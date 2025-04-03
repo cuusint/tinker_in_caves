@@ -4,5 +4,5 @@
   "tinker_in_caves:primitive_club": ["alexscaves:item/primitive_club", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:curiosity": ["alexscaves:item/amber_curiosity", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:magnet_core": ["alexscaves:item/telecore", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:irradiated": ["alexscaves:mob_effect/irradiated", "tconstruct:gui/modifiers/plus"]
+  "tinker_in_caves:irradiated": ["alexscaves:item/uranium", "tconstruct:gui/modifiers/plus"]
 }

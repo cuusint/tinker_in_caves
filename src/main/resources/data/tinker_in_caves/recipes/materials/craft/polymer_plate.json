@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "alexscaves:polymer_plate"
+  },
+  "value": 1,
+  "needed": 2,
+  "material": "tinker_in_caves:polymer_plate"
+}

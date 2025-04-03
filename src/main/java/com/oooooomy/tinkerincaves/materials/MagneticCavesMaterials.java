@@ -7,5 +7,4 @@ import static com.oooooomy.tinkerincaves.materials.MaterialUtility.createMateria
 public class MagneticCavesMaterials {
     public static final MaterialId  scarlet_neodymium = createMaterial("scarlet_neodymium");
     public static final MaterialId  azure_neodymium = createMaterial("azure_neodymium");
-
 }

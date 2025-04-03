@@ -7,7 +7,9 @@
     "tectonic_shard":"#670909",
 
     "scarlet_neodymium":"#E8B3A0",
-    "azure_neodymium":"#1936B9"
+    "azure_neodymium":"#1936B9",
+
+    "polymer_plate":"#DAE7EB"
   },
   "modifier.tinker_in_caves": {
     "primordial_strength":"#B91919",
