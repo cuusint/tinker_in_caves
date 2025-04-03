@@ -1,0 +1,48 @@
+{
+  "material.tinker_in_caves.tough_hide": "Tough Hide",
+  "material.tinker_in_caves.heavy_bone": "Heavy Bone",
+  "material.tinker_in_caves.cycad": "Cycad",
+  "material.tinker_in_caves.archaic_vine": "Archaic Vine",
+
+  "material.tinker_in_caves.scarlet_neodymium": "Scarlet Neodymium",
+  "material.tinker_in_caves.azure_neodymium": "Azure Neodymium",
+
+  "item.tinker_in_caves.molten_scarlet_neodymium_bucket": "Molten Scarlet Neodymium Bucket",
+  "item.tinker_in_caves.molten_azure_neodymium_bucket": "Molten Azure Neodymium Bucket",
+  "item.tinker_in_caves.molten_scarlet_neodymium_ingot_bucket": "Molten Scarlet Neodymium Ingot Bucket",
+  "item.tinker_in_caves.molten_azure_neodymium_ingot_bucket": "Molten Azure Neodymium Ingot Bucket",
+
+  "block.tconstruct.molten_scarlet_neodymium": "Molten Scarlet Neodymium",
+  "block.tconstruct.molten_azure_neodymium": "Molten Azure Neodymium",
+  "block.tconstruct.molten_scarlet_neodymium_ingot": "Molten Scarlet Neodymium Ingot",
+  "block.tconstruct.molten_azure_neodymium_ingot": "Molten Azure Neodymium Ingot",
+
+  "fluid.tconstruct.molten_scarlet_neodymium": "Molten Scarlet Neodymium",
+  "fluid.tconstruct.molten_azure_neodymium": "Molten Azure Neodymium",
+  "fluid.tconstruct.molten_scarlet_neodymium_ingot": "Molten Scarlet Neodymium Ingot",
+  "fluid.tconstruct.molten_azure_neodymium_ingot": "Molten Azure Neodymium Ingot",
+
+  "fluid.tconstruct.flowing_molten_scarlet_neodymium": "Flowing Molten Scarlet Neodymium",
+  "fluid.tconstruct.flowing_molten_azure_neodymium": "Flowing Molten Azure Neodymium",
+  "fluid.tconstruct.flowing_molten_scarlet_neodymium_ingot": "Flowing Molten Scarlet Neodymium Ingot",
+  "fluid.tconstruct.flowing_molten_azure_neodymium_ingot": "Flowing Molten Azure Neodymium Ingot",
+
+  "modifier.tinker_in_caves.primordial_strength": "Primordial Strength",
+  "modifier.tinker_in_caves.primordial_strength.flavor": "Aaa~Ooooo~",
+  "modifier.tinker_in_caves.primordial_strength.description": "Increase 2 damage each level.",
+  "modifier.tinker_in_caves.sea_staff": "Sea Staff",
+  "modifier.tinker_in_caves.sea_staff.flavor": "biu~biu~biu~",
+  "modifier.tinker_in_caves.sea_staff.description": "Launch a water arrow that can track creatures forward. ",
+  "modifier.tinker_in_caves.primitive_club": "Primitive Club",
+  "modifier.tinker_in_caves.primitive_club.flavor": "bang~bang~",
+  "modifier.tinker_in_caves.primitive_club.description": "There is a chance to stun enemies. ",
+  "modifier.tinker_in_caves.curiosity": "Curiosity",
+  "modifier.tinker_in_caves.curiosity.flavor": "My precious!",
+  "modifier.tinker_in_caves.curiosity.description": "1 upgrade slot. ",
+  "modifier.tinker_in_caves.magnet_core": "Magnet Core",
+  "modifier.tinker_in_caves.magnet_core.flavor": "Cannot be immune to mind control",
+  "modifier.tinker_in_caves.magnet_core.description": "1 defense slot. ",
+  "modifier.tinker_in_caves.irradiated": "Irradiated",
+  "modifier.tinker_in_caves.irradiated.flavor": "I feel not good",
+  "modifier.tinker_in_caves.irradiated.description": "Apply radiation effects to the attacked creature. The higher the level, the higher the level and the longer duration of the effect."
+}

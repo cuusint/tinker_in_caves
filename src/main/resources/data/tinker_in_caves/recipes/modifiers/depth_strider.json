@@ -1,0 +1,36 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:bone_worms",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:bone_worms",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/armor/boots"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tconstruct:depth_strider",
+  "level": {
+    "max": 3
+  }
+}

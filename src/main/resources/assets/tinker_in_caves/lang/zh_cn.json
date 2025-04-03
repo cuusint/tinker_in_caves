@@ -1,0 +1,49 @@
+{
+  "material.tinker_in_caves.tough_hide": "坚韧兽皮",
+  "material.tinker_in_caves.heavy_bone": "沉重骨头",
+  "material.tinker_in_caves.cycad": "苏铁",
+  "material.tinker_in_caves.archaic_vine": "远古藤",
+  "material.tinker_in_caves.tectonic_shard": "板块",
+
+  "material.tinker_in_caves.scarlet_neodymium": "赤钕合金",
+  "material.tinker_in_caves.azure_neodymium": "青钕合金",
+
+  "item.tinker_in_caves.molten_scarlet_neodymium_bucket": "熔融赤钕桶",
+  "item.tinker_in_caves.molten_azure_neodymium_bucket": "熔融青钕桶",
+  "item.tinker_in_caves.molten_scarlet_neodymium_ingot_bucket": "熔融赤钕合金桶",
+  "item.tinker_in_caves.molten_azure_neodymium_ingot_bucket": "熔融青钕合金桶",
+
+  "block.tconstruct.molten_scarlet_neodymium": "熔融赤钕",
+  "block.tconstruct.molten_azure_neodymium": "熔融青钕",
+  "block.tconstruct.molten_scarlet_neodymium_ingot": "熔融赤钕合金",
+  "block.tconstruct.molten_azure_neodymium_ingot": "熔融青钕合金",
+
+  "fluid.tconstruct.molten_scarlet_neodymium": "熔融赤钕",
+  "fluid.tconstruct.molten_azure_neodymium": "熔融青钕",
+  "fluid.tconstruct.molten_scarlet_neodymium_ingot": "熔融赤钕合金",
+  "fluid.tconstruct.molten_azure_neodymium_ingot": "熔融青钕合金",
+
+  "fluid.tconstruct.flowing_molten_scarlet_neodymium": "流动的熔融赤钕",
+  "fluid.tconstruct.flowing_molten_azure_neodymium": "流动的熔融青钕",
+  "fluid.tconstruct.flowing_molten_scarlet_neodymium_ingot": "流动的熔融赤钕合金",
+  "fluid.tconstruct.flowing_molten_azure_neodymium_ingot": "流动的熔融青钕合金",
+
+  "modifier.tinker_in_caves.primordial_strength": "原始之力",
+  "modifier.tinker_in_caves.primordial_strength.flavor": "Aaa~Ooooo~",
+  "modifier.tinker_in_caves.primordial_strength.description": "每级增伤2点",
+  "modifier.tinker_in_caves.sea_staff": "海洋法杖",
+  "modifier.tinker_in_caves.sea_staff.flavor": "biu~biu~biu~",
+  "modifier.tinker_in_caves.sea_staff.description": "向前发射能追踪生物的水箭。",
+  "modifier.tinker_in_caves.primitive_club": "原始大棒",
+  "modifier.tinker_in_caves.primitive_club.flavor": "bang~bang~",
+  "modifier.tinker_in_caves.primitive_club.description": "有几率眩晕敌人。",
+  "modifier.tinker_in_caves.curiosity": "珍品",
+  "modifier.tinker_in_caves.curiosity.flavor": "My precious!",
+  "modifier.tinker_in_caves.curiosity.description": "1个升级槽。",
+  "modifier.tinker_in_caves.magnet_core": "磁力核心",
+  "modifier.tinker_in_caves.magnet_core.flavor": "不能免疫心灵控制",
+  "modifier.tinker_in_caves.magnet_core.description": "1个防御槽。",
+  "modifier.tinker_in_caves.irradiated": "辐照",
+  "modifier.tinker_in_caves.irradiated.flavor": "我感觉不舒服",
+  "modifier.tinker_in_caves.irradiated.description": "对被攻击的生物施加辐照效果，等级越高，效果的等级和持续时间越长。"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinker_in_caves:molten_scarlet_neodymium_ingot",
+    "amount": 810
+  },
+  "result": "alexscaves:block_of_scarlet_neodymium",
+  "cooling_time": 500
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient":{ "item":"alexscaves:toxic_paste"},
+  "result": {
+    "fluid": "alexscaves:acid",
+    "amount": 1000
+  },
+  "temperature": 400,
+  "time": 60
+}

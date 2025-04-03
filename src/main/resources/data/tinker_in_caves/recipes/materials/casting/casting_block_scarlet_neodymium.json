@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinker_in_caves:molten_scarlet_neodymium",
+    "amount": 270
+  },
+  "result": "alexscaves:scarlet_neodymium_pillar",
+  "cooling_time": 350
+}

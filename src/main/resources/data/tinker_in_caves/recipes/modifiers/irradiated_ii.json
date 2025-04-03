@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:acid_bucket",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "allow_crystal": false,
+  "result": "tinker_in_caves:irradiated",
+  "level": 2
+}

@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "minecraft:heart_of_the_sea",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:sea_staff",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:heart_of_the_sea",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:heart_of_the_sea",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:heart_of_the_sea",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": false,
+  "result": "tinker_in_caves:sea_staff",
+  "level": 2
+}

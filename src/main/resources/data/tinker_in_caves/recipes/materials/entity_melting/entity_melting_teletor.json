@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:entity_melting",
+  "damage": 2,
+  "entity": {
+    "type": "alexscaves:teletor"
+  },
+  "result": {
+    "amount": 3,
+    "fluid": "tinker_in_caves:molten_azure_neodymium"
+  }
+}

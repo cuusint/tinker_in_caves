@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:entity_melting",
+  "damage": 2,
+  "entity": {
+    "type": "alexscaves:magnetron"
+  },
+  "result": {
+    "amount": 3,
+    "fluid": "tinker_in_caves:molten_scarlet_neodymium"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:block_of_scarlet_neodymium",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:telecore",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:block_of_azure_neodymium",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:block_of_azure_neodymium",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:block_of_scarlet_neodymium",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/armor/worn"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:magnet_core",
+  "level": {
+    "max": 1
+  }
+}

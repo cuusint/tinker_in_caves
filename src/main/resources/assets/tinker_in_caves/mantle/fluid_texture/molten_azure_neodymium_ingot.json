@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tinker_in_caves:fluid/molten_azure_neodymium_ingot/flowing",
+  "still": "tinker_in_caves:fluid/molten_azure_neodymium_ingot/still"
+}

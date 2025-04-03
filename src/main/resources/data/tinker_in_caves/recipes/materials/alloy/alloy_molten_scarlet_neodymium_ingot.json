@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "result": {
+    "fluid": "tinker_in_caves:molten_scarlet_neodymium_ingot",
+    "amount": 90
+  },
+  "inputs": [
+    {
+      "tag": "forge:molten_iron",
+      "amount": 90
+    },
+    {
+      "tag": "tinker_in_caves:molten_scarlet_neodymium",
+      "amount": 90
+    }
+  ],
+  "temperature": 800
+}

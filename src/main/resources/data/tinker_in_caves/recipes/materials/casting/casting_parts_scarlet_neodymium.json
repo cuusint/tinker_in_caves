@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "tag": "tinker_in_caves:molten_scarlet_neodymium_ingot",
+    "amount": 90
+  },
+  "temperature": 800,
+  "output": "tinker_in_caves:scarlet_neodymium"
+}

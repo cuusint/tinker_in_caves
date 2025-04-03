@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinker_in_caves:molten_azure_neodymium_ingot",
+    "amount": 810
+  },
+  "result": "alexscaves:block_of_azure_neodymium",
+  "cooling_time": 500
+}

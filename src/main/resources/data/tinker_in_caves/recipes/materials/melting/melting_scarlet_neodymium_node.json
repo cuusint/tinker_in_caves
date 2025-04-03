@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient":{ "item":"alexscaves:scarlet_neodymium_node"},
+  "result": {
+    "fluid": "tinker_in_caves:molten_scarlet_neodymium",
+    "amount": 450
+  },
+  "temperature": 700,
+  "time": 180
+}

@@ -1,0 +1,20 @@
+{
+  "material.tinker_in_caves": {
+    "tough_hide":"#B63D02",
+    "heavy_bone":"#D9D6BF",
+    "cycad":"#3E2800",
+    "archaic_vine":"#52801E",
+    "tectonic_shard":"#670909",
+
+    "scarlet_neodymium":"#E8B3A0",
+    "azure_neodymium":"#1936B9"
+  },
+  "modifier.tinker_in_caves": {
+    "primordial_strength":"#B91919",
+    "sea_staff":"#2E4854",
+    "primitive_club":"#B91919",
+    "curiosity":"#FC8A00",
+    "magnet_core":"#BC10A0",
+    "irradiated":"#DAD30E"
+  }
+}

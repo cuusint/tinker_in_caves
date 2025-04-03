@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient":{ "item":"alexscaves:block_of_azure_neodymium"},
+  "result": {
+    "fluid": "tinker_in_caves:molten_azure_neodymium_ingot",
+    "amount": 810
+  },
+  "temperature": 800,
+  "time": 1600
+}

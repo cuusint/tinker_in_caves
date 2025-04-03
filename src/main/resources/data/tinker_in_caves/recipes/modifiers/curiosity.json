@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:amber_curiosity",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:amber_curiosity",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:amber_curiosity",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:amber",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:amber",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:curiosity",
+  "level": {
+    "max": 1
+  }
+}

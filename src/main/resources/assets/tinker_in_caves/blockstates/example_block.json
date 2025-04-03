@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tinker_in_caves:block/example_block"
+    }
+  }
+}

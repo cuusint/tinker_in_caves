@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "forge:storage_blocks/uranium",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:fissile_core",
+      "amount_needed": 1
+    },
+    {
+      "tag": "forge:storage_blocks/uranium",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "allow_crystal": false,
+  "result": "tinker_in_caves:irradiated",
+  "level": 3
+}

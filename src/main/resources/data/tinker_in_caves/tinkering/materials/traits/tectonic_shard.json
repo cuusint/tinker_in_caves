@@ -1,0 +1,24 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "name": "tconstruct:flame_barrier",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:fire_protection",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tconstruct:conducting",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:searing",
+        "level": 1
+      }
+    ]
+  }
+}

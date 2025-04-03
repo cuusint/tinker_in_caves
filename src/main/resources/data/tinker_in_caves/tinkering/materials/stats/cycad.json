@@ -1,0 +1,11 @@
+{
+  "stats": {
+    "tconstruct:shield_core": {},
+    "tconstruct:head": {
+      "durability": 120,
+      "mining_speed": 2.0,
+      "mining_tier": "minecraft:wood",
+      "melee_attack": 2.0
+    }
+  }
+}

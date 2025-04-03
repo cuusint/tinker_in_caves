@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:nuclear_bomb",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:charred_remnant",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:nuclear_bomb",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "allow_crystal": false,
+  "result": "tinker_in_caves:irradiated",
+  "level": 4
+}

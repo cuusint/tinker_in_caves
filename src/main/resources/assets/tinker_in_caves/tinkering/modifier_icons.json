@@ -1,0 +1,8 @@
+{
+  "tinker_in_caves:primordial_strength": ["alexscaves:item/tough_hide", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:sea_staff": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:primitive_club": ["alexscaves:item/primitive_club", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:curiosity": ["alexscaves:item/amber_curiosity", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:magnet_core": ["alexscaves:item/telecore", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:irradiated": ["alexscaves:mob_effect/irradiated", "tconstruct:gui/modifiers/plus"]
+}
