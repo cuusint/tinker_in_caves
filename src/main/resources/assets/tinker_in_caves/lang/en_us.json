@@ -74,11 +74,27 @@
   "modifier.tinker_in_caves.triple_splash": "Triple Splash",
   "modifier.tinker_in_caves.triple_splash.flavor": "biubiubiu~",
   "modifier.tinker_in_caves.triple_splash.description": "Split into three water arrows and scatter them out. ",
+  "modifier.tinker_in_caves.flinging": "Flinging",
+  "modifier.tinker_in_caves.flinging.flavor": "Strength flows beneath my feet",
+  "modifier.tinker_in_caves.flinging.description": "When using Ortholance for sprinting, a slight upward force is received, which allows the player to sprint further.",
+  "modifier.tinker_in_caves.sea_swing": "Sea Swing",
+  "modifier.tinker_in_caves.sea_swing.flavor": "The Power of the Ocean",
+  "modifier.tinker_in_caves.sea_swing.description": "When hitting an enemy, release an additional small water wave.",
+  "modifier.tinker_in_caves.second_wave": "Second Wave",
+  "modifier.tinker_in_caves.second_wave.flavor": "Second Wave",
+  "modifier.tinker_in_caves.second_wave.description": "Release an additional wave of water during the sprint of the Ortholance.",
+  "modifier.tinker_in_caves.tsunami": "Tsunami",
+  "modifier.tinker_in_caves.tsunami.flavor": "I am Aquaman",
+  "modifier.tinker_in_caves.tsunami.description": "Make the sprint of the Ortholance release an additional huge wave of water.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.bouncing_bolt.requirements": "Require Sea Staff upgrade",
   "modifier.tinker_in_caves.enveloping_bubble.requirements": "Require Sea Staff upgrade",
   "modifier.tinker_in_caves.soak_seeking.requirements": "Require Sea Staff upgrade",
-  "modifier.tinker_in_caves.triple_splash.requirements": "Require Sea Staff upgrade"
+  "modifier.tinker_in_caves.triple_splash.requirements": "Require Sea Staff upgrade",
+  "modifier.tinker_in_caves.flinging.requirements": "Require Ortholance upgrade",
+  "modifier.tinker_in_caves.sea_swing.requirements": "Require Ortholance upgrade",
+  "modifier.tinker_in_caves.second_wave.requirements": "Require Ortholance upgrade",
+  "modifier.tinker_in_caves.tsunami.requirements": "Require Ortholance upgrade"
 }

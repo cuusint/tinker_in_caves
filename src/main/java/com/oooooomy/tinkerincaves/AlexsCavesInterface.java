@@ -124,16 +124,12 @@ public class AlexsCavesInterface {
         }
     }
 
-    public static void effectOrtholance(Level level, LivingEntity livingEntity,int timeLeft,int flinging,boolean tsunami,boolean secondWave)    {
-        int i = Mth.clamp(timeLeft, 0, 60);
-        if (i<=0){
-            return;
-        }
-        float f = 0.1F * i + flinging * 0.1F;
+    public static void effectOrtholance(Level level, LivingEntity livingEntity,int chargeTime,int flinging,boolean tsunami,boolean secondWave)    {
+        float f = 0.1F * chargeTime + flinging * 0.1F;
         Vec3 vec3 = livingEntity.getDeltaMovement().add(livingEntity.getViewVector(1.0F).normalize().multiply(f, f * 0.15F, f));
-        if (i >= 10 && !level.isClientSide) {
+        if (chargeTime >= 10 && !level.isClientSide) {
             level.playSound(null, livingEntity, ACSoundRegistry.ORTHOLANCE_WAVE.get(), SoundSource.NEUTRAL, 4.0F, 1.0F);
-            int maxWaves = i / 5;
+            int maxWaves = chargeTime / 5;
             if(tsunami){
                 maxWaves = 5;
                 Vec3 waveCenterPos = livingEntity.position().add(vec3);
@@ -183,10 +179,7 @@ public class AlexsCavesInterface {
             AABB aabb = new AABB(livingEntity.position(), livingEntity.position().add(vec3.scale(maxWaves))).inflate(1);
             DamageSource source = livingEntity.damageSources().mobAttack(livingEntity);
             double d = 0;
-            d+=livingEntity.getAttributeValue(Attributes.ATTACK_DAMAGE);
-            //for (AttributeModifier modifier : stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE)) {
-            //    d += modifier.getAmount();
-            //}
+            d += livingEntity.getAttributeValue(Attributes.ATTACK_DAMAGE);
             for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
                 if (!livingEntity.isAlliedTo(entity) && !livingEntity.equals(entity) && livingEntity.hasLineOfSight(entity)) {
                     entity.hurt(source, (float) d);

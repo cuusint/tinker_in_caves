@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:enigmatic_engine",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:tsunami",
+  "level": 1
+}

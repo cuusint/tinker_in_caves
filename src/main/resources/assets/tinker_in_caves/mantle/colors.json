@@ -26,6 +26,10 @@
     "bouncing_bolt":"#2E4854",
     "enveloping_bubble":"#2E4854",
     "soak_seeking":"#2E4854",
-    "triple_splash":"#2E4854"
+    "triple_splash":"#2E4854",
+    "flinging":"#886952",
+    "sea_swing":"#886952",
+    "second_wave":"#886952",
+    "tsunami":"#886952"
   }
 }

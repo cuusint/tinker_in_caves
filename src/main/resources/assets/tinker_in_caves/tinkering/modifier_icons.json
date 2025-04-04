@@ -10,8 +10,12 @@
   "tinker_in_caves:ink_bomb": ["alexscaves:item/ink_bomb", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:glow_ink_bomb": ["alexscaves:item/glow_ink_bomb", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:ortholance": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:bouncing_bolt": ["alexscaves:item/sea_pig", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:enveloping_bubble": ["alexscaves:item/floater", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:soak_seeking": ["alexscaves:item/lanternfish", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:triple_splash": ["alexscaves:item/tripodfish", "tconstruct:gui/modifiers/plus"]
+  "tinker_in_caves:bouncing_bolt": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:enveloping_bubble": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:soak_seeking": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:triple_splash": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:flinging": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:sea_swing": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:second_wave": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:tsunami": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"]
 }

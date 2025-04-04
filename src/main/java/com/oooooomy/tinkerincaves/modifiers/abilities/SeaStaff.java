@@ -27,7 +27,7 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
 
     @Override
     public int getUseDuration(IToolStackView tool, ModifierEntry modifier) {
-        return 12000+ Mth.clamp(12000-modifier.getLevel()*6000,0,12000);
+        return 72000;
     }
 
     @Override
@@ -52,10 +52,14 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
 
     @Override
     public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft){
-        if (!(entity instanceof Player player))
-        {
+        int chargeTime = getUseDuration(tool, modifier) - timeLeft;
+        if (chargeTime <= 20){
             return;
         }
+        if (!(entity instanceof Player player)){
+            return;
+        }
+
         int modifierLevel = modifier.getLevel();
         tool.setDamage(tool.getDamage() + 4 * modifierLevel);
 

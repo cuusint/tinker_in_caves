@@ -30,7 +30,7 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
 
     @Override
     public int getUseDuration(IToolStackView tool, ModifierEntry modifier) {
-        return 36000+ Mth.clamp(36000-modifier.getLevel()*12000,0,36000);
+        return 72000;
     }
 
     @Override
@@ -55,12 +55,16 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
 
     @Override
     public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft){
+        int chargeTime = getUseDuration(tool, modifier) - timeLeft;
+        if (chargeTime <= 20){
+            return;
+        }
         int modifierLevel = modifier.getLevel();
         tool.setDamage(tool.getDamage() + 4 * modifierLevel);
 
-        int flinging = modifierLevel-1;
-        boolean tsunami = modifierLevel>=3;
-        boolean secondWave = modifierLevel>=2;
+        int flinging = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:flinging"));
+        boolean tsunami = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:tsunami"))>0;
+        boolean secondWave = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:second_wave"))>0;
         AlexsCavesInterface.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
     }
 
@@ -69,7 +73,7 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
         if (tool.isBroken()){
             return ;
         }
-        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves::sea_swing"))<=0){
+        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:sea_swing"))<=0){
             return;
         }
         Player player = context.getPlayerAttacker();

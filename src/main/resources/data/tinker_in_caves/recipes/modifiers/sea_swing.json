@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "minecraft:piston",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:piston",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:piston",
+      "amount_needed": 1
+    },
+    {
+      "item": "minecraft:piston",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:sea_swing",
+  "level": 1
+}
