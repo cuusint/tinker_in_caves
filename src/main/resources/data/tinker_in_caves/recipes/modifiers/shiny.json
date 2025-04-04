@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:pearl",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tconstruct:shiny",
+  "level": 1
+}

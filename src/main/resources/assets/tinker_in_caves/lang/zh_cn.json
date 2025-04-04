@@ -46,5 +46,14 @@
   "modifier.tinker_in_caves.magnet_core.description": "1个防御槽。",
   "modifier.tinker_in_caves.irradiated": "辐照",
   "modifier.tinker_in_caves.irradiated.flavor": "我感觉不舒服",
-  "modifier.tinker_in_caves.irradiated.description": "对被攻击的生物施加辐照效果，等级越高，效果的等级和持续时间越长。"
+  "modifier.tinker_in_caves.irradiated.description": "对被攻击的生物施加辐照效果，等级越高，效果的等级和持续时间越长。",
+  "modifier.tinker_in_caves.ink_bomb": "墨水炸弹",
+  "modifier.tinker_in_caves.ink_bomb.flavor": "啊~我看不见了",
+  "modifier.tinker_in_caves.ink_bomb.description": "形成一片墨水云。",
+  "modifier.tinker_in_caves.glow_ink_bomb": "荧光墨水炸弹",
+  "modifier.tinker_in_caves.glow_ink_bomb.flavor": "深海之光",
+  "modifier.tinker_in_caves.glow_ink_bomb.description": "形成一片荧光墨水云。",
+  "modifier.tinker_in_caves.ortholance": "螺旋长枪",
+  "modifier.tinker_in_caves.ortholance.flavor": "水下骑士",
+  "modifier.tinker_in_caves.ortholance.description": "突进！突进！突进！"
 }

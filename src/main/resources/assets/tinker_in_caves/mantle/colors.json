@@ -17,6 +17,9 @@
     "primitive_club":"#B91919",
     "curiosity":"#FC8A00",
     "magnet_core":"#BC10A0",
-    "irradiated":"#DAD30E"
+    "irradiated":"#DAD30E",
+    "ink_bomb":"#193030",
+    "glow_ink_bomb":"#39B3B0",
+    "ortholance":"#886952"
   }
 }

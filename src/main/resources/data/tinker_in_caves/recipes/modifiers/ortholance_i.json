@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:ping_pong_sponge",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:ortholance",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:ping_pong_sponge",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": false,
+  "result": "tinker_in_caves:ortholance",
+  "level": 1
+}

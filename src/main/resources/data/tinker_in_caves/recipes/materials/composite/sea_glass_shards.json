@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "forge:gems/prismarine"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "tconstruct:molten_glass",
+    "amount": 250
+  },
+  "result": "alexscaves:sea_glass_shards",
+  "cooling_time": 80
+}

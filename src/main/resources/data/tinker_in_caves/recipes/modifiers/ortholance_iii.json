@@ -12,28 +12,20 @@
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:sea_staff",
+      "item": "alexscaves:ortholance",
       "amount_needed": 1
     },
     {
       "item": "alexscaves:gazing_pearl",
       "amount_needed": 1
-    },
-    {
-      "item": "minecraft:heart_of_the_sea",
-      "amount_needed": 1
-    },
-    {
-      "item": "minecraft:heart_of_the_sea",
-      "amount_needed": 1
     }
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable/interactable/right"
+      "tag": "tconstruct:modifiable/melee/primary"
     }
   ],
   "allow_crystal": false,
-  "result": "tinker_in_caves:sea_staff",
-  "level": 2
+  "result": "tinker_in_caves:ortholance",
+  "level": 3
 }

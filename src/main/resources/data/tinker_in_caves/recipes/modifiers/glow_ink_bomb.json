@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:glow_ink_bomb",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/ranged/bows"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:glow_ink_bomb",
+  "level": 1
+}

@@ -14,8 +14,8 @@ public class PrimordialStrength extends Modifier implements MeleeDamageModifierH
     public PrimordialStrength(){}
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder)
-    {
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder){
+        super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
     }
 

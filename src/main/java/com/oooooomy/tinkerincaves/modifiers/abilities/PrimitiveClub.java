@@ -24,7 +24,7 @@ public class PrimitiveClub extends Modifier implements MeleeHitModifierHook {
         Entity entity = context.getTarget();
         int level = modifier.getLevel();
         if (level>0&&entity instanceof LivingEntity target){
-            AlexsCavesInterface.effectPrimitiveClub(context.getAttacker().getItemInHand(context.getHand()),target, context.getAttacker(),0.5f,20*level,40,level-1);
+            AlexsCavesInterface.effectPrimitiveClub(target, context.getAttacker(),0.5f,20*level,40,level-1);
         }
     }
 }

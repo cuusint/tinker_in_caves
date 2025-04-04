@@ -1,4 +1,4 @@
-package com.oooooomy.tinkerincaves.modifiers.abilities;
+package com.oooooomy.tinkerincaves.modifiers.upgrades;
 
 import com.oooooomy.tinkerincaves.AlexsCavesInterface;
 import net.minecraft.util.Mth;
@@ -16,8 +16,8 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
-public class SeaStaff extends Modifier implements GeneralInteractionModifierHook {
-    public SeaStaff(){}
+public class Ortholance extends Modifier implements GeneralInteractionModifierHook {
+    public Ortholance(){}
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder){
@@ -26,7 +26,7 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
 
     @Override
     public int getUseDuration(IToolStackView tool, ModifierEntry modifier) {
-        return 12000+ Mth.clamp(12000-modifier.getLevel()*6000,0,12000);
+        return 36000+ Mth.clamp(36000-modifier.getLevel()*12000,0,36000);
     }
 
     @Override
@@ -45,23 +45,18 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
         if (tool.isBroken()){
             return InteractionResult.PASS;
         }
-        GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1 + modifier.getLevel()*0.4f);
+        GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1 + modifier.getLevel()*0.2f);
         return InteractionResult.SUCCESS;
     }
 
     @Override
     public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft){
-        if (!(entity instanceof Player player))
-        {
-            return;
-        }
         int modifierLevel = modifier.getLevel();
         tool.setDamage(tool.getDamage() + 4 * modifierLevel);
 
-        int boltsCount = modifierLevel;
-        double seekDistance = 32+ modifierLevel*16;
-        int seekAmount = modifierLevel;
-        boolean bubble = modifierLevel >= 2;
-        AlexsCavesInterface.effectSeaStaff(player,boltsCount,seekDistance ,seekAmount,bubble,true);
+        int flinging = modifierLevel-1;
+        boolean tsunami = modifierLevel>=3;
+        boolean secondWave = modifierLevel>=2;
+        AlexsCavesInterface.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
     }
 }

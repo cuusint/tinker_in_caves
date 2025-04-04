@@ -46,5 +46,14 @@
   "modifier.tinker_in_caves.magnet_core.description": "1 defense slot. ",
   "modifier.tinker_in_caves.irradiated": "Irradiated",
   "modifier.tinker_in_caves.irradiated.flavor": "I feel not good",
-  "modifier.tinker_in_caves.irradiated.description": "Apply radiation effects to the attacked creature. The higher the level, the higher the level and the longer duration of the effect."
+  "modifier.tinker_in_caves.irradiated.description": "Apply radiation effects to the attacked creature. The higher the level, the higher the level and the longer duration of the effect.",
+  "modifier.tinker_in_caves.ink_bomb": "Ink Bomb",
+  "modifier.tinker_in_caves.ink_bomb.flavor": "OMG~I can't see anything",
+  "modifier.tinker_in_caves.ink_bomb.description": "Form a cloud of ink.",
+  "modifier.tinker_in_caves.glow_ink_bomb": "Glow Ink Bomb",
+  "modifier.tinker_in_caves.glow_ink_bomb.flavor": "Light of the depth",
+  "modifier.tinker_in_caves.glow_ink_bomb.description": "Form a glow cloud of ink.",
+  "modifier.tinker_in_caves.ortholance": "Ortholance",
+  "modifier.tinker_in_caves.ortholance.flavor": "Underwater Knight",
+  "modifier.tinker_in_caves.ortholance.description": "Forward! Forward! Forward!"
 }
