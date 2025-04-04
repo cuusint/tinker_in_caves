@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:bone_ribs",
+      "amount_needed": 16
+    },
+    {
+      "item": "alexscaves:floater",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:bone_ribs",
+      "amount_needed": 16
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:enveloping_bubble",
+  "level": 1
+}

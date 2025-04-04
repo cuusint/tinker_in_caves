@@ -8,24 +8,27 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:amber_curiosity",
+      "item": "minecraft:conduit",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:primitive_club",
+      "item": "minecraft:conduit",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:tremorsaurus_egg",
+      "item": "minecraft:conduit",
       "amount_needed": 1
     }
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee/primary"
+      "tag": "tconstruct:modifiable/interactable/right"
     }
   ],
+  "slots": {
+    "upgrades": 1
+  },
   "allow_crystal": true,
-  "result": "tinker_in_caves:primitive_club",
-  "level": 2
+  "result": "tinker_in_caves:triple_splash",
+  "level": 1
 }

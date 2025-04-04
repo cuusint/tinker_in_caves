@@ -15,11 +15,17 @@
     "primordial_strength":"#B91919",
     "sea_staff":"#2E4854",
     "primitive_club":"#B91919",
+    "dazing_sweep":"#B91919",
+    "tremorsaurus":"#B91919",
     "curiosity":"#FC8A00",
     "magnet_core":"#BC10A0",
     "irradiated":"#DAD30E",
     "ink_bomb":"#193030",
     "glow_ink_bomb":"#39B3B0",
-    "ortholance":"#886952"
+    "ortholance":"#886952",
+    "bouncing_bolt":"#2E4854",
+    "enveloping_bubble":"#2E4854",
+    "soak_seeking":"#2E4854",
+    "triple_splash":"#2E4854"
   }
 }

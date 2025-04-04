@@ -8,14 +8,6 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:amber_curiosity",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:primitive_club",
-      "amount_needed": 1
-    },
-    {
       "item": "alexscaves:tremorsaurus_egg",
       "amount_needed": 1
     }
@@ -25,7 +17,7 @@
       "tag": "tconstruct:modifiable/melee/primary"
     }
   ],
-  "allow_crystal": true,
-  "result": "tinker_in_caves:primitive_club",
-  "level": 2
+  "allow_crystal": false,
+  "result": "tinker_in_caves:tremorsaurus",
+  "level": 1
 }

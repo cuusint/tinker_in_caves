@@ -2,10 +2,16 @@
   "tinker_in_caves:primordial_strength": ["alexscaves:item/tough_hide", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:sea_staff": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:primitive_club": ["alexscaves:item/primitive_club", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:dazing_sweep": ["alexscaves:item/primitive_club", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:tremorsaurus": ["alexscaves:item/tremorsaurus_egg", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:curiosity": ["alexscaves:item/amber_curiosity", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:magnet_core": ["alexscaves:item/telecore", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:irradiated": ["alexscaves:item/uranium", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:ink_bomb": ["alexscaves:item/ink_bomb", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:glow_ink_bomb": ["alexscaves:item/glow_ink_bomb", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:ortholance": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/plus"]
+  "tinker_in_caves:ortholance": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:bouncing_bolt": ["alexscaves:item/sea_pig", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:enveloping_bubble": ["alexscaves:item/floater", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:soak_seeking": ["alexscaves:item/lanternfish", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:triple_splash": ["alexscaves:item/tripodfish", "tconstruct:gui/modifiers/plus"]
 }

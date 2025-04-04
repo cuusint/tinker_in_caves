@@ -126,79 +126,84 @@ public class AlexsCavesInterface {
 
     public static void effectOrtholance(Level level, LivingEntity livingEntity,int timeLeft,int flinging,boolean tsunami,boolean secondWave)    {
         int i = Mth.clamp(timeLeft, 0, 60);
-        if (i > 0) {
-            float f = 0.1F * i + flinging * 0.1F;
-            Vec3 vec3 = livingEntity.getDeltaMovement().add(livingEntity.getViewVector(1.0F).normalize().multiply(f, f * 0.15F, f));
-            if (i >= 10 && !level.isClientSide) {
-                level.playSound(null, livingEntity, ACSoundRegistry.ORTHOLANCE_WAVE.get(), SoundSource.NEUTRAL, 4.0F, 1.0F);
-                //stack.hurtAndBreak(1, livingEntity, (player1) -> {
-                //    player1.broadcastBreakEvent(player1.getUsedItemHand());
-                //});
-                int maxWaves = i / 5;
-                if(tsunami){
-                    maxWaves = 5;
-                    Vec3 waveCenterPos = livingEntity.position().add(vec3);
-                    WaveEntity tsunamiWaveEntity = new WaveEntity(level, livingEntity);
-                    tsunamiWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
-                    tsunamiWaveEntity.setLifespan(20);
-                    tsunamiWaveEntity.setWaveScale(5.0F);
-                    tsunamiWaveEntity.setWaitingTicks(2);
-                    tsunamiWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)));
-                    level.addFreshEntity(tsunamiWaveEntity);
-                }
-                else{
-                    for (int wave = 0; wave < maxWaves; wave++) {
-                        float f1 = (float) wave / maxWaves;
-                        int lifespan = 3 + (int) ((1F - f1) * 3);
-                        Vec3 waveCenterPos = livingEntity.position().add(vec3.scale(f1 * 2));
-                        WaveEntity leftWaveEntity = new WaveEntity(level, livingEntity);
-                        leftWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
-                        leftWaveEntity.setLifespan(lifespan);
-                        leftWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) + 60 - 15 * wave);
-                        level.addFreshEntity(leftWaveEntity);
-                        WaveEntity rightWaveEntity = new WaveEntity(level, livingEntity);
-                        rightWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
-                        rightWaveEntity.setLifespan(lifespan);
-                        rightWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) - 60 + 15 * wave);
-                        level.addFreshEntity(rightWaveEntity);
-                    }
-                    if(secondWave){
-                        int maxSecondWaves = Math.max(1, maxWaves - 1);
-                        for (int wave = 0; wave < maxSecondWaves; wave++) {
-                            float f1 = (float) wave / maxSecondWaves;
-                            int lifespan = 3 + (int) ((1F - f1) * 3);
-                            Vec3 waveCenterPos = livingEntity.position().add(vec3.scale(f1 * 2));
-                            WaveEntity leftWaveEntity = new WaveEntity(level, livingEntity);
-                            leftWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
-                            leftWaveEntity.setLifespan(lifespan);
-                            leftWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) + 60 - 15 * wave);
-                            leftWaveEntity.setWaitingTicks(8);
-                            level.addFreshEntity(leftWaveEntity);
-                            WaveEntity rightWaveEntity = new WaveEntity(level, livingEntity);
-                            rightWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
-                            rightWaveEntity.setLifespan(lifespan);
-                            rightWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) - 60 + 15 * wave);
-                            rightWaveEntity.setWaitingTicks(8);
-                            level.addFreshEntity(rightWaveEntity);
-                        }
-                    }
-                }
-                AABB aabb = new AABB(livingEntity.position(), livingEntity.position().add(vec3.scale(maxWaves))).inflate(1);
-                DamageSource source = livingEntity.damageSources().mobAttack(livingEntity);
-                double d = 0;
-                d+=livingEntity.getAttributeValue(Attributes.ATTACK_DAMAGE);
-                //for (AttributeModifier modifier : stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE)) {
-                //    d += modifier.getAmount();
-                //}
-                for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
-                    if (!livingEntity.isAlliedTo(entity) && !livingEntity.equals(entity) && livingEntity.hasLineOfSight(entity)) {
-                        entity.hurt(source, (float) d);
-                        entity.stopRiding();
-                    }
+        if (i<=0){
+            return;
+        }
+        float f = 0.1F * i + flinging * 0.1F;
+        Vec3 vec3 = livingEntity.getDeltaMovement().add(livingEntity.getViewVector(1.0F).normalize().multiply(f, f * 0.15F, f));
+        if (i >= 10 && !level.isClientSide) {
+            level.playSound(null, livingEntity, ACSoundRegistry.ORTHOLANCE_WAVE.get(), SoundSource.NEUTRAL, 4.0F, 1.0F);
+            int maxWaves = i / 5;
+            if(tsunami){
+                maxWaves = 5;
+                Vec3 waveCenterPos = livingEntity.position().add(vec3);
+                WaveEntity tsunamiWaveEntity = new WaveEntity(level, livingEntity);
+                tsunamiWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
+                tsunamiWaveEntity.setLifespan(20);
+                tsunamiWaveEntity.setWaveScale(5.0F);
+                tsunamiWaveEntity.setWaitingTicks(2);
+                tsunamiWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)));
+                level.addFreshEntity(tsunamiWaveEntity);
+            }
+            for (int wave = 0; wave < maxWaves; wave++) {
+                float f1 = (float) wave / maxWaves;
+                int lifespan = 3 + (int) ((1F - f1) * 3);
+                Vec3 waveCenterPos = livingEntity.position().add(vec3.scale(f1 * 2));
+                WaveEntity leftWaveEntity = new WaveEntity(level, livingEntity);
+                leftWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
+                leftWaveEntity.setLifespan(lifespan);
+                leftWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) + 60 - 15 * wave);
+                level.addFreshEntity(leftWaveEntity);
+                WaveEntity rightWaveEntity = new WaveEntity(level, livingEntity);
+                rightWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
+                rightWaveEntity.setLifespan(lifespan);
+                rightWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) - 60 + 15 * wave);
+                level.addFreshEntity(rightWaveEntity);
+            }
+            if(secondWave){
+                int maxSecondWaves = Math.max(1, maxWaves - 1);
+                for (int wave = 0; wave < maxSecondWaves; wave++) {
+                    float f1 = (float) wave / maxSecondWaves;
+                    int lifespan = 3 + (int) ((1F - f1) * 3);
+                    Vec3 waveCenterPos = livingEntity.position().add(vec3.scale(f1 * 2));
+                    WaveEntity leftWaveEntity = new WaveEntity(level, livingEntity);
+                    leftWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
+                    leftWaveEntity.setLifespan(lifespan);
+                    leftWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) + 60 - 15 * wave);
+                    leftWaveEntity.setWaitingTicks(8);
+                    level.addFreshEntity(leftWaveEntity);
+                    WaveEntity rightWaveEntity = new WaveEntity(level, livingEntity);
+                    rightWaveEntity.setPos(waveCenterPos.x, livingEntity.getY(), waveCenterPos.z);
+                    rightWaveEntity.setLifespan(lifespan);
+                    rightWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) - 60 + 15 * wave);
+                    rightWaveEntity.setWaitingTicks(8);
+                    level.addFreshEntity(rightWaveEntity);
                 }
             }
-            Vec3 deltaMovement = vec3.add(0, (livingEntity.onGround() ? 0.2F : 0) + (flinging * 0.1F), 0);
-            livingEntity.addDeltaMovement(deltaMovement);
+            AABB aabb = new AABB(livingEntity.position(), livingEntity.position().add(vec3.scale(maxWaves))).inflate(1);
+            DamageSource source = livingEntity.damageSources().mobAttack(livingEntity);
+            double d = 0;
+            d+=livingEntity.getAttributeValue(Attributes.ATTACK_DAMAGE);
+            //for (AttributeModifier modifier : stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE)) {
+            //    d += modifier.getAmount();
+            //}
+            for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
+                if (!livingEntity.isAlliedTo(entity) && !livingEntity.equals(entity) && livingEntity.hasLineOfSight(entity)) {
+                    entity.hurt(source, (float) d);
+                    entity.stopRiding();
+                }
+            }
         }
+        Vec3 deltaMovement = vec3.add(0, (livingEntity.onGround() ? 0.2F : 0) + (flinging * 0.1F), 0);
+        livingEntity.addDeltaMovement(deltaMovement);
+    }
+
+    public static void effectOrtholance(LivingEntity player, LivingEntity target){
+        Vec3 vec3 = player.getViewVector(1.0F);
+        WaveEntity waveEntity = new WaveEntity(target.level(), player);
+        waveEntity.setPos(player.getX(), target.getY(), player.getZ());
+        waveEntity.setLifespan(5);
+        waveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)));
+        player.level().addFreshEntity(waveEntity);
     }
 }

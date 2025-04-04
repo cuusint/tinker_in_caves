@@ -10,18 +10,22 @@ import net.minecraft.world.item.UseAnim;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
-public class Ortholance extends Modifier implements GeneralInteractionModifierHook {
+public class Ortholance extends Modifier implements GeneralInteractionModifierHook , MeleeHitModifierHook {
     public Ortholance(){}
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder){
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
+        builder.addHook(this, ModifierHooks.MELEE_HIT);
     }
 
     @Override
@@ -58,5 +62,20 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
         boolean tsunami = modifierLevel>=3;
         boolean secondWave = modifierLevel>=2;
         AlexsCavesInterface.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
+    }
+
+    @Override
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+        if (tool.isBroken()){
+            return ;
+        }
+        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves::sea_swing"))<=0){
+            return;
+        }
+        Player player = context.getPlayerAttacker();
+        if (player == null){
+            return;
+        }
+        AlexsCavesInterface.effectOrtholance(player, context.getLivingTarget());
     }
 }

@@ -8,23 +8,23 @@
   ],
   "inputs": [
     {
+      "item": "alexscaves:dinosaur_chop",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:primitive_club",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:dinosaur_chop",
+      "amount_needed": 1
+    },
+    {
       "item": "alexscaves:amber_curiosity",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:primitive_club",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:primitive_club",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:primitive_club",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:pewen_sap",
+      "item": "alexscaves:amber_curiosity",
       "amount_needed": 1
     }
   ],
@@ -33,10 +33,7 @@
       "tag": "tconstruct:modifiable/melee/primary"
     }
   ],
-  "slots": {
-    "abilities": 1
-  },
-  "allow_crystal": true,
-  "result": "tinker_in_caves:primitive_club",
-  "level": 3
+  "allow_crystal": false,
+  "result": "tinker_in_caves:dazing_sweep",
+  "level": 2
 }

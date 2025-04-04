@@ -18,6 +18,14 @@
     {
       "item": "alexscaves:pewen_sap",
       "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:pewen_sap",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:amber_curiosity",
+      "amount_needed": 1
     }
   ],
   "tools": [
