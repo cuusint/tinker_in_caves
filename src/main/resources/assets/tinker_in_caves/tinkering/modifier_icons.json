@@ -23,5 +23,9 @@
   "tinker_in_caves:resistor_slam": ["alexscaves:item/telecore", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:heavy_slam": ["alexscaves:item/heavyweight", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:scarlet_shield": ["alexscaves:item/scarlet_neodymium_ingot", "tconstruct:gui/modifiers/book"],
-  "tinker_in_caves:azure_shield": ["alexscaves:item/azure_neodymium_ingot", "tconstruct:gui/modifiers/book"]
+  "tinker_in_caves:azure_shield": ["alexscaves:item/azure_neodymium_ingot", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:ray_gun": ["alexscaves:item/fissile_core", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:x_ray": ["alexscaves:item/radon_bottle", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:gamma_ray": ["alexscaves:item/radon_bottle", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:ray_efficiency": ["alexscaves:item/fissile_core", "tconstruct:gui/modifiers/book"]
 }

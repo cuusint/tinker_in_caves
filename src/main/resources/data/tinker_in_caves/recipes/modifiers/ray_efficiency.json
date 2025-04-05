@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:charred_remnant",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:ray_efficiency",
+  "level": {
+    "max": 8
+  }
+}

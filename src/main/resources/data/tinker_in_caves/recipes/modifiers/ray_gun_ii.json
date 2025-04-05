@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:uranium_rod",
+      "amount_needed": 2
+    },
+    {
+      "item": "alexscaves:raygun",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:uranium_rod",
+      "amount_needed": 2
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "allow_crystal": false,
+  "result": "tinker_in_caves:ray_gun",
+  "level": 2
+}

@@ -7,12 +7,17 @@ import com.github.alexmodguy.alexscaves.server.entity.item.DinosaurSpiritEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.SubmarineEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaterBoltEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaveEntity;
+import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
+import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
+import com.github.alexmodguy.alexscaves.server.potion.IrradiatedEffect;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -26,14 +31,25 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.*;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import net.minecraft.core.particles.ParticleOptions;
 
 public class AlexsCavesInterface {
+    private static Vec3 getProjectileStartPosition(LivingEntity entity)
+    {
+        float rot = entity.yHeadRot + 45;
+        double x = entity.getX() - (double) (entity.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F));
+        double y = entity.getEyeY() - (double) 0.4F;
+        double z = entity.getZ() + (double) (entity.getBbWidth()) * 1.1F * (double) Mth.cos(rot * ((float) Math.PI / 180F));
+        return new Vec3(x,y,z);
+    }
+
     public static void effectSeaStaff(Player player, int boltsCount ,double seekDistance,float seekAmount,boolean bubble,boolean bouncing)    {
         Level level =  player.level();
         level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), ACSoundRegistry.SEA_STAFF_CAST.get(), SoundSource.PLAYERS, 0.5F, (player.level().getRandom().nextFloat() * 0.45F + 0.75F));
@@ -43,7 +59,7 @@ public class AlexsCavesInterface {
                 float shootRot = i == 0 ? 0 : i == 1 ? -50 : 50;
                 WaterBoltEntity bolt = new WaterBoltEntity(level, player);
                 float rot = player.yHeadRot + 45;
-                bolt.setPos(player.getX() - (double) (player.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F)), player.getEyeY() - (double) 0.4F, player.getZ() + (double) (player.getBbWidth()) * 1.1F * (double) Mth.cos(rot * ((float) Math.PI / 180F)));
+                bolt.setPos(getProjectileStartPosition(player));
                 bolt.shootFromRotation(player, player.getXRot(), player.getYRot() + shootRot, -20.0F, i > 0 ? 1F : 2F, 12F);
                 if (bubble) {
                     bolt.setBubbling(player.getRandom().nextBoolean());
@@ -270,6 +286,105 @@ public class AlexsCavesInterface {
                     }
                     else{
                         entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, living.getX() - living.getX(), living.getZ() - entity.getZ());
+                    }
+                }
+            }
+        }
+    }
+
+    public static void effectRayGun(IToolStackView tool,LivingEntity living, int timeUsed,float damage, boolean xRay,boolean gammaRay){
+        int realStart = 15;
+        float time = timeUsed < realStart ? timeUsed / (float) realStart : 1F;
+        float maxDist = 25.0F * time;
+        HitResult realHitResult = ProjectileUtil.getHitResultOnViewVector(living, Entity::canBeHitByProjectile, maxDist);
+        HitResult blockOnlyHitResult = living.pick(maxDist, 0.0F, false);
+        Vec3 xRayVec = living.getViewVector(0.0F).scale(maxDist).add(living.getEyePosition());
+        Vec3 vec3 = xRay ? xRayVec : blockOnlyHitResult.getLocation();
+        Vec3 vec31 = xRay ? xRayVec : blockOnlyHitResult.getLocation();
+        Level level = living.level();
+        if (tool.isBroken()) {
+            living.stopUsingItem();
+            level.playSound((Player) null, living.getX(), living.getY(), living.getZ(), ACSoundRegistry.RAYGUN_EMPTY.get(), living.getSoundSource(), 1.0F, 1.0F);
+            return;
+        }
+
+        float deltaX = 0;
+        float deltaY = 0;
+        float deltaZ = 0;
+        ParticleOptions particleOptions;
+        if (level.random.nextBoolean() && time >= 1F) {
+            particleOptions = gammaRay ? ACParticleRegistry.BLUE_RAYGUN_EXPLOSION.get() : ACParticleRegistry.RAYGUN_EXPLOSION.get();
+        } else {
+            particleOptions = gammaRay ? ACParticleRegistry.BLUE_HAZMAT_BREATHE.get() : ACParticleRegistry.HAZMAT_BREATHE.get();
+            deltaX = (level.random.nextFloat() - 0.5F) * 0.2F;
+            deltaY = (level.random.nextFloat() - 0.5F) * 0.2F;
+            deltaZ = (level.random.nextFloat() - 0.5F) * 0.2F;
+        }
+        level.addParticle(particleOptions, vec3.x + (level.random.nextFloat() - 0.5F) * 0.45F, vec3.y + 0.2F, vec3.z + (level.random.nextFloat() - 0.5F) * 0.45F, deltaX, deltaY, deltaZ);
+
+        //todo use Alex's Caves ray
+        {
+            double particleDistance = 0.1d;
+            Vec3 startPosition = getProjectileStartPosition(living);
+            Vec3 direction = vec3.subtract(startPosition);
+            int particleCount = (int)(direction.length()/particleDistance);
+            direction = direction.normalize();
+            Vec3 pos = startPosition;
+            Vec3 delta = direction.scale(particleCount);
+            particleOptions = gammaRay ? ACParticleRegistry.BLUE_HAZMAT_BREATHE.get() : ACParticleRegistry.HAZMAT_BREATHE.get();
+            for (int i=0;i<particleCount;i++)
+            {
+                pos=pos.add(delta);
+                level.addParticle(particleOptions, pos.x , pos.y , pos.z , 0, 0, 0);
+            }
+        }
+
+        Direction blastHitDirection = null;
+        Vec3 blastHitPos = null;
+        if(xRay){
+            AABB maxAABB = living.getBoundingBox().inflate(maxDist);
+            float fakeRayTraceProgress = 1.0F;
+            Vec3 startClip = living.getEyePosition();
+            while(fakeRayTraceProgress < maxDist){
+                startClip = startClip.add(living.getViewVector(1.0F));
+                Vec3 endClip = startClip.add(living.getViewVector(1.0F));
+                HitResult attemptedHitResult = ProjectileUtil.getEntityHitResult(level, living, startClip, endClip, maxAABB, Entity::canBeHitByProjectile);
+                if(attemptedHitResult != null){
+                    realHitResult = attemptedHitResult;
+                    break;
+                }
+                fakeRayTraceProgress++;
+            }
+        }else{
+            if (realHitResult instanceof BlockHitResult blockHitResult) {
+                BlockPos pos = blockHitResult.getBlockPos();
+                BlockState state = level.getBlockState(pos);
+                blastHitDirection = blockHitResult.getDirection();
+                if (!state.isAir() && state.isFaceSturdy(level, pos, blastHitDirection)) {
+                    blastHitPos = realHitResult.getLocation();
+                }
+            }
+        }
+        if (realHitResult instanceof EntityHitResult entityHitResult) {
+            blastHitPos = entityHitResult.getEntity().position();
+            blastHitDirection = Direction.UP;
+            vec31 = blastHitPos;
+        }
+        if (blastHitPos != null && timeUsed % 2 == 0) {
+            float offset = 0.05F + level.random.nextFloat() * 0.09F;
+            Vec3 particleVec = blastHitPos.add(offset * blastHitDirection.getStepX(), offset * blastHitDirection.getStepY(), offset * blastHitDirection.getStepZ());
+            level.addParticle(ACParticleRegistry.RAYGUN_BLAST.get(), particleVec.x, particleVec.y, particleVec.z, blastHitDirection.get3DDataValue(), 0, 0);
+        }
+        if (!level.isClientSide && (timeUsed - realStart) % 3 == 0) {
+            AABB hitBox = new AABB(vec31.add(-1, -1, -1), vec31.add(1, 1, 1));
+            int radiationLevel = gammaRay ? IrradiatedEffect.BLUE_LEVEL : 0;
+            for (Entity entity : level.getEntities(living, hitBox, Entity::canBeHitByProjectile)) {
+                if (!entity.is(living) && !entity.isAlliedTo(living) && !living.isAlliedTo(entity) && !living.isPassengerOfSameVehicle(entity)) {
+                    boolean flag = entity instanceof TremorzillaEntity || entity.hurt(ACDamageTypes.causeRaygunDamage(level.registryAccess(), living), damage);
+                    if (flag && entity instanceof LivingEntity livingEntity && !livingEntity.getType().is(ACTagRegistry.RESISTS_RADIATION)) {
+                        if (livingEntity.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED.get(), 800, radiationLevel))) {
+                            AlexsCaves.sendMSGToAll(new UpdateEffectVisualityEntityMessage(entity.getId(), living.getId(), gammaRay ? 4 : 0, 800));
+                        }
                     }
                 }
             }

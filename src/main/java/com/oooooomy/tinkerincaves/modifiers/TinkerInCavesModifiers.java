@@ -24,4 +24,6 @@ public class TinkerInCavesModifiers {
     public static final StaticModifier<GlowInkBomb> glow_ink_bomb = MODIFIERS.register("glow_ink_bomb", GlowInkBomb::new);
     public static final StaticModifier<Ortholance> ortholance = MODIFIERS.register("ortholance", Ortholance::new);
 
+    public static final StaticModifier<RayGun> ray_gun = MODIFIERS.register("ray_gun",RayGun::new);
+
 }

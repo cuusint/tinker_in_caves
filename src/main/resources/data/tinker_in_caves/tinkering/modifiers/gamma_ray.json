@@ -1,0 +1,24 @@
+{
+  "level_display": "tconstruct:single_level",
+  "tooltip_display": "tinker_station",
+  "modules": [
+    {
+      "type": "tconstruct:requirements",
+      "display_modifiers": [
+        {
+          "level": 1,
+          "name": "tinker_in_caves:ray_gun"
+        }
+      ],
+      "requirement": {
+        "type": "tconstruct:has_modifier",
+        "check": "all",
+        "modifier": {
+          "type": "tconstruct:single",
+          "modifier": "tinker_in_caves:ray_gun"
+        }
+      },
+      "translation_key": "modifier.tinker_in_caves.gamma_ray.requirements"
+    }
+  ]
+}

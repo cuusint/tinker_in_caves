@@ -104,6 +104,18 @@
   "modifier.tinker_in_caves.azure_shield": "Azure Neodymium Shield",
   "modifier.tinker_in_caves.azure_shield.flavor": "Power of Azure Neodymium",
   "modifier.tinker_in_caves.azure_shield.description": "Pull the creature towards the player.",
+  "modifier.tinker_in_caves.ray_gun": "Ray Gun",
+  "modifier.tinker_in_caves.ray_gun.flavor": "Duuuuuuu~",
+  "modifier.tinker_in_caves.ray_gun.description": "Launch laser and continuously cause high-frequency damage.",
+  "modifier.tinker_in_caves.x_ray": "X Ray",
+  "modifier.tinker_in_caves.x_ray.flavor": "X",
+  "modifier.tinker_in_caves.x_ray.description": "Enable the radiation emitted by the Ray Gun to penetrate the block.",
+  "modifier.tinker_in_caves.gamma_ray": "γ Ray",
+  "modifier.tinker_in_caves.gamma_ray.flavor": "γ",
+  "modifier.tinker_in_caves.gamma_ray.description": "Enhance the radiation emitted by the Ray Gun.",
+  "modifier.tinker_in_caves.ray_efficiency": "Efficient Ray",
+  "modifier.tinker_in_caves.ray_efficiency.flavor": "Save it a bit",
+  "modifier.tinker_in_caves.ray_efficiency.description": "Reduce the liquid consumption of the Ray Gun.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",
@@ -117,5 +129,8 @@
   "modifier.tinker_in_caves.tsunami.requirements": "Require Ortholance upgrade",
   "modifier.tinker_in_caves.heavy_slam.requirements": "Require Resistor Slam upgrade",
   "modifier.tinker_in_caves.scarlet_shield.requirements": "Require Resistor Slam upgrade",
-  "modifier.tinker_in_caves.azure_shield.requirements": "Require Resistor Slam upgrade"
+  "modifier.tinker_in_caves.azure_shield.requirements": "Require Resistor Slam upgrade",
+  "modifier.tinker_in_caves.x_ray.requirements": "Require Ray Gun upgrade",
+  "modifier.tinker_in_caves.gamma_ray.requirements": "Require Ray Gun upgrade",
+  "modifier.tinker_in_caves.ray_efficiency.requirements": "Require Ray Gun upgrade"
 }

@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:fissile_core",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:x_ray",
+  "level": 1
+}

@@ -93,7 +93,12 @@ public class TinkerInCaves
 
     public static ResourceLocation getResource(String name) {
         //noinspection removal
-        return new ResourceLocation(MODID, name);
+        return getResource(MODID,name);
+    }
+
+    public static ResourceLocation getResource(String modId,String name) {
+        //noinspection removal
+        return new ResourceLocation(modId, name);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

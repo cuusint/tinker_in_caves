@@ -8,27 +8,27 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:magic_conch",
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 8
+    },
+    {
+      "item": "alexscaves:fissile_core",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:ortholance",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:gazing_pearl",
-      "amount_needed": 1
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 8
     }
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee/primary"
+      "tag": "tconstruct:modifiable/interactable/right"
     }
   ],
   "slots": {
-    "abilities": 1
+    "upgrades": 1
   },
   "allow_crystal": true,
-  "result": "tinker_in_caves:ortholance",
+  "result": "tinker_in_caves:gamma_ray",
   "level": 1
 }

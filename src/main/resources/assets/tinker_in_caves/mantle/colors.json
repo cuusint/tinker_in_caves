@@ -36,6 +36,10 @@
     "resistor_slam":"#424242",
     "heavy_slam":"#FCFCFC",
     "scarlet_shield":"#6F2021",
-    "azure_shield":"#1936B9"
+    "azure_shield":"#1936B9",
+    "ray_gun":"#CAF8CA",
+    "x_ray":"#81ED81",
+    "gamma_ray":"#005FEC",
+    "ray_efficiency":"#00DC1D"
   }
 }
