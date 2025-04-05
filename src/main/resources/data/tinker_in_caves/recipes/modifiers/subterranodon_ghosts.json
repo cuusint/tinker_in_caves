@@ -8,24 +8,25 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:floater",
+      "item": "alexscaves:tremorsaurus_egg",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:ortholance",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:floater",
+      "item": "alexscaves:tremorsaurus_egg",
       "amount_needed": 1
     }
   ],
   "tools": [
     {
       "tag": "tconstruct:modifiable/melee/primary"
+    },
+    {
+      "tag": "tconstruct:modifiable/ranged/bows"
     }
   ],
-  "allow_crystal": false,
-  "result": "tinker_in_caves:ortholance",
-  "level": 2
+  "allow_crystal": true,
+  "result": "tinker_in_caves:subterranodon_ghosts",
+  "level": {
+    "max" : 3
+  }
 }

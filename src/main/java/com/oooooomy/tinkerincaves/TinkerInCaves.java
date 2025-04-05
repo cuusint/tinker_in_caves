@@ -92,6 +92,7 @@ public class TinkerInCaves
     }
 
     public static ResourceLocation getResource(String name) {
+        //noinspection removal
         return new ResourceLocation(MODID, name);
     }
 

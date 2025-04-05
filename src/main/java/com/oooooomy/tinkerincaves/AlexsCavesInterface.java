@@ -1,12 +1,18 @@
 package com.oooooomy.tinkerincaves;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
+import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
+import com.github.alexmodguy.alexscaves.server.entity.item.DinosaurSpiritEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.SubmarineEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaterBoltEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaveEntity;
+import com.github.alexmodguy.alexscaves.server.item.ExtinctionSpearItem;
+import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
+import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -16,23 +22,23 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-
-import static com.github.alexmodguy.alexscaves.server.item.SeaStaffItem.getClosestLookingAtEntityFor;
 
 public class AlexsCavesInterface {
     public static void effectSeaStaff(Player player, int boltsCount ,double seekDistance,float seekAmount,boolean bubble,boolean bouncing)    {
         Level level =  player.level();
         level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), ACSoundRegistry.SEA_STAFF_CAST.get(), SoundSource.PLAYERS, 0.5F, (player.level().getRandom().nextFloat() * 0.45F + 0.75F));
         if (!level.isClientSide) {
-            Entity closestValid = getClosestLookingAtEntityFor(level, player, seekDistance);
+            Entity closestValid = SeaStaffItem.getClosestLookingAtEntityFor(level, player, seekDistance);
             for(int i = 0; i < boltsCount; i++){
                 float shootRot = i == 0 ? 0 : i == 1 ? -50 : 50;
                 WaterBoltEntity bolt = new WaterBoltEntity(level, player);
@@ -198,5 +204,62 @@ public class AlexsCavesInterface {
         waveEntity.setLifespan(5);
         waveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)));
         player.level().addFreshEntity(waveEntity);
+    }
+
+    public static void effectTremorsaurusGhosts(LivingEntity attacker, LivingEntity target, int levelChompingSprite)    {
+        target.setSecondsOnFire(2 + 2 * levelChompingSprite);
+        DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(attacker.level());
+        Vec3 between = attacker.position().add(target.position()).scale(0.5F);//todo fix position
+        dinosaurSpirit.setPos(between.x, attacker.getY() + 1.0F, between.z);
+        dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.TREMORSAURUS);
+        dinosaurSpirit.setPlayerUUID(attacker.getUUID());
+        dinosaurSpirit.setEnchantmentLevel(levelChompingSprite);
+        dinosaurSpirit.setAttackingEntityId(target.getId());
+        dinosaurSpirit.lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition());
+        dinosaurSpirit.setDelaySpawn(5);
+
+        attacker.level().addFreshEntity(dinosaurSpirit);
+    }
+
+    public static void effectGrottoGhosts(LivingEntity entity, int count)    {
+        Level level = entity.level();
+        level.playSound((Player) null, entity, ACSoundRegistry.EXTINCTION_SPEAR_SUMMON.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        int grottoHeads = count;
+        float grottoRotateBy = 360F / grottoHeads;
+        for(int i = 0; i < grottoHeads; i++){
+            DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level);
+            dinosaurSpirit.copyPosition(entity);
+            dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.GROTTOCERATOPS);
+            dinosaurSpirit.setPlayerUUID(entity.getUUID());
+            dinosaurSpirit.setRotateOffset(i * grottoRotateBy);
+            level.addFreshEntity(dinosaurSpirit);
+        }
+    }
+
+    public static void effectGrottoGhostsClear(Player player, boolean justTheClosest){
+        ExtinctionSpearItem.killGrottoGhostsFor(player, justTheClosest);
+    }
+
+    public static void effectSubterranodonGosts(LivingEntity attacker,LivingEntity target,float damage,int modifierLevel){
+        DamageSource damagesource = ACDamageTypes.causeSpiritDinosaurDamage(attacker.level().registryAccess(), attacker);
+        target.setSecondsOnFire(5);
+        if (target.hurt(damagesource, damage)) {
+            if (target.getType() == EntityType.ENDERMAN) {
+                return;
+            }
+            if (target instanceof LivingEntity) {
+                EnchantmentHelper.doPostHurtEffects(target, attacker);
+                EnchantmentHelper.doPostDamageEffects(attacker, target);
+            }
+            DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(attacker.level());
+            dinosaurSpirit.setPos(target.getX(), target.getY() + target.getBbHeight(), target.getZ());
+            dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.SUBTERRANODON);
+            dinosaurSpirit.setPlayerUUID(attacker.getUUID());
+            dinosaurSpirit.setAttackingEntityId(target.getId());
+            dinosaurSpirit.lookAt(EntityAnchorArgument.Anchor.EYES, attacker.getEyePosition());
+            dinosaurSpirit.setEnchantmentLevel(modifierLevel);
+            target.playSound(ACSoundRegistry.EXTINCTION_SPEAR_SUMMON.get(), 1.0F, 1.0F);
+            attacker.level().addFreshEntity(dinosaurSpirit);
+        }
     }
 }

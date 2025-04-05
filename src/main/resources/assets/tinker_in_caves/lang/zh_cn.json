@@ -86,6 +86,12 @@
   "modifier.tinker_in_caves.tsunami": "海啸",
   "modifier.tinker_in_caves.tsunami.flavor": "我是海王",
   "modifier.tinker_in_caves.tsunami.description": "使螺纹长枪的冲刺额外释放一道巨大的水浪。",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts": "撼地龙魂",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts.flavor": "撼地龙",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts.description": "击中目标时使目标着火，并召唤撼地龙灵魂对目标造成额外伤害。",
+  "modifier.tinker_in_caves.subterranodon_ghosts": "翼龙魂",
+  "modifier.tinker_in_caves.subterranodon_ghosts.flavor": "翼龙",
+  "modifier.tinker_in_caves.subterranodon_ghosts.description": "击中目标时造成额外伤害并使目标着火，同时召唤地底翼龙灵魂将目标抓起，上升一定高度后抛下。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

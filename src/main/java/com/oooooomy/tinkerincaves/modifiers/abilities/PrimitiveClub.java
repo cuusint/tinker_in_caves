@@ -13,6 +13,7 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class PrimitiveClub extends Modifier implements MeleeHitModifierHook {
+    public PrimitiveClub(){}
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder){

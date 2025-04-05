@@ -8,27 +8,25 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:ping_pong_sponge",
+      "item": "alexscaves:tremorsaurus_egg",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:ortholance",
-      "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:ping_pong_sponge",
+      "item": "alexscaves:tremorsaurus_egg",
       "amount_needed": 1
     }
   ],
   "tools": [
     {
       "tag": "tconstruct:modifiable/melee/primary"
+    },
+    {
+      "tag": "tconstruct:modifiable/ranged/bows"
     }
   ],
-  "slots": {
-    "abilities": 1
-  },
-  "allow_crystal": false,
-  "result": "tinker_in_caves:ortholance",
-  "level": 1
+  "allow_crystal": true,
+  "result": "tinker_in_caves:tremorsaurus_ghosts",
+  "level": {
+    "max" : 3
+  }
 }

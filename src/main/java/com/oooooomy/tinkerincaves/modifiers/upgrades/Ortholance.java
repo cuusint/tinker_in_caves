@@ -1,25 +1,24 @@
 package com.oooooomy.tinkerincaves.modifiers.upgrades;
 
 import com.oooooomy.tinkerincaves.AlexsCavesInterface;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.UseAnim;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
-public class Ortholance extends Modifier implements GeneralInteractionModifierHook , MeleeHitModifierHook {
+public class Ortholance extends NoLevelsModifier implements GeneralInteractionModifierHook , MeleeHitModifierHook {
     public Ortholance(){}
 
     @Override
@@ -59,8 +58,7 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
         if (chargeTime <= 20){
             return;
         }
-        int modifierLevel = modifier.getLevel();
-        tool.setDamage(tool.getDamage() + 4 * modifierLevel);
+        tool.setDamage(tool.getDamage() + 4);
 
         int flinging = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:flinging"));
         boolean tsunami = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:tsunami"))>0;
@@ -73,7 +71,7 @@ public class Ortholance extends Modifier implements GeneralInteractionModifierHo
         if (tool.isBroken()){
             return ;
         }
-        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:sea_swing"))<=0){
+        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:sea_swing")) <= 0){
             return;
         }
         Player player = context.getPlayerAttacker();

@@ -25,7 +25,7 @@
       "tag": "tconstruct:modifiable/melee/primary"
     }
   ],
-  "allow_crystal": false,
+  "allow_crystal": true,
   "result": "tinker_in_caves:ortholance",
-  "level": 3
+  "level": 1
 }

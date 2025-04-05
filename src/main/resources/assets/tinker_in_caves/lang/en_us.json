@@ -86,6 +86,12 @@
   "modifier.tinker_in_caves.tsunami": "Tsunami",
   "modifier.tinker_in_caves.tsunami.flavor": "I am Aquaman",
   "modifier.tinker_in_caves.tsunami.description": "Make the sprint of the Ortholance release an additional huge wave of water.",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts": "Tremorsaurus Ghosts",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts.flavor": "Tremorsaurus",
+  "modifier.tinker_in_caves.tremorsaurus_ghosts.description": "When hitting the target, ignite the target and summon the soul of Tremorsaurus to deal additional damage to the target.",
+  "modifier.tinker_in_caves.subterranodon_ghosts": "Subterranodon Ghosts",
+  "modifier.tinker_in_caves.subterranodon_ghosts.flavor": "Subterranodon",
+  "modifier.tinker_in_caves.subterranodon_ghosts.description": "When hitting the target, it causes additional damage and ignites the target, while summoning the soul of Subterranodon to grab the target, rise to a certain height, and then throw it down.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

@@ -17,5 +17,7 @@
   "tinker_in_caves:flinging": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:sea_swing": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:second_wave": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
-  "tinker_in_caves:tsunami": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"]
+  "tinker_in_caves:tsunami": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:tremorsaurus_ghosts": ["alexscaves:item/tremorsaurus_egg", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:subterranodon_ghosts": ["alexscaves:item/subterranodon_egg", "tconstruct:gui/modifiers/plus"]
 }
