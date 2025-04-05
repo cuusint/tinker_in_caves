@@ -12,6 +12,8 @@ import com.oooooomy.tinkerincaves.TinkerInCaves;
 public class TinkerInCavesModifiers {
     public static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkerInCaves.MODID);
 
+    public static final StaticModifier<ResistorSlam> resistor_slam = MODIFIERS.register("resistor_slam",ResistorSlam::new);
+
     public static final StaticModifier<PrimordialStrength> primordial_strength = MODIFIERS.register("primordial_strength",PrimordialStrength::new);
     public static final StaticModifier<PrimitiveClub> primitive_club = MODIFIERS.register("primitive_club",PrimitiveClub::new);
     public static final StaticModifier<TremorsaurusGhosts> tremorsaurus_ghosts = MODIFIERS.register("tremorsaurus_ghosts", TremorsaurusGhosts::new);

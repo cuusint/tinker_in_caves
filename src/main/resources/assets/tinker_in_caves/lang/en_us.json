@@ -92,6 +92,18 @@
   "modifier.tinker_in_caves.subterranodon_ghosts": "Subterranodon Ghosts",
   "modifier.tinker_in_caves.subterranodon_ghosts.flavor": "Subterranodon",
   "modifier.tinker_in_caves.subterranodon_ghosts.description": "When hitting the target, it causes additional damage and ignites the target, while summoning the soul of Subterranodon to grab the target, rise to a certain height, and then throw it down.",
+  "modifier.tinker_in_caves.resistor_slam": "Resistor Slam",
+  "modifier.tinker_in_caves.resistor_slam.flavor": "BANG!!!!!",
+  "modifier.tinker_in_caves.resistor_slam.description": "When blocking, it will release electric current to the surrounding area, causing sustained damage to the organism through electric shock.",
+  "modifier.tinker_in_caves.heavy_slam": "Heavy Slam",
+  "modifier.tinker_in_caves.heavy_slam.flavor": "BANG!!!!!",
+  "modifier.tinker_in_caves.heavy_slam.description": "Increase the damage caused by Resistor Slam.",
+  "modifier.tinker_in_caves.scarlet_shield": "Scarlet Neodymium Shield",
+  "modifier.tinker_in_caves.scarlet_shield.flavor": "Power of Scarlet Neodymium",
+  "modifier.tinker_in_caves.scarlet_shield.description": "Knock back the creatures.",
+  "modifier.tinker_in_caves.azure_shield": "Azure Neodymium Shield",
+  "modifier.tinker_in_caves.azure_shield.flavor": "Power of Azure Neodymium",
+  "modifier.tinker_in_caves.azure_shield.description": "Pull the creature towards the player.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",
@@ -102,5 +114,8 @@
   "modifier.tinker_in_caves.flinging.requirements": "Require Ortholance upgrade",
   "modifier.tinker_in_caves.sea_swing.requirements": "Require Ortholance upgrade",
   "modifier.tinker_in_caves.second_wave.requirements": "Require Ortholance upgrade",
-  "modifier.tinker_in_caves.tsunami.requirements": "Require Ortholance upgrade"
+  "modifier.tinker_in_caves.tsunami.requirements": "Require Ortholance upgrade",
+  "modifier.tinker_in_caves.heavy_slam.requirements": "Require Resistor Slam upgrade",
+  "modifier.tinker_in_caves.scarlet_shield.requirements": "Require Resistor Slam upgrade",
+  "modifier.tinker_in_caves.azure_shield.requirements": "Require Resistor Slam upgrade"
 }

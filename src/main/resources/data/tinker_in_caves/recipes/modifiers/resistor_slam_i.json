@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:scarlet_neodymium_ingot",
+      "amount_needed": 3
+    },
+    {
+      "item": "alexscaves:heart_of_iron",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:azure_neodymium_ingot",
+      "amount_needed": 3
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/interactable/right"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": false,
+  "result": "tinker_in_caves:resistor_slam",
+  "level": 1
+}

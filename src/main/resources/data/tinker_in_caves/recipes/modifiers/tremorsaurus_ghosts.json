@@ -24,6 +24,9 @@
       "tag": "tconstruct:modifiable/ranged/bows"
     }
   ],
+  "slots": {
+    "upgrades": 1
+  },
   "allow_crystal": true,
   "result": "tinker_in_caves:tremorsaurus_ghosts",
   "level": {

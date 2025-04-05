@@ -32,6 +32,10 @@
     "second_wave":"#886952",
     "tsunami":"#886952",
     "tremorsaurus_ghosts":"#CD9411",
-    "subterranodon_ghosts":"#00AAAB"
+    "subterranodon_ghosts":"#00AAAB",
+    "resistor_slam":"#424242",
+    "heavy_slam":"#FCFCFC",
+    "scarlet_shield":"#6F2021",
+    "azure_shield":"#1936B9"
   }
 }

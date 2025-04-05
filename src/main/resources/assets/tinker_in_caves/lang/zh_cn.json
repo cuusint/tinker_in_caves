@@ -92,6 +92,18 @@
   "modifier.tinker_in_caves.subterranodon_ghosts": "翼龙魂",
   "modifier.tinker_in_caves.subterranodon_ghosts.flavor": "翼龙",
   "modifier.tinker_in_caves.subterranodon_ghosts.description": "击中目标时造成额外伤害并使目标着火，同时召唤地底翼龙灵魂将目标抓起，上升一定高度后抛下。",
+  "modifier.tinker_in_caves.resistor_slam": "阻尼冲撞",
+  "modifier.tinker_in_caves.resistor_slam.flavor": "BANG!!!!!",
+  "modifier.tinker_in_caves.resistor_slam.description": "格挡时会向周围放出电流，电击生物造成持续伤害。",
+  "modifier.tinker_in_caves.heavy_slam": "重磅冲撞",
+  "modifier.tinker_in_caves.heavy_slam.flavor": "BANG!!!!!",
+  "modifier.tinker_in_caves.heavy_slam.description": "增加阻尼冲撞造成的伤害。",
+  "modifier.tinker_in_caves.scarlet_shield": "赤钕盾",
+  "modifier.tinker_in_caves.scarlet_shield.flavor": "赤钕之力",
+  "modifier.tinker_in_caves.scarlet_shield.description": "击退生物。",
+  "modifier.tinker_in_caves.azure_shield": "青钕盾",
+  "modifier.tinker_in_caves.azure_shield.flavor": "青钕之力",
+  "modifier.tinker_in_caves.azure_shield.description": "将生物向玩家牵引。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",
@@ -102,5 +114,8 @@
   "modifier.tinker_in_caves.flinging.requirements": "要求 螺纹长枪 升级",
   "modifier.tinker_in_caves.sea_swing.requirements": "要求 螺纹长枪 升级",
   "modifier.tinker_in_caves.second_wave.requirements": "要求 螺纹长枪 升级",
-  "modifier.tinker_in_caves.tsunami.requirements": "要求 螺纹长枪 升级"
+  "modifier.tinker_in_caves.tsunami.requirements": "要求 螺纹长枪 升级",
+  "modifier.tinker_in_caves.heavy_slam.requirements": "要求 阻尼冲撞 升级",
+  "modifier.tinker_in_caves.scarlet_shield.requirements": "要求 阻尼冲撞 升级",
+  "modifier.tinker_in_caves.azure_shield.requirements": "要求 阻尼冲撞 升级"
 }

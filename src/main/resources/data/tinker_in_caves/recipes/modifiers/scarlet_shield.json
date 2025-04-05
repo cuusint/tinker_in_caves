@@ -8,27 +8,25 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:tremorsaurus_egg",
+      "item": "alexscaves:block_of_scarlet_neodymium",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:tremorsaurus_egg",
+      "item": "alexscaves:ferrouslime_ball",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:block_of_scarlet_neodymium",
       "amount_needed": 1
     }
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee/primary"
-    },
-    {
-      "tag": "tconstruct:modifiable/ranged/bows"
+      "tag": "tconstruct:modifiable/interactable/right"
     }
   ],
-  "slots": {
-    "upgrades": 1
-  },
   "allow_crystal": true,
-  "result": "tinker_in_caves:subterranodon_ghosts",
+  "result": "tinker_in_caves:scarlet_shield",
   "level": {
     "max" : 3
   }

@@ -1,12 +1,12 @@
 package com.oooooomy.tinkerincaves;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
+import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.DinosaurSpiritEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.SubmarineEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaterBoltEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.WaveEntity;
-import com.github.alexmodguy.alexscaves.server.item.ExtinctionSpearItem;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
@@ -221,25 +221,6 @@ public class AlexsCavesInterface {
         attacker.level().addFreshEntity(dinosaurSpirit);
     }
 
-    public static void effectGrottoGhosts(LivingEntity entity, int count)    {
-        Level level = entity.level();
-        level.playSound((Player) null, entity, ACSoundRegistry.EXTINCTION_SPEAR_SUMMON.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
-        int grottoHeads = count;
-        float grottoRotateBy = 360F / grottoHeads;
-        for(int i = 0; i < grottoHeads; i++){
-            DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level);
-            dinosaurSpirit.copyPosition(entity);
-            dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.GROTTOCERATOPS);
-            dinosaurSpirit.setPlayerUUID(entity.getUUID());
-            dinosaurSpirit.setRotateOffset(i * grottoRotateBy);
-            level.addFreshEntity(dinosaurSpirit);
-        }
-    }
-
-    public static void effectGrottoGhostsClear(Player player, boolean justTheClosest){
-        ExtinctionSpearItem.killGrottoGhostsFor(player, justTheClosest);
-    }
-
     public static void effectSubterranodonGosts(LivingEntity attacker,LivingEntity target,float damage,int modifierLevel){
         DamageSource damagesource = ACDamageTypes.causeSpiritDinosaurDamage(attacker.level().registryAccess(), attacker);
         target.setSecondsOnFire(5);
@@ -260,6 +241,38 @@ public class AlexsCavesInterface {
             dinosaurSpirit.setEnchantmentLevel(modifierLevel);
             target.playSound(ACSoundRegistry.EXTINCTION_SPEAR_SUMMON.get(), 1.0F, 1.0F);
             attacker.level().addFreshEntity(dinosaurSpirit);
+        }
+    }
+
+    public static void effectResistorSlam(LivingEntity living,int timeUsed,float range,int firstHitDamage,int restHitDamage,double firstKnockBackDistance,double restKnockBackDistance,int scarlet,int azure){
+        boolean firstHit = timeUsed >= 10 && timeUsed <= 12;
+        Level level = living.level();
+        if(timeUsed == 10){
+            living.playSound(ACSoundRegistry.RESITOR_SHIELD_SLAM.get());
+        }
+        if (timeUsed >= 10 && timeUsed % 5 == 0) {
+            AlexsCaves.PROXY.playWorldSound(living, (byte) ((scarlet-azure)>0 ? 9 : 10));
+            Vec3 particlesFrom = living.position().add(0, 0.2, 0);
+            float particleMax = 2 + 2 * scarlet + 2 * azure + living.getRandom().nextInt(5);
+            for (int particles = 0; particles < particleMax; particles++) {
+                Vec3 vec3 = new Vec3((living.getRandom().nextFloat() - 0.5) * 0.3F, (living.getRandom().nextFloat() - 0.5) * 0.3F, range * 0.5F + range * 0.5F * living.getRandom().nextFloat()).yRot((float) ((particles / particleMax) * Math.PI * 2)).add(particlesFrom);
+                level.addParticle(ACParticleRegistry.SCARLET_SHIELD_LIGHTNING.get(), vec3.x, vec3.y, vec3.z, particlesFrom.x, particlesFrom.y, particlesFrom.z);
+                level.addParticle(ACParticleRegistry.AZURE_SHIELD_LIGHTNING.get(), particlesFrom.x, particlesFrom.y, particlesFrom.z, vec3.x, vec3.y, vec3.z);
+            }
+        }
+        if (timeUsed >= 10 && timeUsed % 5 == 0) {
+            AABB bashBox = living.getBoundingBox().inflate(range, 1, range);
+            for (LivingEntity entity : living.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
+                if (!living.isAlliedTo(entity) && !entity.equals(living) && entity.distanceTo(living) <= range) {
+                    entity.hurt(living.damageSources().mobAttack(living), firstHit ? firstHitDamage : restHitDamage);
+                    if ((scarlet-azure)>0) {
+                        entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, entity.getX() - living.getX(), entity.getZ() - living.getZ());
+                    }
+                    else{
+                        entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, living.getX() - living.getX(), living.getZ() - entity.getZ());
+                    }
+                }
+            }
         }
     }
 }
