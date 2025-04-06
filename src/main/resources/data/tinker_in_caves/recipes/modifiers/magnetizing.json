@@ -8,12 +8,24 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:subterranodon_egg",
+      "item": "alexscaves:scarlet_neodymium_ingot",
       "amount_needed": 1
     },
     {
-      "item": "alexscaves:subterranodon_egg",
+      "tag": "forge:ingots/iron",
       "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:azure_neodymium_ingot",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:raw_azure_neodymium",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:raw_scarlet_neodymium",
+      "amount_needed": 4
     }
   ],
   "tools": [
@@ -24,12 +36,9 @@
       "tag": "tconstruct:modifiable/ranged/bows"
     }
   ],
-  "slots": {
-    "upgrades": 1
-  },
   "allow_crystal": true,
-  "result": "tinker_in_caves:subterranodon_ghosts",
+  "result": "tinker_in_caves:magnetizing",
   "level": {
-    "max" : 3
+    "max": 5
   }
 }

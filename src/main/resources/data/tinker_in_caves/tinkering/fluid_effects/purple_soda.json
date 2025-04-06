@@ -1,0 +1,27 @@
+{
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "fluid": {
+    "name": "alexscaves:purple_soda",
+    "amount": 50
+  },
+  "block_effects": [
+    {
+      "type": "tconstruct:place_block",
+      "block": "alexscaves:rock_candy_purple"
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:restore_hunger",
+      "can_always_eat": true,
+      "hunger": 1,
+      "representative_item": "alexscaves:purple_soda_bottle",
+      "saturation": 0.1
+    }
+  ]
+}

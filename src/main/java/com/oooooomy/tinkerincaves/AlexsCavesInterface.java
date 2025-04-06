@@ -372,13 +372,21 @@ public class AlexsCavesInterface {
                 if (!entity.is(living) && !entity.isAlliedTo(living) && !living.isAlliedTo(entity) && !living.isPassengerOfSameVehicle(entity)) {
                     boolean flag = entity instanceof TremorzillaEntity || entity.hurt(ACDamageTypes.causeRaygunDamage(level.registryAccess(), living), damage);
                     if (flag && entity instanceof LivingEntity livingEntity && !livingEntity.getType().is(ACTagRegistry.RESISTS_RADIATION)) {
-                        if (livingEntity.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED.get(), 800, radiationLevel))) {
-                            AlexsCaves.sendMSGToAll(new UpdateEffectVisualityEntityMessage(entity.getId(), living.getId(), gammaRay ? 4 : 0, 800));
-                        }
+                        effectIrradiated(living,livingEntity,radiationLevel,800,gammaRay);
                     }
                 }
             }
         }
+    }
+
+    public static void effectIrradiated(LivingEntity attacker, LivingEntity target,int level,int duration,boolean gammaRay){
+        if (target.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED.get(), duration, level))) {
+            AlexsCaves.sendMSGToAll(new UpdateEffectVisualityEntityMessage(target.getId(), attacker.getId(), gammaRay ? 4 : 0, duration));
+        }
+    }
+
+    public static void effectMagnetizing(LivingEntity target,int duration){
+        target.addEffect(new MobEffectInstance(ACEffectRegistry.MAGNETIZING.get(), duration, 1));
     }
 
     public static void effectDesolateDagger(ItemStack stack,LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab)    {

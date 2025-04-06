@@ -125,6 +125,9 @@
   "modifier.tinker_in_caves.impending_stab": "Impending Stab",
   "modifier.tinker_in_caves.impending_stab.flavor": "Wait a minute!",
   "modifier.tinker_in_caves.impending_stab.description": "Extend the charging time of the dagger summoned after the attack of the Desolate Dagger, while increasing the damage of the dagger.",
+  "modifier.tinker_in_caves.magnetizing": "Magnetizing",
+  "modifier.tinker_in_caves.magnetizing.flavor": "Add Buff to you!",
+  "modifier.tinker_in_caves.magnetizing.description": "Apply Magnetizing effect to the attacked creature, and the higher the level, the longer the duration of the effect.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

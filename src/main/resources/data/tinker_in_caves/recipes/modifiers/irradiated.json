@@ -8,12 +8,20 @@
   ],
   "inputs": [
     {
-      "item": "alexscaves:radon_bottle",
+      "tag": "forge:raw_materials/uranium",
       "amount_needed": 4
     },
     {
       "item": "alexscaves:acid_bucket",
       "amount_needed": 1
+    },
+    {
+      "tag": "forge:raw_materials/uranium",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:radon_bottle",
+      "amount_needed": 4
     },
     {
       "item": "alexscaves:radon_bottle",
@@ -23,9 +31,14 @@
   "tools": [
     {
       "tag": "tconstruct:modifiable/melee/primary"
+    },
+    {
+      "tag": "tconstruct:modifiable/ranged/bows"
     }
   ],
-  "allow_crystal": false,
+  "allow_crystal": true,
   "result": "tinker_in_caves:irradiated",
-  "level": 2
+  "level": {
+    "max": 5
+  }
 }

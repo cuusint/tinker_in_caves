@@ -1,8 +1,12 @@
 {
   "default": [
     {
+      "name": "tinker_in_caves:magnetizing",
+      "level": 1
+    },
+    {
       "name": "tconstruct:magnetic",
-      "level": 2
+      "level": 1
     }
   ]
 }

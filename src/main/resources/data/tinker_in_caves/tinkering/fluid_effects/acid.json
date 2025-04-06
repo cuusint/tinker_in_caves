@@ -1,0 +1,61 @@
+{
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "fluid": {
+    "name": "alexscaves:acid",
+    "amount": 50
+  },
+  "block_effects": [
+    {
+      "type": "tconstruct:mob_effect_cloud",
+      "effects": [
+        {
+          "effect": "minecraft:poison",
+          "level": 1,
+          "time": 100
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:conditional",
+      "block": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:or",
+        "predicates": [
+          "tconstruct:blocks_motion",
+          {
+            "type": "mantle:tag",
+            "tag": "tconstruct:unreplacable_by_liquid"
+          }
+        ]
+      },
+      "effect": {
+        "type": "tconstruct:break_block"
+      }
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:conditional",
+      "effect": {
+        "type": "tconstruct:damage",
+        "damage": 2.0,
+        "damage_type": {
+          "melee": "tconstruct:water_melee",
+          "ranged": "tconstruct:water_ranged"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "minecraft:poison",
+      "action": "add",
+      "time": 100,
+      "level": 1
+    }
+  ]
+}

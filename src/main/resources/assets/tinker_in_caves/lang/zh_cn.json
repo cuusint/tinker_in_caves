@@ -125,6 +125,9 @@
   "modifier.tinker_in_caves.impending_stab": "悬刃",
   "modifier.tinker_in_caves.impending_stab.flavor": "等一下！",
   "modifier.tinker_in_caves.impending_stab.description": "使荒芜匕首攻击后召唤的幻影匕首蓄力时间延长，同时提升幻影匕首伤害。",
+  "modifier.tinker_in_caves.magnetizing": "磁化",
+  "modifier.tinker_in_caves.magnetizing.flavor": "给你加Buff！",
+  "modifier.tinker_in_caves.magnetizing.description": "对被攻击的生物施加磁化效果，等级越高，效果的持续时间越长。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

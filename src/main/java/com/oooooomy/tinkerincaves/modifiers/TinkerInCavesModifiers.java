@@ -3,6 +3,8 @@ package com.oooooomy.tinkerincaves.modifiers;
 import com.oooooomy.tinkerincaves.modifiers.abilities.*;
 import com.oooooomy.tinkerincaves.modifiers.slotless.GlowInkBomb;
 import com.oooooomy.tinkerincaves.modifiers.slotless.InkBomb;
+import com.oooooomy.tinkerincaves.modifiers.upgrades.Irradiated;
+import com.oooooomy.tinkerincaves.modifiers.upgrades.Magnetizing;
 import com.oooooomy.tinkerincaves.modifiers.upgrades.Ortholance;
 import com.oooooomy.tinkerincaves.modifiers.upgrades.PrimordialStrength;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -13,6 +15,7 @@ public class TinkerInCavesModifiers {
     public static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkerInCaves.MODID);
 
     public static final StaticModifier<ResistorSlam> resistor_slam = MODIFIERS.register("resistor_slam",ResistorSlam::new);
+    public static final StaticModifier<Magnetizing> magnetizing = MODIFIERS.register("magnetizing",Magnetizing::new);
 
     public static final StaticModifier<PrimordialStrength> primordial_strength = MODIFIERS.register("primordial_strength",PrimordialStrength::new);
     public static final StaticModifier<PrimitiveClub> primitive_club = MODIFIERS.register("primitive_club",PrimitiveClub::new);
@@ -25,6 +28,7 @@ public class TinkerInCavesModifiers {
     public static final StaticModifier<Ortholance> ortholance = MODIFIERS.register("ortholance", Ortholance::new);
 
     public static final StaticModifier<RayGun> ray_gun = MODIFIERS.register("ray_gun",RayGun::new);
+    public static final StaticModifier<Irradiated> irradiated = MODIFIERS.register("irradiated",Irradiated::new);
 
     public static final StaticModifier<DesolateDagger> desolate_dagger = MODIFIERS.register("desolate_dagger",DesolateDagger::new);
 }
