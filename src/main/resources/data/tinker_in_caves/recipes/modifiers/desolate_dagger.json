@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:occult_gem",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:desolate_dagger",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:shadow_silk",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:desolate_dagger",
+  "level": 1
+}

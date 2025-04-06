@@ -106,7 +106,7 @@
   "modifier.tinker_in_caves.azure_shield.description": "Pull the creature towards the player.",
   "modifier.tinker_in_caves.ray_gun": "Ray Gun",
   "modifier.tinker_in_caves.ray_gun.flavor": "Duuuuuuu~",
-  "modifier.tinker_in_caves.ray_gun.description": "Launch laser and continuously cause high-frequency damage.",
+  "modifier.tinker_in_caves.ray_gun.description": "Consuming molten uranium，launch laser and continuously cause high-frequency damage.",
   "modifier.tinker_in_caves.x_ray": "X Ray",
   "modifier.tinker_in_caves.x_ray.flavor": "X",
   "modifier.tinker_in_caves.x_ray.description": "Enable the radiation emitted by the Ray Gun to penetrate the block.",
@@ -116,6 +116,15 @@
   "modifier.tinker_in_caves.ray_efficiency": "Efficient Ray",
   "modifier.tinker_in_caves.ray_efficiency.flavor": "Save it a bit",
   "modifier.tinker_in_caves.ray_efficiency.description": "Reduce the liquid consumption of the Ray Gun.",
+  "modifier.tinker_in_caves.desolate_dagger": "Desolate Dagger",
+  "modifier.tinker_in_caves.desolate_dagger.flavor": "Desolate Dagger",
+  "modifier.tinker_in_caves.desolate_dagger.description": "After the attack, a Desolate Dagger will be summoned, which will lock onto the attacked object and cause magical damage after briefly accumulating power.",
+  "modifier.tinker_in_caves.multiple_stab": "Multiple Stab",
+  "modifier.tinker_in_caves.multiple_stab.flavor": "Stop!Stop it!",
+  "modifier.tinker_in_caves.multiple_stab.description": "Summon additional daggers after each attack with the Desolate Dagger.",
+  "modifier.tinker_in_caves.impending_stab": "Impending Stab",
+  "modifier.tinker_in_caves.impending_stab.flavor": "Wait a minute!",
+  "modifier.tinker_in_caves.impending_stab.description": "Extend the charging time of the dagger summoned after the attack of the Desolate Dagger, while increasing the damage of the dagger.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",
@@ -132,5 +141,7 @@
   "modifier.tinker_in_caves.azure_shield.requirements": "Require Resistor Slam upgrade",
   "modifier.tinker_in_caves.x_ray.requirements": "Require Ray Gun upgrade",
   "modifier.tinker_in_caves.gamma_ray.requirements": "Require Ray Gun upgrade",
-  "modifier.tinker_in_caves.ray_efficiency.requirements": "Require Ray Gun upgrade"
+  "modifier.tinker_in_caves.ray_efficiency.requirements": "Require Ray Gun upgrade",
+  "modifier.tinker_in_caves.multiple_stab.requirements": "Require Desolate Dagger upgrade",
+  "modifier.tinker_in_caves.impending_stab.requirements": "Require Desolate Dagger upgrade"
 }

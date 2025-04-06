@@ -26,4 +26,5 @@ public class TinkerInCavesModifiers {
 
     public static final StaticModifier<RayGun> ray_gun = MODIFIERS.register("ray_gun",RayGun::new);
 
+    public static final StaticModifier<DesolateDagger> desolate_dagger = MODIFIERS.register("desolate_dagger",DesolateDagger::new);
 }

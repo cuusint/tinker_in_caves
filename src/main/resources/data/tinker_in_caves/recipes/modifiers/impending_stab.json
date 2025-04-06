@@ -1,0 +1,33 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:pure_darkness",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:occult_gem",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:pure_darkness",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:impending_stab",
+  "level": {
+    "max": 3
+  }
+}

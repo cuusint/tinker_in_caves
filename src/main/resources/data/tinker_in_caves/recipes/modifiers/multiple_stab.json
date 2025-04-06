@@ -1,0 +1,33 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:thornwood_branch",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:occult_gem",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:thornwood_branch",
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:multiple_stab",
+  "level": {
+    "max": 2
+  }
+}

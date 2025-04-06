@@ -3,10 +3,7 @@ package com.oooooomy.tinkerincaves;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
-import com.github.alexmodguy.alexscaves.server.entity.item.DinosaurSpiritEntity;
-import com.github.alexmodguy.alexscaves.server.entity.item.SubmarineEntity;
-import com.github.alexmodguy.alexscaves.server.entity.item.WaterBoltEntity;
-import com.github.alexmodguy.alexscaves.server.entity.item.WaveEntity;
+import com.github.alexmodguy.alexscaves.server.entity.item.*;
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
@@ -33,6 +30,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,14 +39,6 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import net.minecraft.core.particles.ParticleOptions;
 
 public class AlexsCavesInterface {
-    private static Vec3 getProjectileStartPosition(LivingEntity entity)
-    {
-        float rot = entity.yHeadRot + 45;
-        double x = entity.getX() - (double) (entity.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F));
-        double y = entity.getEyeY() - (double) 0.4F;
-        double z = entity.getZ() + (double) (entity.getBbWidth()) * 1.1F * (double) Mth.cos(rot * ((float) Math.PI / 180F));
-        return new Vec3(x,y,z);
-    }
 
     public static void effectSeaStaff(Player player, int boltsCount ,double seekDistance,float seekAmount,boolean bubble,boolean bouncing)    {
         Level level =  player.level();
@@ -322,7 +312,7 @@ public class AlexsCavesInterface {
         }
         level.addParticle(particleOptions, vec3.x + (level.random.nextFloat() - 0.5F) * 0.45F, vec3.y + 0.2F, vec3.z + (level.random.nextFloat() - 0.5F) * 0.45F, deltaX, deltaY, deltaZ);
 
-        //todo use Alex's Caves ray
+        //todo use Alex's Caves ray, but can't find the code
         {
             double particleDistance = 0.1d;
             Vec3 startPosition = getProjectileStartPosition(living);
@@ -390,4 +380,24 @@ public class AlexsCavesInterface {
             }
         }
     }
+
+    public static void effectDesolateDagger(ItemStack stack,LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab)    {
+        for(int i = 0; i < 1 + multipleStab; i++){
+            DesolateDaggerEntity daggerEntity = ACEntityRegistry.DESOLATE_DAGGER.get().create(attacker.level());
+            daggerEntity.setTargetId(target.getId());
+            daggerEntity.copyPosition(attacker);
+            daggerEntity.setItemStack(stack);
+            daggerEntity.orbitFor = (impendingStab > 0 ? 40 : 20) + attacker.getRandom().nextInt(10);
+            attacker.level().addFreshEntity(daggerEntity);
+        }
+    }
+
+    private static Vec3 getProjectileStartPosition(LivingEntity entity)    {
+        float rot = entity.yHeadRot + 45;
+        double x = entity.getX() - (double) (entity.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F));
+        double y = entity.getEyeY() - (double) 0.4F;
+        double z = entity.getZ() + (double) (entity.getBbWidth()) * 1.1F * (double) Mth.cos(rot * ((float) Math.PI / 180F));
+        return new Vec3(x,y,z);
+    }
+
 }

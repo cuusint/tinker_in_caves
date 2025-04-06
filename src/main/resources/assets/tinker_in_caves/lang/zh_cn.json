@@ -106,7 +106,7 @@
   "modifier.tinker_in_caves.azure_shield.description": "将生物向玩家牵引。",
   "modifier.tinker_in_caves.ray_gun": "射线枪",
   "modifier.tinker_in_caves.ray_gun.flavor": "Duuuuuuu~",
-  "modifier.tinker_in_caves.ray_gun.description": "发射镭射，持续造成高频率的伤害。",
+  "modifier.tinker_in_caves.ray_gun.description": "消耗熔融铀，发射镭射，持续造成高频率的伤害。",
   "modifier.tinker_in_caves.x_ray": "X射线",
   "modifier.tinker_in_caves.x_ray.flavor": "X",
   "modifier.tinker_in_caves.x_ray.description": "使射线枪发射的射线可以穿透方块。",
@@ -116,6 +116,15 @@
   "modifier.tinker_in_caves.ray_efficiency": "节能射线",
   "modifier.tinker_in_caves.ray_efficiency.flavor": "省着点用",
   "modifier.tinker_in_caves.ray_efficiency.description": "减少射线枪消耗的液体。",
+  "modifier.tinker_in_caves.desolate_dagger": "荒芜匕首",
+  "modifier.tinker_in_caves.desolate_dagger.flavor": "荒芜匕首",
+  "modifier.tinker_in_caves.desolate_dagger.description": "在攻击后会召唤一个幻影匕首，幻影匕首会锁定被攻击的对象，短暂蓄力后造成魔法伤害。",
+  "modifier.tinker_in_caves.multiple_stab": "多重打击",
+  "modifier.tinker_in_caves.multiple_stab.flavor": "停！停下！",
+  "modifier.tinker_in_caves.multiple_stab.description": "使荒芜匕首每次攻击后召唤额外幻影匕首。",
+  "modifier.tinker_in_caves.impending_stab": "悬刃",
+  "modifier.tinker_in_caves.impending_stab.flavor": "等一下！",
+  "modifier.tinker_in_caves.impending_stab.description": "使荒芜匕首攻击后召唤的幻影匕首蓄力时间延长，同时提升幻影匕首伤害。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",
@@ -132,5 +141,7 @@
   "modifier.tinker_in_caves.azure_shield.requirements": "要求 阻尼冲撞 升级",
   "modifier.tinker_in_caves.x_ray.requirements": "要求 射线枪 升级",
   "modifier.tinker_in_caves.gamma_ray.requirements": "要求 射线枪 升级",
-  "modifier.tinker_in_caves.ray_efficiency.requirements": "要求 射线枪 升级"
+  "modifier.tinker_in_caves.ray_efficiency.requirements": "要求 射线枪 升级",
+  "modifier.tinker_in_caves.multiple_stab.requirements": "要求 荒芜匕首 升级",
+  "modifier.tinker_in_caves.impending_stab.requirements": "要求 荒芜匕首 升级"
 }

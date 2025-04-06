@@ -1,20 +1,20 @@
 package com.oooooomy.tinkerincaves.modifiers.abilities;
 
 import com.oooooomy.tinkerincaves.AlexsCavesInterface;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
-public class PrimitiveClub extends Modifier implements MeleeHitModifierHook {
-    public PrimitiveClub(){}
+public class DesolateDagger extends NoLevelsModifier implements MeleeHitModifierHook {
+    public DesolateDagger(){}
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder){
@@ -24,15 +24,15 @@ public class PrimitiveClub extends Modifier implements MeleeHitModifierHook {
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt){
-        Entity entity = context.getTarget();
-        int modifierLevel = modifier.getLevel();
-        if (!(entity instanceof LivingEntity target)){
-           return;
+        LivingEntity attacker = context.getAttacker();
+        LivingEntity target = context.getLivingTarget();
+        if (attacker==null||target==null){
+            return;
         }
-        float dazingProbability = 0.3f * modifierLevel;
-        int dazingEdge = 2 * tool.getModifierLevel(tryParse("tinker_in_caves:dazing_sweep"));
-        int durationBase = 10 + 5 * modifierLevel + 10 * tool.getModifierLevel(tryParse("tinker_in_caves:tremorsaurus"));
-        int durationExtra = durationBase; //10+5*modifierLevel+10*tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:tremorsaurus"));
-        AlexsCavesInterface.effectPrimitiveClub(target, context.getAttacker(),dazingProbability,durationBase,durationExtra,dazingEdge);
+        ItemStack itemStack=context.getPlayerAttacker().getItemInHand(context.getHand());
+        int multipleStab = tool.getModifierLevel(tryParse("tinker_in_caves:multiple_stab"));
+        int impendingStab = tool.getModifierLevel(tryParse("tinker_in_caves:impending_stab"));
+
+        AlexsCavesInterface.effectDesolateDagger(itemStack,attacker,target,multipleStab,impendingStab);
     }
 }
