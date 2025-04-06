@@ -1,0 +1,24 @@
+{
+  "level_display": "tconstruct:default",
+  "tooltip_display": "tinker_station",
+  "modules": [
+    {
+      "type": "tconstruct:requirements",
+      "display_modifiers": [
+        {
+          "level": 1,
+          "name": "tinker_in_caves:sugar_staff"
+        }
+      ],
+      "requirement": {
+        "type": "tconstruct:has_modifier",
+        "check": "all",
+        "modifier": {
+          "type": "tconstruct:single",
+          "modifier": "tinker_in_caves:sugar_staff"
+        }
+      },
+      "translation_key": "modifier.tinker_in_caves.peppermint_punting.requirements"
+    }
+  ]
+}

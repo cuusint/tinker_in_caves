@@ -45,6 +45,13 @@
     "multiple_stab":"#4E4653",
     "impending_stab":"#FC0000",
     "magnetizing":"#41382F",
-    "darkness_suit":"#41382F"
+    "darkness_suit":"#41382F",
+    "frostmint_spear":"#30BEB9",
+    "sugar_magic":"#891173",
+    "humungous_hex":"#FCABD0",
+    "spell_lasting":"#FC3E55",
+    "sugar_staff":"#9C1483",
+    "peppermint_punting":"#C4B1DE",
+    "multiple_mint":"#F6EDFC"
   }
 }

@@ -1,0 +1,44 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:frostmint_spear",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:frostmint_spear",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:frostmint_spear",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:frostmint",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:frostmint",
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/staffs"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:frostmint_spear",
+  "level": {
+    "max": 2
+  }
+}

@@ -53,7 +53,7 @@ public class RayGun  extends Modifier implements GeneralInteractionModifierHook 
         if (source != InteractionSource.RIGHT_CLICK){
             return InteractionResult.PASS;
         }
-        if (tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()){
             return InteractionResult.PASS;
         }
         int fluidNeed = getFluidNeed(tool);
@@ -86,9 +86,11 @@ public class RayGun  extends Modifier implements GeneralInteractionModifierHook 
 
         AlexsCavesInterface.effectRayGun(tool,entity,getUseDuration(tool, modifier)-timeLeft,damage,modifierLevelXRay>0,modifierLevelGammaRay>0);
 
-        fluid.shrink(fluidNeed);
-        TANK_HELPER.setFluid(tool, fluid);
-        tool.setDamage(tool.getDamage() + 1);
+        if (entity instanceof Player player && !player.isCreative()){
+            fluid.shrink(fluidNeed);
+            TANK_HELPER.setFluid(tool, fluid);
+            tool.setDamage(tool.getDamage() + 1);
+        }
     }
 
     private int getFluidNeed(IToolStackView tool){

@@ -9,6 +9,7 @@ import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.ArmorKeyMessage;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
+import com.github.alexmodguy.alexscaves.server.misc.ACMath;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
@@ -27,6 +28,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -412,6 +414,58 @@ public class AlexsCavesInterface {
         }
     }
 
+    public static void effectFrostmintSpear(LivingEntity livingEntity, int count){
+        Level level = livingEntity.level();
+        for (int i=0;i<count;i++)
+        {
+            FrostmintSpearEntity spearEntity = new FrostmintSpearEntity(level, livingEntity, null);
+            spearEntity.shootFromRotation(livingEntity, livingEntity.getXRot(), livingEntity.getYRot(), 0.0F, 2.5F, 1.0F);
+            spearEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
+            level.addFreshEntity(spearEntity);
+            level.playSound(null, spearEntity, ACSoundRegistry.FROSTMINT_SPEAR_THROW.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        }
+    }
+
+    public static void effectSugarMagic(LivingEntity attacker,LivingEntity target,int scaleLevel,int lastingLevel){
+        effectSugarMagic(attacker,target.blockPosition(),scaleLevel,lastingLevel);
+    }
+
+    public static void effectSugarMagic(LivingEntity attacker,BlockPos position,int scaleLevel,int lastingLevel){
+        Level level = attacker.level();
+        Vec3 ground = ACMath.getGroundBelowPosition(level, position.above().getCenter());
+        SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(attacker.level());
+        sugarStaffHexEntity.setOwner(attacker);
+        sugarStaffHexEntity.setPos(ground.x, ground.y, ground.z);
+        sugarStaffHexEntity.setHexScale(1.0F + 0.25F * scaleLevel);
+        level.addFreshEntity(sugarStaffHexEntity);
+        level.playSound((Player)null, position, ACSoundRegistry.SUGAR_STAFF_CAST_HEX.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
+        sugarStaffHexEntity.setLifespan(100 + 60 * lastingLevel);
+    }
+
+    public static void effectSugarStaff(LivingEntity livingEntity,int multipleMintLevel,boolean peppermintPunting){
+        Level level = livingEntity.level();
+        int spawnIn = 3 + multipleMintLevel;
+        for (int i = 0; i < spawnIn; i++) {
+            SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(level);
+            spinningPeppermintEntity.setPos(livingEntity.position().add(0, livingEntity.getBbHeight() * 0.45F, 0));
+            if(peppermintPunting){
+                spinningPeppermintEntity.setStraight(true);
+                spinningPeppermintEntity.setYRot(180 + livingEntity.getYHeadRot() + (i - 1) * 15);
+                spinningPeppermintEntity.setSpinSpeed(8F);
+            }else{
+                spinningPeppermintEntity.setStraight(false);
+                spinningPeppermintEntity.setYRot(180 + (i - 1) * 30);
+                spinningPeppermintEntity.setSpinSpeed(12F);
+            }
+            spinningPeppermintEntity.setSpinRadius(3.5F);
+            spinningPeppermintEntity.setOwner(livingEntity);
+            spinningPeppermintEntity.setStartAngle(i * 360 / (float) spawnIn);
+            spinningPeppermintEntity.setLifespan(80);
+            level.addFreshEntity(spinningPeppermintEntity);
+        }
+        level.playSound((Player)null, livingEntity.blockPosition(), ACSoundRegistry.SUGAR_STAFF_CAST_PEPPERMINT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+    }
+
     private static Vec3 getProjectileStartPosition(LivingEntity entity)    {
         float rot = entity.yHeadRot + 45;
         double x = entity.getX() - (double) (entity.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F));
@@ -420,7 +474,9 @@ public class AlexsCavesInterface {
         return new Vec3(x,y,z);
     }
 
-    /** Gets the light at the given position */
+    /*
+    Gets the light at the given position
+    */
     private static int getLight(Level level, BlockPos pos) {
         return Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
     }

@@ -1,0 +1,61 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:candy_cane",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:radiant_essence",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:candy_cane",
+      "amount_needed": 4
+    },
+    {
+      "ingredient": [
+        {
+          "item": "alexscaves:gelatin_blue"
+        },
+        {
+          "item": "alexscaves:gelatin_green"
+        },
+        {
+          "item": "alexscaves:gelatin_pink"
+        }
+      ],
+      "amount_needed": 4
+    },
+    {
+      "ingredient": [
+        {
+          "item": "alexscaves:gelatin_blue"
+        },
+        {
+          "item": "alexscaves:gelatin_green"
+        },
+        {
+          "item": "alexscaves:gelatin_pink"
+        }
+      ],
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/staffs"
+    }
+  ],
+  "allow_crystal": true,
+  "result": "tinker_in_caves:peppermint_punting",
+  "level": {
+    "max": 3
+  }
+}

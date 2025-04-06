@@ -25,17 +25,11 @@ public class InkBomb extends NoLevelsModifier implements ProjectileHitModifierHo
     }
 
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        if (modifier.getLevel()<=0){
-            return false;
-        }
         AlexsCavesInterface.effectInkBomb(projectile,hit,false);
         return false;
     }
 
     public void onProjectileHitBlock(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        if (modifier.getLevel()<=0){
-            return;
-        }
         AlexsCavesInterface.effectInkBomb(projectile,false);
     }
 }

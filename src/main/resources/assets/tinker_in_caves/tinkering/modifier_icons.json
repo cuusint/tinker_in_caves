@@ -32,5 +32,12 @@
   "tinker_in_caves:multiple_stab": ["tinker_in_caves:item/multiple_stab", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:impending_stab": ["alexscaves:item/desolate_dagger", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:magnetizing": ["tinker_in_caves:item/magnetizing", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:darkness_suit": ["tinker_in_caves:item/darkness_suit", "tconstruct:gui/modifiers/plus"]
+  "tinker_in_caves:darkness_suit": ["tinker_in_caves:item/darkness_suit", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:frostmint_spear": ["alexscaves:item/frostmint_spear", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:sugar_magic": ["tinker_in_caves:item/sugar_staff_hex", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:humungous_hex": ["tinker_in_caves:item/sugar_staff_hex", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:spell_lasting": ["tinker_in_caves:item/sugar_staff_hex", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:sugar_staff": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:peppermint_punting": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:multiple_mint": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/book"]
 }

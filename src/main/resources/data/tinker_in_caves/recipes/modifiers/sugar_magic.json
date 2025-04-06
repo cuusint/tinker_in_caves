@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:sweetberry_ice_cream",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:sugar_staff",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:sweetberry_ice_cream",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:peppermint_powder",
+      "amount_needed": 4
+    },
+    {
+      "item": "alexscaves:peppermint_powder",
+      "amount_needed": 4
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/staffs"
+    }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:sugar_magic",
+  "level": 1
+}
