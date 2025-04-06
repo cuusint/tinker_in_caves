@@ -10,8 +10,8 @@
   "tinker_in_caves:ink_bomb": ["alexscaves:item/ink_bomb", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:glow_ink_bomb": ["alexscaves:item/glow_ink_bomb", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:ortholance": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/plus"],
-  "tinker_in_caves:bouncing_bolt": ["tinker_in_caves:item/bubbled", "tconstruct:gui/modifiers/book"],
-  "tinker_in_caves:enveloping_bubble": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:bouncing_bolt": ["tinker_in_caves:item/bouncing_bolt", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:enveloping_bubble": ["tinker_in_caves:item/enveloping_bubble", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:soak_seeking": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:triple_splash": ["alexscaves:item/sea_staff", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:flinging": ["alexscaves:item/ortholance", "tconstruct:gui/modifiers/book"],
@@ -31,5 +31,6 @@
   "tinker_in_caves:desolate_dagger": ["alexscaves:item/desolate_dagger", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:multiple_stab": ["tinker_in_caves:item/multiple_stab", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:impending_stab": ["alexscaves:item/desolate_dagger", "tconstruct:gui/modifiers/book"],
-  "tinker_in_caves:magnetizing": ["tinker_in_caves:item/magnetizing", "tconstruct:gui/modifiers/plus"]
+  "tinker_in_caves:magnetizing": ["tinker_in_caves:item/magnetizing", "tconstruct:gui/modifiers/plus"],
+  "tinker_in_caves:darkness_suit": ["tinker_in_caves:item/darkness_suit", "tconstruct:gui/modifiers/plus"]
 }

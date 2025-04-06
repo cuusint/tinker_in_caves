@@ -5,9 +5,10 @@
   "material.tinker_in_caves.archaic_vine": "远古藤",
   "material.tinker_in_caves.tectonic_shard": "板块碎片",
   "material.tinker_in_caves.polymer_plate": "聚合物板",
-
   "material.tinker_in_caves.scarlet_neodymium": "赤钕合金",
   "material.tinker_in_caves.azure_neodymium": "青钕合金",
+  "material.tinker_in_caves.dark_tatters": "黑暗布条",
+  "material.tinker_in_caves.shadow_silk": "暗影丝绸",
 
   "item.tinker_in_caves.molten_scarlet_neodymium_bucket": "熔融赤钕桶",
   "item.tinker_in_caves.molten_azure_neodymium_bucket": "熔融青钕桶",
@@ -28,6 +29,20 @@
   "fluid.tconstruct.flowing_molten_azure_neodymium": "流动的熔融青钕",
   "fluid.tconstruct.flowing_molten_scarlet_neodymium_ingot": "流动的熔融赤钕合金",
   "fluid.tconstruct.flowing_molten_azure_neodymium_ingot": "流动的熔融青钕合金",
+
+  "fluid.tinker_in_caves.molten_scarlet_neodymium": "熔融赤钕",
+  "fluid.tinker_in_caves.molten_azure_neodymium": "熔融青钕",
+  "fluid.tinker_in_caves.molten_scarlet_neodymium_ingot": "熔融赤钕合金",
+  "fluid.tinker_in_caves.molten_azure_neodymium_ingot": "熔融青钕合金",
+  "fluid.tinker_in_caves.acid": "酸液",
+  "fluid.tinker_in_caves.purple_soda": "紫色苏打水",
+
+  "fluid.tinker_in_caves.molten_scarlet_neodymium.fluid_effect": "熔融赤钕",
+  "fluid.tinker_in_caves.molten_azure_neodymium.fluid_effect": "熔融青钕",
+  "fluid.tinker_in_caves.molten_scarlet_neodymium_ingot.fluid_effect": "熔融赤钕合金",
+  "fluid.tinker_in_caves.molten_azure_neodymium_ingot.fluid_effect": "熔融青钕合金",
+  "fluid.tinker_in_caves.acid.fluid_effect": "酸液会自然生成在毒化洞穴中，毒化洞穴中通常有着大面积的酸液湖。",
+  "fluid.tinker_in_caves.purple_soda.fluid_effect": "紫色苏打水会自然生成在糖果龋洞中，糖果龋洞中通常有着横纵交错的紫色苏打水河流和较大的紫色苏打水湖泊，一些糖玻璃组成的罐子中也会有大量的紫色苏打水。",
 
   "modifier.tinker_in_caves.primordial_strength": "原始之力",
   "modifier.tinker_in_caves.primordial_strength.flavor": "Aaa~Ooooo~",
@@ -128,6 +143,9 @@
   "modifier.tinker_in_caves.magnetizing": "磁化",
   "modifier.tinker_in_caves.magnetizing.flavor": "给你加Buff！",
   "modifier.tinker_in_caves.magnetizing.description": "对被攻击的生物施加磁化效果，等级越高，效果的持续时间越长。",
+  "modifier.tinker_in_caves.darkness_suit": "黑暗套装（未完成）",
+  "modifier.tinker_in_caves.darkness_suit.flavor": "化为无形",
+  "modifier.tinker_in_caves.darkness_suit.description": "在黑暗处按下Alex's洞穴的特殊能力键，进入黑暗化身状态。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

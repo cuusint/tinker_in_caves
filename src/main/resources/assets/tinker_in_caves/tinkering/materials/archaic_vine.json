@@ -18,7 +18,10 @@
         ]
       }
     },
-    "supportedStats": [ "tconstruct:binding", "tconstruct:bowstring" ],
+    "supportedStats": [
+      "tconstruct:binding",
+      "tconstruct:bowstring"
+    ],
     "ignoreMaterialStats": false
   }
 }

@@ -1,0 +1,44 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:hood_of_darkness",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:cloak_of_darkness",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:shadow_silk",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:shadow_silk",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:shadow_silk",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/armor/worn"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:darkness_suit",
+  "level": {
+    "max": 5
+  }
+}

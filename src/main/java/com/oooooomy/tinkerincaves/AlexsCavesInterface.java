@@ -6,6 +6,7 @@ import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.*;
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
+import com.github.alexmodguy.alexscaves.server.message.ArmorKeyMessage;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
@@ -16,16 +17,14 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.AreaEffectCloud;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -33,6 +32,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -389,7 +389,7 @@ public class AlexsCavesInterface {
         target.addEffect(new MobEffectInstance(ACEffectRegistry.MAGNETIZING.get(), duration, 1));
     }
 
-    public static void effectDesolateDagger(ItemStack stack,LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab)    {
+    public static void effectDesolateDagger(ItemStack stack,LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab){
         for(int i = 0; i < 1 + multipleStab; i++){
             DesolateDaggerEntity daggerEntity = ACEntityRegistry.DESOLATE_DAGGER.get().create(attacker.level());
             daggerEntity.setTargetId(target.getId());
@@ -397,6 +397,18 @@ public class AlexsCavesInterface {
             daggerEntity.setItemStack(stack);
             daggerEntity.orbitFor = (impendingStab > 0 ? 40 : 20) + attacker.getRandom().nextInt(10);
             attacker.level().addFreshEntity(daggerEntity);
+        }
+    }
+
+    public static void effectDarknessSuit(Entity wearer, ItemStack itemStack){
+
+        //todo fix bugs
+
+        int light = getLight(wearer.level(),wearer.blockPosition());
+        if (wearer instanceof LivingEntity living&&light <= 10) {
+            living.addEffect(new MobEffectInstance(ACEffectRegistry.DARKNESS_INCARNATE.get(), AlexsCaves.COMMON_CONFIG.darknessCloakFlightTime.get(), 0, false, false, false));
+        } else if (wearer instanceof Player player && !wearer.level().isClientSide) {
+            player.displayClientMessage(Component.translatable("item.alexscaves.cloak_of_darkness.requires_darkness"), true);
         }
     }
 
@@ -408,4 +420,8 @@ public class AlexsCavesInterface {
         return new Vec3(x,y,z);
     }
 
+    /** Gets the light at the given position */
+    private static int getLight(Level level, BlockPos pos) {
+        return Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
+    }
 }

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "alexscaves:shadow_silk"
+  },
+  "value": 1,
+  "needed": 1,
+  "material": "tinker_in_caves:shadow_silk"
+}

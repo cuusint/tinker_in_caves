@@ -1,5 +1,5 @@
 {
-  "fallbacks": [ "primitive" ],
+  "fallbacks": [ "metal" ],
   "color": "FFB91919",
   "luminosity": 2,
   "generator": {
@@ -25,11 +25,6 @@
       "tconstruct:repair_kit",
 
       "tconstruct:armor_plating",
-      "tconstruct:plating_boots",
-      "tconstruct:plating_leggings",
-      "tconstruct:plating_chestplate",
-      "tconstruct:plating_helmet",
-      "tconstruct:plating_shield",
       "tconstruct:maille",
       "tconstruct:armor_maille"
     ],

@@ -5,9 +5,10 @@
   "material.tinker_in_caves.archaic_vine": "Archaic Vine",
   "material.tinker_in_caves.tectonic_shard": "Tectonic Shard",
   "material.tinker_in_caves.polymer_plate": "Polymer Plate",
-
   "material.tinker_in_caves.scarlet_neodymium": "Scarlet Neodymium",
   "material.tinker_in_caves.azure_neodymium": "Azure Neodymium",
+  "material.tinker_in_caves.dark_tatters": "Dark Tatters",
+  "material.tinker_in_caves.shadow_silk": "Shadow Silk",
 
   "item.tinker_in_caves.molten_scarlet_neodymium_bucket": "Molten Scarlet Neodymium Bucket",
   "item.tinker_in_caves.molten_azure_neodymium_bucket": "Molten Azure Neodymium Bucket",
@@ -28,6 +29,20 @@
   "fluid.tconstruct.flowing_molten_azure_neodymium": "Flowing Molten Azure Neodymium",
   "fluid.tconstruct.flowing_molten_scarlet_neodymium_ingot": "Flowing Molten Scarlet Neodymium Ingot",
   "fluid.tconstruct.flowing_molten_azure_neodymium_ingot": "Flowing Molten Azure Neodymium Ingot",
+
+  "fluid.tinker_in_caves.molten_scarlet_neodymium": "Molten Scarlet Neodymium",
+  "fluid.tinker_in_caves.molten_azure_neodymium": "Molten Azure Neodymium",
+  "fluid.tinker_in_caves.molten_scarlet_neodymium_ingot": "Molten Scarlet Neodymium Ingot",
+  "fluid.tinker_in_caves.molten_azure_neodymium_ingot": "Molten Azure Neodymium Ingot",
+  "fluid.tinker_in_caves.acid": "Acid",
+  "fluid.tinker_in_caves.purple_soda": "Purple Soda",
+
+  "fluid.tinker_in_caves.molten_scarlet_neodymium.fluid_effect": "Molten Scarlet Neodymium",
+  "fluid.tinker_in_caves.molten_azure_neodymium.fluid_effect": "Molten Azure Neodymium",
+  "fluid.tinker_in_caves.molten_scarlet_neodymium_ingot.fluid_effect": "Molten Scarlet Neodymium Ingot",
+  "fluid.tinker_in_caves.molten_azure_neodymium_ingot.fluid_effect": "Molten Azure Neodymium Ingot",
+  "fluid.tinker_in_caves.acid.fluid_effect": "Acid will naturally form in poisoned caves, which usually have large areas of acid lakes.",
+  "fluid.tinker_in_caves.purple_soda.fluid_effect": "Purple soda water naturally forms in candy cavities, which usually have intersecting purple soda water rivers and larger purple soda water lakes. Some sugar glass jars also contain large amounts of purple soda water.",
 
   "modifier.tinker_in_caves.primordial_strength": "Primordial Strength",
   "modifier.tinker_in_caves.primordial_strength.flavor": "Aaa~Ooooo~",
@@ -128,6 +143,9 @@
   "modifier.tinker_in_caves.magnetizing": "Magnetizing",
   "modifier.tinker_in_caves.magnetizing.flavor": "Add Buff to you!",
   "modifier.tinker_in_caves.magnetizing.description": "Apply Magnetizing effect to the attacked creature, and the higher the level, the longer the duration of the effect.",
+  "modifier.tinker_in_caves.darkness_suit": "Darkness Suit (incomplete)",
+  "modifier.tinker_in_caves.darkness_suit.flavor": "Become intangible",
+  "modifier.tinker_in_caves.darkness_suit.description": "Press the special ability key of Alex's Saves in the dark to enter the Darkness Incarnate state.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

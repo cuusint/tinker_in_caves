@@ -1,5 +1,5 @@
 {
-  "fallbacks": [ "primitive" ],
+  "fallbacks": [ "metal" ],
   "color": "FF1936B9",
   "luminosity": 2,
   "generator": {

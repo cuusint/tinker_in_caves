@@ -14,7 +14,10 @@
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable"
+      "tag": "tconstruct:modifiable/armor/boots"
+    },
+    {
+      "tag": "tconstruct:modifiable/harvest/primary"
     }
   ],
   "slots": {

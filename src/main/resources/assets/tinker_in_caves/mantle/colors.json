@@ -5,11 +5,11 @@
     "cycad":"#3E2800",
     "archaic_vine":"#52801E",
     "tectonic_shard":"#670909",
-
     "scarlet_neodymium":"#E8B3A0",
     "azure_neodymium":"#1936B9",
-
-    "polymer_plate":"#DAE7EB"
+    "polymer_plate":"#DAE7EB",
+    "dark_tatters":"#151515",
+    "shadow_silk":"#151515"
   },
   "modifier.tinker_in_caves": {
     "primordial_strength":"#B91919",
@@ -44,6 +44,7 @@
     "desolate_dagger":"#500E0E",
     "multiple_stab":"#4E4653",
     "impending_stab":"#FC0000",
-    "magnetizing":"#41382F"
+    "magnetizing":"#41382F",
+    "darkness_suit":"#41382F"
   }
 }

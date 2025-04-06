@@ -1,11 +1,11 @@
 package com.oooooomy.tinkerincaves;
 
 import com.mojang.logging.LogUtils;
-import com.oooooomy.tinkerincaves.blocks.TinkerInCavesBlocks;
-import com.oooooomy.tinkerincaves.creativetabs.TinkerInCavesCreativeTabs;
-import com.oooooomy.tinkerincaves.fluids.TinkerInCavesFluids;
-import com.oooooomy.tinkerincaves.items.TinkerInCavesItems;
-import com.oooooomy.tinkerincaves.modifiers.TinkerInCavesModifiers;
+import com.oooooomy.tinkerincaves.registers.TinkerInCavesBlocks;
+import com.oooooomy.tinkerincaves.registers.TinkerInCavesCreativeTabs;
+import com.oooooomy.tinkerincaves.registers.TinkerInCavesFluids;
+import com.oooooomy.tinkerincaves.registers.TinkerInCavesItems;
+import com.oooooomy.tinkerincaves.registers.TinkerInCavesModifiers;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
