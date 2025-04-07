@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
@@ -39,7 +39,7 @@ public class Irradiated extends Modifier implements MeleeHitModifierHook, Projec
             return;
         }
         int duration = getMobEffectDuration(modifier);
-        AlexsCavesInterface.effectIrradiated(attacker,target,modifierLevel,duration,modifierLevel>3);
+        AlexsCavesEffects.effectIrradiated(attacker,target,modifierLevel,duration,modifierLevel>3);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Irradiated extends Modifier implements MeleeHitModifierHook, Projec
             return false;
         }
         int duration = getMobEffectDuration(modifier);
-        AlexsCavesInterface.effectIrradiated(attacker,target,modifierLevel,duration,modifierLevel>3);
+        AlexsCavesEffects.effectIrradiated(attacker,target,modifierLevel,duration,modifierLevel>3);
         return false;
     }
 

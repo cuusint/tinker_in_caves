@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
@@ -38,7 +38,7 @@ public class Magnetizing extends Modifier implements MeleeHitModifierHook, Proje
             return;
         }
         int duration = getMobEffectDuration(modifier);
-        AlexsCavesInterface.effectMagnetizing(target,duration);
+        AlexsCavesEffects.effectMagnetizing(target,duration);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Magnetizing extends Modifier implements MeleeHitModifierHook, Proje
             return false;
         }
         int duration = getMobEffectDuration(modifier);
-        AlexsCavesInterface.effectMagnetizing(target,duration);
+        AlexsCavesEffects.effectMagnetizing(target,duration);
         return false;
     }
 

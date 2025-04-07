@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -33,6 +33,6 @@ public class PrimitiveClub extends Modifier implements MeleeHitModifierHook {
         int dazingEdge = 2 * tool.getModifierLevel(tryParse("tinker_in_caves:dazing_sweep"));
         int durationBase = 10 + 5 * modifierLevel + 10 * tool.getModifierLevel(tryParse("tinker_in_caves:tremorsaurus"));
         int durationExtra = durationBase; //10+5*modifierLevel+10*tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:tremorsaurus"));
-        AlexsCavesInterface.effectPrimitiveClub(target, context.getAttacker(),dazingProbability,durationBase,durationExtra,dazingEdge);
+        AlexsCavesEffects.effectPrimitiveClub(target, context.getAttacker(),dazingProbability,durationBase,durationExtra,dazingEdge);
     }
 }

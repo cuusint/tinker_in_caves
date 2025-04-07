@@ -1,7 +1,7 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import com.oooooomy.tinkerincaves.TinkerInCaves;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
@@ -84,7 +84,7 @@ public class RayGun  extends Modifier implements GeneralInteractionModifierHook 
 
         int damage = modifier.getLevel() + modifierLevelXRay + modifierLevelGammaRay;
 
-        AlexsCavesInterface.effectRayGun(tool,entity,getUseDuration(tool, modifier)-timeLeft,damage,modifierLevelXRay>0,modifierLevelGammaRay>0);
+        AlexsCavesEffects.effectRayGun(tool,entity,getUseDuration(tool, modifier)-timeLeft,damage,modifierLevelXRay>0,modifierLevelGammaRay>0);
 
         if (entity instanceof Player player && !player.isCreative()){
             fluid.shrink(fluidNeed);

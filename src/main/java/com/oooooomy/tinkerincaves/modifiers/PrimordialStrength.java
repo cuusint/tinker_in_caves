@@ -10,7 +10,6 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class PrimordialStrength extends Modifier implements MeleeDamageModifierHook {
-
     public PrimordialStrength(){}
 
     @Override
@@ -24,7 +23,7 @@ public class PrimordialStrength extends Modifier implements MeleeDamageModifierH
         LivingEntity target = context.getLivingTarget();
         if (target != null)
         {
-            return baseDamage+modifier.getLevel()*2;
+            return baseDamage  +modifier.getLevel() * 2;
         }
         return baseDamage;
     }

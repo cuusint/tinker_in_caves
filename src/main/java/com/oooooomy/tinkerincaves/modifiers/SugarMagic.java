@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.BlockHitResult;
@@ -26,12 +26,12 @@ public class SugarMagic extends NoLevelsModifier implements ProjectileHitModifie
     }
 
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        AlexsCavesInterface.effectSugarMagic(attacker,target,getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
+        AlexsCavesEffects.effectSugarMagic(attacker,target,getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
         return false;
     }
 
     public void onProjectileHitBlock(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        AlexsCavesInterface.effectSugarMagic(attacker,hit.getBlockPos(),getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
+        AlexsCavesEffects.effectSugarMagic(attacker,hit.getBlockPos(),getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
     }
 
     private int getModifierLevelHumungousHex(ModifierNBT modifiers){

@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -68,7 +68,7 @@ public class FrostmintSpear extends Modifier implements GeneralInteractionModifi
             return;
         }
 
-        AlexsCavesInterface.effectFrostmintSpear(entity,modifierLevel);
+        AlexsCavesEffects.effectFrostmintSpear(entity,modifierLevel);
 
         if (!player.isCreative()){
             tool.setDamage(tool.getDamage() + 4 * modifierLevel);

@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -40,7 +40,7 @@ public class SubterranodonGhosts extends Modifier implements MeleeHitModifierHoo
             return;
         }
         float damage = getDamage(attacker);
-        AlexsCavesInterface.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
+        AlexsCavesEffects.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class SubterranodonGhosts extends Modifier implements MeleeHitModifierHoo
             return false;
         }
         float damage = getDamage(attacker);
-        AlexsCavesInterface.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
+        AlexsCavesEffects.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
         return false;
     }
 

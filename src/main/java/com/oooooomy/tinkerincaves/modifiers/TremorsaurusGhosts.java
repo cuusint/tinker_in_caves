@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
@@ -38,7 +38,7 @@ public class TremorsaurusGhosts extends Modifier implements MeleeHitModifierHook
         if (target == null || attacker == null){
             return;
         }
-        AlexsCavesInterface.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
+        AlexsCavesEffects.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class TremorsaurusGhosts extends Modifier implements MeleeHitModifierHook
         if (target == null || attacker == null){
             return false;
         }
-        AlexsCavesInterface.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
+        AlexsCavesEffects.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
         return false;
     }
 }

@@ -6,7 +6,6 @@ import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.*;
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
-import com.github.alexmodguy.alexscaves.server.message.ArmorKeyMessage;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
 import com.github.alexmodguy.alexscaves.server.misc.ACMath;
@@ -40,7 +39,7 @@ import net.minecraft.world.phys.*;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import net.minecraft.core.particles.ParticleOptions;
 
-public class AlexsCavesInterface {
+public class AlexsCavesEffects {
 
     public static void effectSeaStaff(Player player, int boltsCount ,double seekDistance,float seekAmount,boolean bubble,boolean bouncing)    {
         Level level =  player.level();
@@ -474,9 +473,6 @@ public class AlexsCavesInterface {
         return new Vec3(x,y,z);
     }
 
-    /*
-    Gets the light at the given position
-    */
     private static int getLight(Level level, BlockPos pos) {
         return Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
     }

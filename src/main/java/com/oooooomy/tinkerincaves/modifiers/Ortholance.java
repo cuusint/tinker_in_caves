@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,7 +8,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.UseAnim;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
@@ -17,6 +16,8 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
+
+import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
 public class Ortholance extends NoLevelsModifier implements GeneralInteractionModifierHook , MeleeHitModifierHook {
     public Ortholance(){}
@@ -60,10 +61,10 @@ public class Ortholance extends NoLevelsModifier implements GeneralInteractionMo
         }
         tool.setDamage(tool.getDamage() + 4);
 
-        int flinging = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:flinging"));
-        boolean tsunami = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:tsunami"))>0;
-        boolean secondWave = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:second_wave"))>0;
-        AlexsCavesInterface.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
+        int flinging = tool.getModifierLevel(tryParse("tinker_in_caves:flinging"));
+        boolean tsunami = tool.getModifierLevel(tryParse("tinker_in_caves:tsunami")) > 0;
+        boolean secondWave = tool.getModifierLevel(tryParse("tinker_in_caves:second_wave")) > 0;
+        AlexsCavesEffects.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
     }
 
     @Override
@@ -72,9 +73,9 @@ public class Ortholance extends NoLevelsModifier implements GeneralInteractionMo
         if (!player.isCreative() && tool.isBroken()){
             return;
         }
-        if (tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:sea_swing")) <= 0){
+        if (tool.getModifierLevel(tryParse("tinker_in_caves:sea_swing")) <= 0){
             return;
         }
-        AlexsCavesInterface.effectOrtholance(player, context.getLivingTarget());
+        AlexsCavesEffects.effectOrtholance(player, context.getLivingTarget());
     }
 }

@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -33,6 +33,6 @@ public class DesolateDagger extends NoLevelsModifier implements MeleeHitModifier
         int multipleStab = tool.getModifierLevel(tryParse("tinker_in_caves:multiple_stab"));
         int impendingStab = tool.getModifierLevel(tryParse("tinker_in_caves:impending_stab"));
 
-        AlexsCavesInterface.effectDesolateDagger(itemStack,attacker,target,multipleStab,impendingStab);
+        AlexsCavesEffects.effectDesolateDagger(itemStack,attacker,target,multipleStab,impendingStab);
     }
 }

@@ -1,17 +1,15 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.UseAnim;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
@@ -68,7 +66,7 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
         int seekAmount = modifierLevel+tool.getModifierLevel(tryParse("tinker_in_caves:soak_seeking"));
         boolean bubble = tool.getModifierLevel(tryParse("tinker_in_caves:enveloping_bubble"))>0;
         boolean bouncing = tool.getModifierLevel(tryParse("tinker_in_caves:bouncing_bolt"))>0;
-        AlexsCavesInterface.effectSeaStaff(player,boltsCount,seekDistance ,seekAmount,bubble,bouncing);
+        AlexsCavesEffects.effectSeaStaff(player,boltsCount,seekDistance ,seekAmount,bubble,bouncing);
 
         if (!player.isCreative()){
             tool.setDamage(tool.getDamage() + 4 * modifierLevel);

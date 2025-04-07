@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -62,7 +62,7 @@ public class SugarStaff extends NoLevelsModifier implements GeneralInteractionMo
         }
         int modifierLevelPeppermintPunting = getModifierLevelPeppermintPunting(tool);
         int modifierLevelMultipleMint = getModifierLevelMultipleMint(tool);
-        AlexsCavesInterface.effectSugarStaff(entity, modifierLevelMultipleMint,modifierLevelPeppermintPunting > 0);
+        AlexsCavesEffects.effectSugarStaff(entity, modifierLevelMultipleMint,modifierLevelPeppermintPunting > 0);
         if (!player.isCreative()){
             tool.setDamage(tool.getDamage() + 4 );
         }

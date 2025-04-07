@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.BlockHitResult;
@@ -25,11 +25,11 @@ public class InkBomb extends NoLevelsModifier implements ProjectileHitModifierHo
     }
 
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        AlexsCavesInterface.effectInkBomb(projectile,hit,false);
+        AlexsCavesEffects.effectInkBomb(projectile,hit,false);
         return false;
     }
 
     public void onProjectileHitBlock(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        AlexsCavesInterface.effectInkBomb(projectile,false);
+        AlexsCavesEffects.effectInkBomb(projectile,false);
     }
 }

@@ -1,6 +1,6 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -61,7 +61,7 @@ public class ResistorSlam extends Modifier implements GeneralInteractionModifier
         float range = 1+2*modifierLevel+modifierLevelHeavySlam+modifierLevelAzure+modifierLevelScarlet;
         double hitDamage =0.2d * entity.getAttributeValue(Attributes.ATTACK_DAMAGE)+2*modifierLevel+4*modifierLevelHeavySlam+modifierLevelAzure+modifierLevelScarlet;
         double knockBackDistance = entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK) +0.1d*modifierLevel+0.2d*modifierLevelHeavySlam+0.1d*modifierLevelAzure+0.1d*modifierLevelScarlet;
-        AlexsCavesInterface.effectResistorSlam(
+        AlexsCavesEffects.effectResistorSlam(
                 entity,
                 getUseDuration(tool, modifier)-timeLeft,
                 range,

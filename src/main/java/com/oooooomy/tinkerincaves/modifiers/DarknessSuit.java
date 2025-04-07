@@ -2,7 +2,7 @@ package com.oooooomy.tinkerincaves.modifiers;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
-import com.oooooomy.tinkerincaves.AlexsCavesInterface;
+import com.oooooomy.tinkerincaves.AlexsCavesEffects;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -42,7 +42,7 @@ public class DarknessSuit extends Modifier implements InventoryTickModifierHook 
             return;
         }
         if (AlexsCaves.PROXY.getClientSidePlayer() == livingEntity && AlexsCaves.PROXY.isKeyDown(2)){
-            AlexsCavesInterface.effectDarknessSuit(livingEntity,itemStack);
+            AlexsCavesEffects.effectDarknessSuit(livingEntity,itemStack);
             damageTool(tool, modifier);
         }
     }
