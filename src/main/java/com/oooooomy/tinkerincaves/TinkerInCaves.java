@@ -26,10 +26,17 @@ public class TinkerInCaves
         if(event.includeServer()){}
     }
 
-    public TinkerInCaves(FMLJavaModLoadingContext context)
-    {
+    public TinkerInCaves(FMLJavaModLoadingContext context){
         IEventBus modEventBus = context.getModEventBus();
 
+        TinkerInCavesFluids.FLUIDS.register(modEventBus);
+        TinkerInCavesModifiers.MODIFIERS.register(modEventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public TinkerInCaves(){
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         TinkerInCavesFluids.FLUIDS.register(modEventBus);
         TinkerInCavesModifiers.MODIFIERS.register(modEventBus);
 
