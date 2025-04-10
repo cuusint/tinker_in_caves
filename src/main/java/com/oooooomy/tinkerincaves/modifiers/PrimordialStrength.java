@@ -10,10 +10,11 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class PrimordialStrength extends Modifier implements MeleeDamageModifierHook {
-    public PrimordialStrength(){}
+    public PrimordialStrength() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder){
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE);
     }
@@ -21,9 +22,8 @@ public class PrimordialStrength extends Modifier implements MeleeDamageModifierH
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        if (target != null)
-        {
-            return baseDamage  +modifier.getLevel() * 2;
+        if (target != null) {
+            return baseDamage + modifier.getLevel() * 2;
         }
         return baseDamage;
     }

@@ -36,4 +36,6 @@ public class TinkerInCavesModifiers {
     public static final StaticModifier<FrostmintSpear> frostmint_spear = MODIFIERS.register("frostmint_spear",FrostmintSpear::new);
     public static final StaticModifier<SugarMagic> sugar_magic = MODIFIERS.register("sugar_magic",SugarMagic::new);
     public static final StaticModifier<SugarStaff> sugar_staff = MODIFIERS.register("sugar_staff",SugarStaff::new);
+    public static final StaticModifier<CaramelArmor> caramel_armor = MODIFIERS.register("caramel_armor", CaramelArmor::new);
+
 }

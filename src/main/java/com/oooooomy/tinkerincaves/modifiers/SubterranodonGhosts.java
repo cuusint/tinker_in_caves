@@ -19,45 +19,46 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 
 public class SubterranodonGhosts extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
-    public SubterranodonGhosts(){}
+    public SubterranodonGhosts() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
         builder.addHook(this, ModifierHooks.MELEE_HIT);
         builder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
 
     @Override
-    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt){
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         int modifierLevel = modifier.getLevel();
-        if (modifierLevel<=0){
+        if (modifierLevel <= 0) {
             return;
         }
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (target == null || attacker == null){
+        if (target == null || attacker == null) {
             return;
         }
         float damage = getDamage(attacker);
-        AlexsCavesEffects.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
+        AlexsCavesEffects.effectSubterranodonGosts(attacker, target, damage, modifierLevel);
     }
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         int modifierLevel = modifier.getLevel();
-        if (modifierLevel<=0){
+        if (modifierLevel <= 0) {
             return false;
         }
-        if (target == null || attacker == null){
+        if (target == null || attacker == null) {
             return false;
         }
         float damage = getDamage(attacker);
-        AlexsCavesEffects.effectSubterranodonGosts(attacker,target,damage,modifierLevel);
+        AlexsCavesEffects.effectSubterranodonGosts(attacker, target, damage, modifierLevel);
         return false;
     }
 
-    private float getDamage(LivingEntity attacker){
+    private float getDamage(LivingEntity attacker) {
         return 0.2f * (float) attacker.getAttributeValue(Attributes.ATTACK_DAMAGE);
     }
 }

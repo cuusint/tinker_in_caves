@@ -17,28 +17,29 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 
 public class SugarMagic extends NoLevelsModifier implements ProjectileHitModifierHook {
-    public SugarMagic(){}
+    public SugarMagic() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder){
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
 
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        AlexsCavesEffects.effectSugarMagic(attacker,target,getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
+        AlexsCavesEffects.effectSugarMagic(attacker, target, getModifierLevelHumungousHex(modifiers), getModifierLevelSpellLasting(modifiers));
         return false;
     }
 
     public void onProjectileHitBlock(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        AlexsCavesEffects.effectSugarMagic(attacker,hit.getBlockPos(),getModifierLevelHumungousHex(modifiers),getModifierLevelSpellLasting(modifiers));
+        AlexsCavesEffects.effectSugarMagic(attacker, hit.getBlockPos(), getModifierLevelHumungousHex(modifiers), getModifierLevelSpellLasting(modifiers));
     }
 
-    private int getModifierLevelHumungousHex(ModifierNBT modifiers){
+    private int getModifierLevelHumungousHex(ModifierNBT modifiers) {
         return modifiers.getLevel(ModifierId.tryParse("tinker_in_caves:humungous_hex"));
     }
 
-    private int getModifierLevelSpellLasting(ModifierNBT modifiers){
+    private int getModifierLevelSpellLasting(ModifierNBT modifiers) {
         return modifiers.getLevel(ModifierId.tryParse("tinker_in_caves:spell_lasting"));
     }
 }

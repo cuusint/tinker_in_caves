@@ -22,12 +22,14 @@ public class TinkerInCavesFluids {
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp) {
         return FLUIDS.register(name).type(hot(name).temperature(temp).lightLevel(12)).block(MapColor.COLOR_RED, 12).bucket().flowing();
     }
+
     private static FluidType.Properties hot(String name) {
         return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
                 .descriptionId(TConstruct.makeDescriptionId("fluid", name))
                 .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
                 .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA);
     }
+
     private static FluidType.Properties cool(String name) {
         return FluidType.Properties.create()
                 .descriptionId(TConstruct.makeDescriptionId("fluid", name))

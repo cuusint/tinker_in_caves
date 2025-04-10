@@ -18,39 +18,40 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 
 public class TremorsaurusGhosts extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
-    public TremorsaurusGhosts(){}
+    public TremorsaurusGhosts() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
         builder.addHook(this, ModifierHooks.MELEE_HIT);
         builder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
 
     @Override
-    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt){
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         int modifierLevel = modifier.getLevel();
-        if (modifierLevel<=0){
+        if (modifierLevel <= 0) {
             return;
         }
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (target == null || attacker == null){
+        if (target == null || attacker == null) {
             return;
         }
-        AlexsCavesEffects.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
+        AlexsCavesEffects.effectTremorsaurusGhosts(attacker, target, modifierLevel - 1);
     }
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         int modifierLevel = modifier.getLevel();
-        if (modifierLevel<=0){
+        if (modifierLevel <= 0) {
             return false;
         }
-        if (target == null || attacker == null){
+        if (target == null || attacker == null) {
             return false;
         }
-        AlexsCavesEffects.effectTremorsaurusGhosts(attacker,target,modifierLevel-1);
+        AlexsCavesEffects.effectTremorsaurusGhosts(attacker, target, modifierLevel - 1);
         return false;
     }
 }

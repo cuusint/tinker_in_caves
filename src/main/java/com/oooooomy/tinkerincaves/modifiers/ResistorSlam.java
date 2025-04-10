@@ -17,10 +17,11 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class ResistorSlam extends Modifier implements GeneralInteractionModifierHook {
-    public ResistorSlam(){}
+    public ResistorSlam() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
     }
 
@@ -41,10 +42,10 @@ public class ResistorSlam extends Modifier implements GeneralInteractionModifier
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (source != InteractionSource.RIGHT_CLICK){
+        if (source != InteractionSource.RIGHT_CLICK) {
             return InteractionResult.PASS;
         }
-        if (tool.isBroken()){
+        if (tool.isBroken()) {
             return InteractionResult.PASS;
         }
         GeneralInteractionModifierHook.startUsing(tool, modifier.getId(), player, hand);
@@ -58,17 +59,17 @@ public class ResistorSlam extends Modifier implements GeneralInteractionModifier
         int modifierLevelScarlet = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:scarlet_shield"));
         int modifierLevelAzure = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:azure_shield"));
 
-        float range = 1+2*modifierLevel+modifierLevelHeavySlam+modifierLevelAzure+modifierLevelScarlet;
-        double hitDamage =0.2d * entity.getAttributeValue(Attributes.ATTACK_DAMAGE)+2*modifierLevel+4*modifierLevelHeavySlam+modifierLevelAzure+modifierLevelScarlet;
-        double knockBackDistance = entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK) +0.1d*modifierLevel+0.2d*modifierLevelHeavySlam+0.1d*modifierLevelAzure+0.1d*modifierLevelScarlet;
+        float range = 1 + 2 * modifierLevel + modifierLevelHeavySlam + modifierLevelAzure + modifierLevelScarlet;
+        double hitDamage = 0.2d * entity.getAttributeValue(Attributes.ATTACK_DAMAGE) + 2 * modifierLevel + 4 * modifierLevelHeavySlam + modifierLevelAzure + modifierLevelScarlet;
+        double knockBackDistance = entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 0.1d * modifierLevel + 0.2d * modifierLevelHeavySlam + 0.1d * modifierLevelAzure + 0.1d * modifierLevelScarlet;
         AlexsCavesEffects.effectResistorSlam(
                 entity,
-                getUseDuration(tool, modifier)-timeLeft,
+                getUseDuration(tool, modifier) - timeLeft,
                 range,
-                (int)hitDamage,
-                (int)(hitDamage/4d),
+                (int) hitDamage,
+                (int) (hitDamage / 4d),
                 knockBackDistance,
-                knockBackDistance/4d,
+                knockBackDistance / 4d,
                 modifierLevelScarlet,
                 modifierLevelScarlet);
     }

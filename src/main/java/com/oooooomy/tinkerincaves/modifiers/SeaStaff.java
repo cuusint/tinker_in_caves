@@ -19,17 +19,18 @@ import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModif
 import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
 public class SeaStaff extends Modifier implements GeneralInteractionModifierHook {
-    public SeaStaff(){}
+    public SeaStaff() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
     }
 
     @Override
     public int getUseDuration(IToolStackView tool, ModifierEntry modifier) {
         int modifierLevel = modifier.getLevel();
-        return Mth.clamp(20 - 3 * modifierLevel,2,100);
+        return Mth.clamp(20 - 3 * modifierLevel, 2, 100);
     }
 
     @Override
@@ -39,13 +40,13 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (hand != InteractionHand.MAIN_HAND){
+        if (hand != InteractionHand.MAIN_HAND) {
             return InteractionResult.PASS;
         }
-        if (source != InteractionSource.RIGHT_CLICK){
+        if (source != InteractionSource.RIGHT_CLICK) {
             return InteractionResult.PASS;
         }
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return InteractionResult.PASS;
         }
         GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, getSpeedFactor(tool, modifier));
@@ -53,27 +54,27 @@ public class SeaStaff extends Modifier implements GeneralInteractionModifierHook
     }
 
     @Override
-    public void onFinishUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity){
-        if (!(entity instanceof Player player)){
+    public void onFinishUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity) {
+        if (!(entity instanceof Player player)) {
             return;
         }
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return;
         }
         int modifierLevel = modifier.getLevel();
-        int boltsCount = tool.getModifierLevel(tryParse("tinker_in_caves:triple_splash"))>0?3:1;
-        double seekDistance = 32+ modifierLevel*8+16*tool.getModifierLevel(tryParse("tinker_in_caves:soak_seeking"));
-        int seekAmount = modifierLevel+tool.getModifierLevel(tryParse("tinker_in_caves:soak_seeking"));
-        boolean bubble = tool.getModifierLevel(tryParse("tinker_in_caves:enveloping_bubble"))>0;
-        boolean bouncing = tool.getModifierLevel(tryParse("tinker_in_caves:bouncing_bolt"))>0;
-        AlexsCavesEffects.effectSeaStaff(player,boltsCount,seekDistance ,seekAmount,bubble,bouncing);
+        int boltsCount = tool.getModifierLevel(tryParse("tinker_in_caves:triple_splash")) > 0 ? 3 : 1;
+        double seekDistance = 32 + modifierLevel * 8 + 16 * tool.getModifierLevel(tryParse("tinker_in_caves:soak_seeking"));
+        int seekAmount = modifierLevel + tool.getModifierLevel(tryParse("tinker_in_caves:soak_seeking"));
+        boolean bubble = tool.getModifierLevel(tryParse("tinker_in_caves:enveloping_bubble")) > 0;
+        boolean bouncing = tool.getModifierLevel(tryParse("tinker_in_caves:bouncing_bolt")) > 0;
+        AlexsCavesEffects.effectSeaStaff(player, boltsCount, seekDistance, seekAmount, bubble, bouncing);
 
-        if (!player.isCreative()){
+        if (!player.isCreative()) {
             tool.setDamage(tool.getDamage() + 4 * modifierLevel);
         }
     }
 
-    private float getSpeedFactor(IToolStackView tool, ModifierEntry modifier){
-        return 1 + modifier.getLevel()*0.4f;
+    private float getSpeedFactor(IToolStackView tool, ModifierEntry modifier) {
+        return 1 + modifier.getLevel() * 0.4f;
     }
 }

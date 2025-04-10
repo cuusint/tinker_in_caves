@@ -28,11 +28,12 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import static slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper.TANK_HELPER;
 
-public class RayGun  extends Modifier implements GeneralInteractionModifierHook {
-    public RayGun(){}
+public class RayGun extends Modifier implements GeneralInteractionModifierHook {
+    public RayGun() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
         builder.addModule(ToolTankHelper.TANK_HANDLER);
         builder.addModule(StatBoostModule.add(ToolTankHelper.CAPACITY_STAT).eachLevel(FluidType.BUCKET_VOLUME));
@@ -50,10 +51,10 @@ public class RayGun  extends Modifier implements GeneralInteractionModifierHook 
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (source != InteractionSource.RIGHT_CLICK){
+        if (source != InteractionSource.RIGHT_CLICK) {
             return InteractionResult.PASS;
         }
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return InteractionResult.PASS;
         }
         int fluidNeed = getFluidNeed(tool);
@@ -84,16 +85,16 @@ public class RayGun  extends Modifier implements GeneralInteractionModifierHook 
 
         int damage = modifier.getLevel() + modifierLevelXRay + modifierLevelGammaRay;
 
-        AlexsCavesEffects.effectRayGun(tool,entity,getUseDuration(tool, modifier)-timeLeft,damage,modifierLevelXRay>0,modifierLevelGammaRay>0);
+        AlexsCavesEffects.effectRayGun(tool, entity, getUseDuration(tool, modifier) - timeLeft, damage, modifierLevelXRay > 0, modifierLevelGammaRay > 0);
 
-        if (entity instanceof Player player && !player.isCreative()){
+        if (entity instanceof Player player && !player.isCreative()) {
             fluid.shrink(fluidNeed);
             TANK_HELPER.setFluid(tool, fluid);
             tool.setDamage(tool.getDamage() + 1);
         }
     }
 
-    private int getFluidNeed(IToolStackView tool){
-        return Mth.clamp(10 - tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:ray_efficiency")),1,10);
+    private int getFluidNeed(IToolStackView tool) {
+        return Mth.clamp(10 - tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:ray_efficiency")), 1, 10);
     }
 }

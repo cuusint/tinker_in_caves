@@ -39,5 +39,6 @@
   "tinker_in_caves:spell_lasting": ["tinker_in_caves:gui/modifiers/sugar_staff_hex", "tconstruct:gui/modifiers/book"],
   "tinker_in_caves:sugar_staff": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/plus"],
   "tinker_in_caves:peppermint_punting": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/book"],
-  "tinker_in_caves:multiple_mint": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/book"]
+  "tinker_in_caves:multiple_mint": ["alexscaves:item/sugar_staff", "tconstruct:gui/modifiers/book"],
+  "tinker_in_caves:caramel_armor": ["tinker_in_caves:gui/modifiers/caramel_armor", "tconstruct:gui/modifiers/plus"]
 }

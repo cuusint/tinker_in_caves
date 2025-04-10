@@ -167,6 +167,9 @@
   "modifier.tinker_in_caves.multiple_mint": "双倍薄荷",
   "modifier.tinker_in_caves.multiple_mint.flavor": "劲爽！",
   "modifier.tinker_in_caves.multiple_mint.description": "使召唤的薄荷糖数量增加。",
+  "modifier.tinker_in_caves.caramel_armor": "焦糖护甲",
+  "modifier.tinker_in_caves.caramel_armor.flavor": "焦糖式反应装甲",
+  "modifier.tinker_in_caves.caramel_armor.description": "受到攻击时在附件生成熔融焦糖，可以减缓敌人的速度，但要小心有时也会将自己也黏住。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

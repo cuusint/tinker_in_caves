@@ -19,11 +19,12 @@ import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModif
 
 import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
-public class Ortholance extends NoLevelsModifier implements GeneralInteractionModifierHook , MeleeHitModifierHook {
-    public Ortholance(){}
+public class Ortholance extends NoLevelsModifier implements GeneralInteractionModifierHook, MeleeHitModifierHook {
+    public Ortholance() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
         builder.addHook(this, ModifierHooks.MELEE_HIT);
     }
@@ -40,23 +41,23 @@ public class Ortholance extends NoLevelsModifier implements GeneralInteractionMo
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (hand != InteractionHand.MAIN_HAND){
+        if (hand != InteractionHand.MAIN_HAND) {
             return InteractionResult.PASS;
         }
-        if (source != InteractionSource.RIGHT_CLICK){
+        if (source != InteractionSource.RIGHT_CLICK) {
             return InteractionResult.PASS;
         }
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return InteractionResult.PASS;
         }
-        GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1 + modifier.getLevel()*0.2f);
+        GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1 + modifier.getLevel() * 0.2f);
         return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft){
+    public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
         int chargeTime = getUseDuration(tool, modifier) - timeLeft;
-        if (chargeTime <= 20){
+        if (chargeTime <= 20) {
             return;
         }
         tool.setDamage(tool.getDamage() + 4);
@@ -64,16 +65,16 @@ public class Ortholance extends NoLevelsModifier implements GeneralInteractionMo
         int flinging = tool.getModifierLevel(tryParse("tinker_in_caves:flinging"));
         boolean tsunami = tool.getModifierLevel(tryParse("tinker_in_caves:tsunami")) > 0;
         boolean secondWave = tool.getModifierLevel(tryParse("tinker_in_caves:second_wave")) > 0;
-        AlexsCavesEffects.effectOrtholance(entity.level(),entity,getUseDuration(tool, modifier)-timeLeft,flinging,tsunami,secondWave);
+        AlexsCavesEffects.effectOrtholance(entity.level(), entity, getUseDuration(tool, modifier) - timeLeft, flinging, tsunami, secondWave);
     }
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         Player player = context.getPlayerAttacker();
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return;
         }
-        if (tool.getModifierLevel(tryParse("tinker_in_caves:sea_swing")) <= 0){
+        if (tool.getModifierLevel(tryParse("tinker_in_caves:sea_swing")) <= 0) {
             return;
         }
         AlexsCavesEffects.effectOrtholance(player, context.getLivingTarget());

@@ -16,10 +16,11 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class FrostmintSpear extends Modifier implements GeneralInteractionModifierHook {
-    public FrostmintSpear(){}
+    public FrostmintSpear() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.GENERAL_INTERACT);
     }
 
@@ -35,13 +36,13 @@ public class FrostmintSpear extends Modifier implements GeneralInteractionModifi
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (hand != InteractionHand.MAIN_HAND){
+        if (hand != InteractionHand.MAIN_HAND) {
             return InteractionResult.PASS;
         }
-        if (source != InteractionSource.RIGHT_CLICK){
+        if (source != InteractionSource.RIGHT_CLICK) {
             return InteractionResult.PASS;
         }
-        if (!player.isCreative() && tool.isBroken()){
+        if (!player.isCreative() && tool.isBroken()) {
             return InteractionResult.PASS;
         }
         GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, getSpeedFactor(tool, modifier));
@@ -52,30 +53,30 @@ public class FrostmintSpear extends Modifier implements GeneralInteractionModifi
     public void onUsingTick(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
         int chargeTime = getUseDuration(tool, modifier) - timeLeft;
         int modifierLevel = modifier.getLevel();
-        int chargeTimeRequire = Mth.clamp(20 - 4 * modifierLevel,5,100);
-        if (chargeTime <= chargeTimeRequire){
+        int chargeTimeRequire = Mth.clamp(20 - 4 * modifierLevel, 5, 100);
+        if (chargeTime <= chargeTimeRequire) {
             return;
         }
-        if (!(entity instanceof Player player)){
+        if (!(entity instanceof Player player)) {
             return;
         }
-        if (!player.isCreative() && tool.isBroken()){
-            return;
-        }
-
-        int interval = Mth.clamp(20 - 3 * modifierLevel,2,100);
-        if ((chargeTime - chargeTimeRequire) % interval != 0){
+        if (!player.isCreative() && tool.isBroken()) {
             return;
         }
 
-        AlexsCavesEffects.effectFrostmintSpear(entity,modifierLevel);
+        int interval = Mth.clamp(20 - 3 * modifierLevel, 2, 100);
+        if ((chargeTime - chargeTimeRequire) % interval != 0) {
+            return;
+        }
 
-        if (!player.isCreative()){
+        AlexsCavesEffects.effectFrostmintSpear(entity, modifierLevel);
+
+        if (!player.isCreative()) {
             tool.setDamage(tool.getDamage() + 4 * modifierLevel);
         }
     }
 
-    private float getSpeedFactor(IToolStackView tool, ModifierEntry modifier){
-        return 1 + modifier.getLevel()*0.4f;
+    private float getSpeedFactor(IToolStackView tool, ModifierEntry modifier) {
+        return 1 + modifier.getLevel() * 0.4f;
     }
 }

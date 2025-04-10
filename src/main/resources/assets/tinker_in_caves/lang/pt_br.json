@@ -169,6 +169,9 @@
   "modifier.tinker_in_caves.multiple_mint": "Multimenta",
   "modifier.tinker_in_caves.multiple_mint.flavor": "Empolgante!",
   "modifier.tinker_in_caves.multiple_mint.description": "Aumenta o número de balas de menta invocadas.",
+  "modifier.tinker_in_caves.caramel_armor": "Caramel Armor",
+  "modifier.tinker_in_caves.caramel_armor.flavor": "Armura reativa de estilo de caramelho",
+  "modifier.tinker_in_caves.caramel_armor.description": "Quando em ataque, geram caramelo fundido no anexo, o que pode diminuir a velocidade do inimigo, mas tenham cuidado de que às vezes ele também pode se aderir a si mesmo.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Requer melhoria da Clava Primitiva",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Requer melhoria da Clava Primitiva",

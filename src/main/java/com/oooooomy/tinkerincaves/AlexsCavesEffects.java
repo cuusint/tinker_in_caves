@@ -41,12 +41,12 @@ import net.minecraft.core.particles.ParticleOptions;
 
 public class AlexsCavesEffects {
 
-    public static void effectSeaStaff(Player player, int boltsCount ,double seekDistance,float seekAmount,boolean bubble,boolean bouncing)    {
-        Level level =  player.level();
+    public static void effectSeaStaff(Player player, int boltsCount, double seekDistance, float seekAmount, boolean bubble, boolean bouncing) {
+        Level level = player.level();
         level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), ACSoundRegistry.SEA_STAFF_CAST.get(), SoundSource.PLAYERS, 0.5F, (player.level().getRandom().nextFloat() * 0.45F + 0.75F));
         if (!level.isClientSide) {
             Entity closestValid = SeaStaffItem.getClosestLookingAtEntityFor(level, player, seekDistance);
-            for(int i = 0; i < boltsCount; i++){
+            for (int i = 0; i < boltsCount; i++) {
                 float shootRot = i == 0 ? 0 : i == 1 ? -50 : 50;
                 WaterBoltEntity bolt = new WaterBoltEntity(level, player);
                 float rot = player.yHeadRot + 45;
@@ -67,7 +67,7 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectPrimitiveClub(LivingEntity hurtEntity, LivingEntity player,float dazingProbability,int durationBase,int durationExtra,int dazingEdgeLevel)    {
+    public static void effectPrimitiveClub(LivingEntity hurtEntity, LivingEntity player, float dazingProbability, int durationBase, int durationExtra, int dazingEdgeLevel) {
         if (!hurtEntity.level().isClientSide) {
             SoundEvent soundEvent = ACSoundRegistry.PRIMITIVE_CLUB_MISS.get();
             if (hurtEntity.getRandom().nextFloat() < dazingProbability) {
@@ -94,7 +94,7 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectInkBomb(Projectile projectile, EntityHitResult hitResult,boolean glowing)    {
+    public static void effectInkBomb(Projectile projectile, EntityHitResult hitResult, boolean glowing) {
         hitResult.getEntity().hurt(projectile.damageSources().thrown(projectile, projectile.getOwner()), 0F);
         if (hitResult.getEntity() instanceof SubmarineEntity submarine) {
             submarine.setLightsOn(false);
@@ -119,7 +119,7 @@ public class AlexsCavesEffects {
         effectInkBomb(projectile, glowing);
     }
 
-    public static void effectInkBomb(Projectile projectile, boolean glowing)    {
+    public static void effectInkBomb(Projectile projectile, boolean glowing) {
         if (!projectile.level().isClientSide) {
             projectile.level().broadcastEntityEvent(projectile, (byte) 3);
             projectile.discard();
@@ -137,13 +137,13 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectOrtholance(Level level, LivingEntity livingEntity,int chargeTime,int flinging,boolean tsunami,boolean secondWave)    {
+    public static void effectOrtholance(Level level, LivingEntity livingEntity, int chargeTime, int flinging, boolean tsunami, boolean secondWave) {
         float f = 0.1F * chargeTime + flinging * 0.1F;
         Vec3 vec3 = livingEntity.getDeltaMovement().add(livingEntity.getViewVector(1.0F).normalize().multiply(f, f * 0.15F, f));
         if (chargeTime >= 10 && !level.isClientSide) {
             level.playSound(null, livingEntity, ACSoundRegistry.ORTHOLANCE_WAVE.get(), SoundSource.NEUTRAL, 4.0F, 1.0F);
             int maxWaves = chargeTime / 5;
-            if(tsunami){
+            if (tsunami) {
                 maxWaves = 5;
                 Vec3 waveCenterPos = livingEntity.position().add(vec3);
                 WaveEntity tsunamiWaveEntity = new WaveEntity(level, livingEntity);
@@ -169,7 +169,7 @@ public class AlexsCavesEffects {
                 rightWaveEntity.setYRot(-(float) (Mth.atan2(vec3.x, vec3.z) * (double) (180F / (float) Math.PI)) - 60 + 15 * wave);
                 level.addFreshEntity(rightWaveEntity);
             }
-            if(secondWave){
+            if (secondWave) {
                 int maxSecondWaves = Math.max(1, maxWaves - 1);
                 for (int wave = 0; wave < maxSecondWaves; wave++) {
                     float f1 = (float) wave / maxSecondWaves;
@@ -204,7 +204,7 @@ public class AlexsCavesEffects {
         livingEntity.addDeltaMovement(deltaMovement);
     }
 
-    public static void effectOrtholance(LivingEntity player, LivingEntity target){
+    public static void effectOrtholance(LivingEntity player, LivingEntity target) {
         Vec3 vec3 = player.getViewVector(1.0F);
         WaveEntity waveEntity = new WaveEntity(target.level(), player);
         waveEntity.setPos(player.getX(), target.getY(), player.getZ());
@@ -213,7 +213,7 @@ public class AlexsCavesEffects {
         player.level().addFreshEntity(waveEntity);
     }
 
-    public static void effectTremorsaurusGhosts(LivingEntity attacker, LivingEntity target, int levelChompingSprite)    {
+    public static void effectTremorsaurusGhosts(LivingEntity attacker, LivingEntity target, int levelChompingSprite) {
         target.setSecondsOnFire(2 + 2 * levelChompingSprite);
         DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(attacker.level());
         Vec3 between = attacker.position().add(target.position()).scale(0.5F);//todo fix position
@@ -228,7 +228,7 @@ public class AlexsCavesEffects {
         attacker.level().addFreshEntity(dinosaurSpirit);
     }
 
-    public static void effectSubterranodonGosts(LivingEntity attacker,LivingEntity target,float damage,int modifierLevel){
+    public static void effectSubterranodonGosts(LivingEntity attacker, LivingEntity target, float damage, int modifierLevel) {
         DamageSource damagesource = ACDamageTypes.causeSpiritDinosaurDamage(attacker.level().registryAccess(), attacker);
         target.setSecondsOnFire(5);
         if (target.hurt(damagesource, damage)) {
@@ -251,14 +251,14 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectResistorSlam(LivingEntity living,int timeUsed,float range,int firstHitDamage,int restHitDamage,double firstKnockBackDistance,double restKnockBackDistance,int scarlet,int azure){
+    public static void effectResistorSlam(LivingEntity living, int timeUsed, float range, int firstHitDamage, int restHitDamage, double firstKnockBackDistance, double restKnockBackDistance, int scarlet, int azure) {
         boolean firstHit = timeUsed >= 10 && timeUsed <= 12;
         Level level = living.level();
-        if(timeUsed == 10){
+        if (timeUsed == 10) {
             living.playSound(ACSoundRegistry.RESITOR_SHIELD_SLAM.get());
         }
         if (timeUsed >= 10 && timeUsed % 5 == 0) {
-            AlexsCaves.PROXY.playWorldSound(living, (byte) ((scarlet-azure)>0 ? 9 : 10));
+            AlexsCaves.PROXY.playWorldSound(living, (byte) ((scarlet - azure) > 0 ? 9 : 10));
             Vec3 particlesFrom = living.position().add(0, 0.2, 0);
             float particleMax = 2 + 2 * scarlet + 2 * azure + living.getRandom().nextInt(5);
             for (int particles = 0; particles < particleMax; particles++) {
@@ -272,10 +272,9 @@ public class AlexsCavesEffects {
             for (LivingEntity entity : living.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
                 if (!living.isAlliedTo(entity) && !entity.equals(living) && entity.distanceTo(living) <= range) {
                     entity.hurt(living.damageSources().mobAttack(living), firstHit ? firstHitDamage : restHitDamage);
-                    if ((scarlet-azure)>0) {
+                    if ((scarlet - azure) > 0) {
                         entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, entity.getX() - living.getX(), entity.getZ() - living.getZ());
-                    }
-                    else{
+                    } else {
                         entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, living.getX() - living.getX(), living.getZ() - entity.getZ());
                     }
                 }
@@ -283,7 +282,7 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectRayGun(IToolStackView tool,LivingEntity living, int timeUsed,float damage, boolean xRay,boolean gammaRay){
+    public static void effectRayGun(IToolStackView tool, LivingEntity living, int timeUsed, float damage, boolean xRay, boolean gammaRay) {
         int realStart = 15;
         float time = timeUsed < realStart ? timeUsed / (float) realStart : 1F;
         float maxDist = 25.0F * time;
@@ -318,35 +317,34 @@ public class AlexsCavesEffects {
             double particleDistance = 0.1d;
             Vec3 startPosition = getProjectileStartPosition(living);
             Vec3 direction = vec3.subtract(startPosition);
-            int particleCount = (int)(direction.length()/particleDistance);
+            int particleCount = (int) (direction.length() / particleDistance);
             direction = direction.normalize();
             Vec3 pos = startPosition;
             Vec3 delta = direction.scale(particleCount);
             particleOptions = gammaRay ? ACParticleRegistry.BLUE_HAZMAT_BREATHE.get() : ACParticleRegistry.HAZMAT_BREATHE.get();
-            for (int i=0;i<particleCount;i++)
-            {
-                pos=pos.add(delta);
-                level.addParticle(particleOptions, pos.x , pos.y , pos.z , 0, 0, 0);
+            for (int i = 0; i < particleCount; i++) {
+                pos = pos.add(delta);
+                level.addParticle(particleOptions, pos.x, pos.y, pos.z, 0, 0, 0);
             }
         }
 
         Direction blastHitDirection = null;
         Vec3 blastHitPos = null;
-        if(xRay){
+        if (xRay) {
             AABB maxAABB = living.getBoundingBox().inflate(maxDist);
             float fakeRayTraceProgress = 1.0F;
             Vec3 startClip = living.getEyePosition();
-            while(fakeRayTraceProgress < maxDist){
+            while (fakeRayTraceProgress < maxDist) {
                 startClip = startClip.add(living.getViewVector(1.0F));
                 Vec3 endClip = startClip.add(living.getViewVector(1.0F));
                 HitResult attemptedHitResult = ProjectileUtil.getEntityHitResult(level, living, startClip, endClip, maxAABB, Entity::canBeHitByProjectile);
-                if(attemptedHitResult != null){
+                if (attemptedHitResult != null) {
                     realHitResult = attemptedHitResult;
                     break;
                 }
                 fakeRayTraceProgress++;
             }
-        }else{
+        } else {
             if (realHitResult instanceof BlockHitResult blockHitResult) {
                 BlockPos pos = blockHitResult.getBlockPos();
                 BlockState state = level.getBlockState(pos);
@@ -373,25 +371,25 @@ public class AlexsCavesEffects {
                 if (!entity.is(living) && !entity.isAlliedTo(living) && !living.isAlliedTo(entity) && !living.isPassengerOfSameVehicle(entity)) {
                     boolean flag = entity instanceof TremorzillaEntity || entity.hurt(ACDamageTypes.causeRaygunDamage(level.registryAccess(), living), damage);
                     if (flag && entity instanceof LivingEntity livingEntity && !livingEntity.getType().is(ACTagRegistry.RESISTS_RADIATION)) {
-                        effectIrradiated(living,livingEntity,radiationLevel,800,gammaRay);
+                        effectIrradiated(living, livingEntity, radiationLevel, 800, gammaRay);
                     }
                 }
             }
         }
     }
 
-    public static void effectIrradiated(LivingEntity attacker, LivingEntity target,int level,int duration,boolean gammaRay){
+    public static void effectIrradiated(LivingEntity attacker, LivingEntity target, int level, int duration, boolean gammaRay) {
         if (target.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED.get(), duration, level))) {
             AlexsCaves.sendMSGToAll(new UpdateEffectVisualityEntityMessage(target.getId(), attacker.getId(), gammaRay ? 4 : 0, duration));
         }
     }
 
-    public static void effectMagnetizing(LivingEntity target,int duration){
+    public static void effectMagnetizing(LivingEntity target, int duration) {
         target.addEffect(new MobEffectInstance(ACEffectRegistry.MAGNETIZING.get(), duration, 1));
     }
 
-    public static void effectDesolateDagger(ItemStack stack,LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab){
-        for(int i = 0; i < 1 + multipleStab; i++){
+    public static void effectDesolateDagger(ItemStack stack, LivingEntity attacker, LivingEntity target, int multipleStab, int impendingStab) {
+        for (int i = 0; i < 1 + multipleStab; i++) {
             DesolateDaggerEntity daggerEntity = ACEntityRegistry.DESOLATE_DAGGER.get().create(attacker.level());
             daggerEntity.setTargetId(target.getId());
             daggerEntity.copyPosition(attacker);
@@ -401,22 +399,21 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectDarknessSuit(Entity wearer, ItemStack itemStack){
+    public static void effectDarknessSuit(Entity wearer, ItemStack itemStack) {
 
         //todo fix bugs
 
-        int light = getLight(wearer.level(),wearer.blockPosition());
-        if (wearer instanceof LivingEntity living&&light <= 10) {
+        int light = getLight(wearer.level(), wearer.blockPosition());
+        if (wearer instanceof LivingEntity living && light <= 10) {
             living.addEffect(new MobEffectInstance(ACEffectRegistry.DARKNESS_INCARNATE.get(), AlexsCaves.COMMON_CONFIG.darknessCloakFlightTime.get(), 0, false, false, false));
         } else if (wearer instanceof Player player && !wearer.level().isClientSide) {
             player.displayClientMessage(Component.translatable("item.alexscaves.cloak_of_darkness.requires_darkness"), true);
         }
     }
 
-    public static void effectFrostmintSpear(LivingEntity livingEntity, int count){
+    public static void effectFrostmintSpear(LivingEntity livingEntity, int count) {
         Level level = livingEntity.level();
-        for (int i=0;i<count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             FrostmintSpearEntity spearEntity = new FrostmintSpearEntity(level, livingEntity, null);
             spearEntity.shootFromRotation(livingEntity, livingEntity.getXRot(), livingEntity.getYRot(), 0.0F, 2.5F, 1.0F);
             spearEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
@@ -425,11 +422,11 @@ public class AlexsCavesEffects {
         }
     }
 
-    public static void effectSugarMagic(LivingEntity attacker,LivingEntity target,int scaleLevel,int lastingLevel){
-        effectSugarMagic(attacker,target.blockPosition(),scaleLevel,lastingLevel);
+    public static void effectSugarMagic(LivingEntity attacker, LivingEntity target, int scaleLevel, int lastingLevel) {
+        effectSugarMagic(attacker, target.blockPosition(), scaleLevel, lastingLevel);
     }
 
-    public static void effectSugarMagic(LivingEntity attacker,BlockPos position,int scaleLevel,int lastingLevel){
+    public static void effectSugarMagic(LivingEntity attacker, BlockPos position, int scaleLevel, int lastingLevel) {
         Level level = attacker.level();
         Vec3 ground = ACMath.getGroundBelowPosition(level, position.above().getCenter());
         SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(attacker.level());
@@ -437,21 +434,21 @@ public class AlexsCavesEffects {
         sugarStaffHexEntity.setPos(ground.x, ground.y, ground.z);
         sugarStaffHexEntity.setHexScale(1.0F + 0.25F * scaleLevel);
         level.addFreshEntity(sugarStaffHexEntity);
-        level.playSound((Player)null, position, ACSoundRegistry.SUGAR_STAFF_CAST_HEX.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
+        level.playSound((Player) null, position, ACSoundRegistry.SUGAR_STAFF_CAST_HEX.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
         sugarStaffHexEntity.setLifespan(100 + 60 * lastingLevel);
     }
 
-    public static void effectSugarStaff(LivingEntity livingEntity,int multipleMintLevel,boolean peppermintPunting){
+    public static void effectSugarStaff(LivingEntity livingEntity, int multipleMintLevel, boolean peppermintPunting) {
         Level level = livingEntity.level();
         int spawnIn = 3 + multipleMintLevel;
         for (int i = 0; i < spawnIn; i++) {
             SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(level);
             spinningPeppermintEntity.setPos(livingEntity.position().add(0, livingEntity.getBbHeight() * 0.45F, 0));
-            if(peppermintPunting){
+            if (peppermintPunting) {
                 spinningPeppermintEntity.setStraight(true);
                 spinningPeppermintEntity.setYRot(180 + livingEntity.getYHeadRot() + (i - 1) * 15);
                 spinningPeppermintEntity.setSpinSpeed(8F);
-            }else{
+            } else {
                 spinningPeppermintEntity.setStraight(false);
                 spinningPeppermintEntity.setYRot(180 + (i - 1) * 30);
                 spinningPeppermintEntity.setSpinSpeed(12F);
@@ -462,15 +459,32 @@ public class AlexsCavesEffects {
             spinningPeppermintEntity.setLifespan(80);
             level.addFreshEntity(spinningPeppermintEntity);
         }
-        level.playSound((Player)null, livingEntity.blockPosition(), ACSoundRegistry.SUGAR_STAFF_CAST_PEPPERMINT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        level.playSound((Player) null, livingEntity.blockPosition(), ACSoundRegistry.SUGAR_STAFF_CAST_PEPPERMINT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 
-    private static Vec3 getProjectileStartPosition(LivingEntity entity)    {
+    public static void effectCaramelArmor(LivingEntity entity, LivingEntity damageSource, int modifierLevel) {
+        int i = 1 + modifierLevel;
+        Vec3 entityPos = entity.position();
+        Vec3 direction = damageSource.position().subtract(entity.position()).normalize();
+        for (int j = 0; j < i; ++j) {
+            float f1 = damageSource.getRandom().nextFloat() * 0.5F + 0.65F;
+            double f2 = direction.x * i * 0.5F * f1;
+            double f3 = direction.z * i * 0.5F * f1;
+            MeltedCaramelEntity meltedCaramel = ACEntityRegistry.MELTED_CARAMEL.get().create(damageSource.level());
+            Vec3 vec3 = new Vec3(entityPos.x + f2, entityPos.y + 0.02d, entityPos.z + f3);
+            meltedCaramel.setPos(ACMath.getGroundBelowPosition(damageSource.level(), vec3));
+            meltedCaramel.setDespawnsIn(40 + (i - 1) * 40);
+            meltedCaramel.setDeltaMovement(damageSource.getDeltaMovement().multiply(-1.0F, 0.0F, -1.0F));
+            damageSource.level().addFreshEntity(meltedCaramel);
+        }
+    }
+
+    private static Vec3 getProjectileStartPosition(LivingEntity entity) {
         float rot = entity.yHeadRot + 45;
         double x = entity.getX() - (double) (entity.getBbWidth()) * 1.1F * (double) Mth.sin(rot * ((float) Math.PI / 180F));
         double y = entity.getEyeY() - (double) 0.4F;
         double z = entity.getZ() + (double) (entity.getBbWidth()) * 1.1F * (double) Mth.cos(rot * ((float) Math.PI / 180F));
-        return new Vec3(x,y,z);
+        return new Vec3(x, y, z);
     }
 
     private static int getLight(Level level, BlockPos pos) {

@@ -16,21 +16,22 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 
 public class GlowInkBomb extends NoLevelsModifier implements ProjectileHitModifierHook {
-    public GlowInkBomb(){}
+    public GlowInkBomb() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder){
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
 
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        AlexsCavesEffects.effectInkBomb(projectile,hit,true);
+        AlexsCavesEffects.effectInkBomb(projectile, hit, true);
         return false;
     }
 
     public void onProjectileHitBlock(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        AlexsCavesEffects.effectInkBomb(projectile,true);
+        AlexsCavesEffects.effectInkBomb(projectile, true);
     }
 }
 

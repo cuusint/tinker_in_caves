@@ -14,25 +14,26 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
 public class DesolateDagger extends NoLevelsModifier implements MeleeHitModifierHook {
-    public DesolateDagger(){}
+    public DesolateDagger() {
+    }
 
     @Override
-    protected void registerHooks(ModuleHookMap.Builder builder){
+    protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
         builder.addHook(this, ModifierHooks.MELEE_HIT);
     }
 
     @Override
-    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt){
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity attacker = context.getAttacker();
         LivingEntity target = context.getLivingTarget();
-        if (attacker==null||target==null){
+        if (attacker == null || target == null) {
             return;
         }
-        ItemStack itemStack=context.getPlayerAttacker().getItemInHand(context.getHand());
+        ItemStack itemStack = context.getPlayerAttacker().getItemInHand(context.getHand());
         int multipleStab = tool.getModifierLevel(tryParse("tinker_in_caves:multiple_stab"));
         int impendingStab = tool.getModifierLevel(tryParse("tinker_in_caves:impending_stab"));
 
-        AlexsCavesEffects.effectDesolateDagger(itemStack,attacker,target,multipleStab,impendingStab);
+        AlexsCavesEffects.effectDesolateDagger(itemStack, attacker, target, multipleStab, impendingStab);
     }
 }

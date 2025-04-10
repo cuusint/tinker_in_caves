@@ -14,19 +14,20 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(TinkerInCaves.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TinkerInCaves
-{
+public class TinkerInCaves {
     public static final String MODID = "tinker_in_caves";
 
     @SubscribeEvent
     public static void gatherData(final GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        if(event.includeClient()){}
-        if(event.includeServer()){}
+        if (event.includeClient()) {
+        }
+        if (event.includeServer()) {
+        }
     }
 
-    public TinkerInCaves(FMLJavaModLoadingContext context){
+    public TinkerInCaves(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
         TinkerInCavesFluids.FLUIDS.register(modEventBus);
@@ -35,7 +36,7 @@ public class TinkerInCaves
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public TinkerInCaves(){
+    public TinkerInCaves() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         TinkerInCavesFluids.FLUIDS.register(modEventBus);
         TinkerInCavesModifiers.MODIFIERS.register(modEventBus);
@@ -44,10 +45,10 @@ public class TinkerInCaves
     }
 
     public static ResourceLocation getResource(String name) {
-        return getResource(MODID,name);
+        return getResource(MODID, name);
     }
 
-    public static ResourceLocation getResource(String modId,String name) {
+    public static ResourceLocation getResource(String modId, String name) {
         return new ResourceLocation(modId, name);
     }
 }

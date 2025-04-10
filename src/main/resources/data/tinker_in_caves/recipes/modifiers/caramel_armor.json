@@ -1,0 +1,44 @@
+{
+  "type": "tconstruct:modifier",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "alexscaves:caramel",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:caramel_apple",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:caramel",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:caramel",
+      "amount_needed": 1
+    },
+    {
+      "item": "alexscaves:caramel",
+      "amount_needed": 1
+    }
+  ],
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/armor/chestplate"
+    }
+  ],
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:caramel_armor",
+  "level": {
+    "max": 3
+  }
+}
