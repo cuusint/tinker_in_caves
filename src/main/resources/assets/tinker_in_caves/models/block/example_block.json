@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "tinker_in_caves:block/example_block"
-  }
-}

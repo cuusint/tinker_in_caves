@@ -1,5 +1,5 @@
 {
-"_translators_comment": "Traduzido por Sr.Xlr11",
+  "_translators_comment": "Traduzido por Sr.Xlr11",
 
   "material.tinker_in_caves.tough_hide": "Pele Resistente",
   "material.tinker_in_caves.heavy_bone": "Osso Pesado",
@@ -154,9 +154,9 @@
   "modifier.tinker_in_caves.sugar_magic": "Magia Doce",
   "modifier.tinker_in_caves.sugar_magic.flavor": "Querido!",
   "modifier.tinker_in_caves.sugar_magic.description": "Invoca um hex mágico que causa dano contínuo e repele inimigos. Ao final, o hex explode.",
-  "modifier.tinker_in_caves.h high_hex": "Hex Gigante",
-  "modifier.tinker_in_caves.h high_hex.flavor": "Está crescendo!",
-  "modifier.tinker_in_caves.h high_hex.description": "Aumenta o tamanho do hex mágico.",
+  "modifier.tinker_in_caves.humungous_hex": "Hex Gigante",
+  "modifier.tinker_in_caves.humungous_hex.flavor": "Está crescendo!",
+  "modifier.tinker_in_caves.humungous_hex.description": "Aumenta o tamanho do hex mágico.",
   "modifier.tinker_in_caves.spell_lasting": "Feitiço Duradouro",
   "modifier.tinker_in_caves.spell_lasting.flavor": "Vai durar mais!",
   "modifier.tinker_in_caves.spell_lasting.description": "Aumenta a duração do hex mágico.",
@@ -188,7 +188,7 @@
   "modifier.tinker_in_caves.ray_efficiency.requirements": "Requer melhoria do Arma de Raios",
   "modifier.tinker_in_caves.multiple_stab.requirements": "Requer melhoria da Adaga Desolada",
   "modifier.tinker_in_caves.impending_stab.requirements": "Requer melhoria da Adaga Desolada",
-  "modifier.tinker_in_caves.h high_hex.requirements": "Requer melhoria da Magia Doce",
+  "modifier.tinker_in_caves.humungous_hex.requirements": "Requer melhoria da Magia Doce",
   "modifier.tinker_in_caves.spell_lasting.requirements": "Requer melhoria da Magia Doce",
   "modifier.tinker_in_caves.peppermint_punting.requirements": "Requer melhoria do Cajado de Açúcar",
   "modifier.tinker_in_caves.multiple_mint.requirements": "Requer melhoria do Cajado de Açúcar"

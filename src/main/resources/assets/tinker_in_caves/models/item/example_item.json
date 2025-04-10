@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "tinker_in_caves:item/example_item"
-  }
-}
