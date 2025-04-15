@@ -10,18 +10,19 @@
     {
       "item": "alexscaves:atlatitan_egg",
       "amount_needed": 1
-    },
-    {
-      "item": "alexscaves:primitive_club",
-      "amount_needed": 1
     }
   ],
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee/primary"
+      "tag": "tconstruct:modifiable/staffs"
     }
   ],
-  "allow_crystal": false,
-  "result": "tinker_in_caves:dazing_sweep",
-  "level": 3
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": "tinker_in_caves:atlatitan_trample",
+  "level": {
+    "max" : 4
+  }
 }

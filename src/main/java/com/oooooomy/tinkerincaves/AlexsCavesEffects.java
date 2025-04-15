@@ -5,6 +5,7 @@ import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.*;
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
+import com.github.alexmodguy.alexscaves.server.entity.util.MovingBlockData;
 import com.github.alexmodguy.alexscaves.server.item.SeaStaffItem;
 import com.github.alexmodguy.alexscaves.server.message.UpdateEffectVisualityEntityMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
@@ -34,10 +35,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import net.minecraft.core.particles.ParticleOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlexsCavesEffects {
 
@@ -275,7 +281,7 @@ public class AlexsCavesEffects {
                     if ((scarlet - azure) > 0) {
                         entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, entity.getX() - living.getX(), entity.getZ() - living.getZ());
                     } else {
-                        entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, living.getX() - living.getX(), living.getZ() - entity.getZ());
+                        entity.knockback(firstHit ? firstKnockBackDistance : restKnockBackDistance, living.getX() - entity.getX(), living.getZ() - entity.getZ());
                     }
                 }
             }
@@ -476,6 +482,60 @@ public class AlexsCavesEffects {
             meltedCaramel.setDespawnsIn(40 + (i - 1) * 40);
             meltedCaramel.setDeltaMovement(damageSource.getDeltaMovement().multiply(-1.0F, 0.0F, -1.0F));
             damageSource.level().addFreshEntity(meltedCaramel);
+        }
+    }
+
+    private static final int STOMP_CRUSH_HEIGHT = 6;
+
+    public static void effectAtlatitanTrample(LivingEntity living, int width, float dropChance) {
+        BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
+        int feetY = living.getBlockY();
+        BlockPos center = new BlockPos(living.getBlockX(), feetY, living.getBlockZ());
+        Level level = living.level();
+        level.playSound(null, living, ACSoundRegistry.ATLATITAN_HURT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        level.playSound(null, living, ACSoundRegistry.ATLATITAN_STOMP.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+        for (int y = 0; y <= STOMP_CRUSH_HEIGHT; y++) {
+            List<MovingBlockData> dataPerYLevel = new ArrayList<>();
+            int currentBlocksInChunk = 0;
+            for (int i = -width - 1; i <= width + 1; i++) {
+                for (int j = -width - 1; j <= width + 1; j++) {
+                    mutableBlockPos.set(living.getBlockX() + i, feetY + y, living.getBlockZ() + j);
+                    double dist = Math.sqrt(mutableBlockPos.distSqr(center));
+                    if (dist <= width && level.isLoaded(mutableBlockPos)) {
+                        BlockState state = level.getBlockState(mutableBlockPos);
+                        if (state.is(ACTagRegistry.UNMOVEABLE) || state.isAir() || state.canBeReplaced() || state.getBlock().getExplosionResistance() > AlexsCaves.COMMON_CONFIG.atlatitanMaxExplosionResistance.get()) {
+                            continue;
+                        } else {
+                            BlockEntity te = level.getBlockEntity(mutableBlockPos);
+                            BlockPos offset = mutableBlockPos.immutable().subtract(center);
+                            MovingBlockData data = new MovingBlockData(state, state.getShape(level, mutableBlockPos), offset, te == null ? null : te.saveWithoutMetadata());
+                            dataPerYLevel.add(data);
+
+                            if (currentBlocksInChunk < 16) {
+                                currentBlocksInChunk++;
+                            } else {
+                                CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level);
+                                crushed.moveTo(Vec3.atCenterOf(center.above(y)));
+                                crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
+                                crushed.setPlacementCooldown(10);
+                                crushed.setDropChance(dropChance);
+                                level.addFreshEntity(crushed);
+                                dataPerYLevel.clear();
+                                currentBlocksInChunk = 0;
+                            }
+                            level.setBlockAndUpdate(mutableBlockPos, Blocks.AIR.defaultBlockState());
+                        }
+                    }
+                }
+            }
+            if (!dataPerYLevel.isEmpty()) {
+                CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level);
+                crushed.moveTo(Vec3.atCenterOf(center.above(y)));
+                crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
+                crushed.setDropChance(dropChance);
+                crushed.setPlacementCooldown(1);
+                level.addFreshEntity(crushed);
+            }
         }
     }
 

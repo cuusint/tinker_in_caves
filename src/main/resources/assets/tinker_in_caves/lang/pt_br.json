@@ -171,7 +171,10 @@
   "modifier.tinker_in_caves.multiple_mint.description": "Aumenta o número de balas de menta invocadas.",
   "modifier.tinker_in_caves.caramel_armor": "Caramel Armor",
   "modifier.tinker_in_caves.caramel_armor.flavor": "Armura reativa de estilo de caramelho",
-  "modifier.tinker_in_caves.caramel_armor.description": "Quando em ataque, geram caramelo fundido no anexo, o que pode diminuir a velocidade do inimigo, mas tenham cuidado de que às vezes ele também pode se aderir a si mesmo.",
+  "modifier.tinker_in_caves.caramel_armor.description": "Quando submetidos a ataque, geram caramelos fundidos próximos, o que pode diminuir a velocidade do inimigo, mas tenham cuidado de que às vezes ele também pode aderir a si mesmo.",
+  "modifier.tinker_in_caves.atlatitan_trample": "Atlatitan Trample",
+  "modifier.tinker_in_caves.atlatitan_trample.flavor": "Leveler de terreno!",
+  "modifier.tinker_in_caves.atlatitan_trample.description": "Convertem os blocos ao redor que são mais altos que seus próprios pés em gotas.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Requer melhoria da Clava Primitiva",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Requer melhoria da Clava Primitiva",

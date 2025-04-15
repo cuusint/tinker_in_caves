@@ -169,7 +169,10 @@
   "modifier.tinker_in_caves.multiple_mint.description": "Increase the number of summoned mint candies.",
   "modifier.tinker_in_caves.caramel_armor": "Caramel Armor",
   "modifier.tinker_in_caves.caramel_armor.flavor": "Caramel style reactive armor",
-  "modifier.tinker_in_caves.caramel_armor.description": "When under attack, generate molten caramel in the attachment, which can slow down the enemy's speed, but be careful that sometimes it may also stick to oneself.",
+  "modifier.tinker_in_caves.caramel_armor.description": "When under attack, generate molten caramel nearby, which can slow down the enemy's speed, but be careful that sometimes it may also stick to oneself.",
+  "modifier.tinker_in_caves.atlatitan_trample": "Atlatitan Trample",
+  "modifier.tinker_in_caves.atlatitan_trample.flavor": "Terrain leveler!",
+  "modifier.tinker_in_caves.atlatitan_trample.description": "Turn the surrounding blocks that are higher than your own feet into drops.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

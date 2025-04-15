@@ -10,11 +10,12 @@ import net.minecraft.world.item.UseAnim;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+
+import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
 
 public class ResistorSlam extends Modifier implements GeneralInteractionModifierHook {
     public ResistorSlam() {
@@ -55,9 +56,9 @@ public class ResistorSlam extends Modifier implements GeneralInteractionModifier
     @Override
     public void onUsingTick(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
         int modifierLevel = modifier.getLevel();
-        int modifierLevelHeavySlam = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:heavy_slam"));
-        int modifierLevelScarlet = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:scarlet_shield"));
-        int modifierLevelAzure = tool.getModifierLevel(ModifierId.tryParse("tinker_in_caves:azure_shield"));
+        int modifierLevelHeavySlam = tool.getModifierLevel(tryParse("tinker_in_caves:heavy_slam"));
+        int modifierLevelScarlet = tool.getModifierLevel(tryParse("tinker_in_caves:scarlet_shield"));
+        int modifierLevelAzure = tool.getModifierLevel(tryParse("tinker_in_caves:azure_shield"));
 
         float range = 1 + 2 * modifierLevel + modifierLevelHeavySlam + modifierLevelAzure + modifierLevelScarlet;
         double hitDamage = 0.2d * entity.getAttributeValue(Attributes.ATTACK_DAMAGE) + 2 * modifierLevel + 4 * modifierLevelHeavySlam + modifierLevelAzure + modifierLevelScarlet;
@@ -71,6 +72,6 @@ public class ResistorSlam extends Modifier implements GeneralInteractionModifier
                 knockBackDistance,
                 knockBackDistance / 4d,
                 modifierLevelScarlet,
-                modifierLevelScarlet);
+                modifierLevelAzure);
     }
 }
