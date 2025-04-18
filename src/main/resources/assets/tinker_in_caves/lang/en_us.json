@@ -179,6 +179,12 @@
   "modifier.tinker_in_caves.scarlet_magnet": "Scarlet Magnet",
   "modifier.tinker_in_caves.scarlet_magnet.flavor": "Repulsion",
   "modifier.tinker_in_caves.scarlet_magnet.description": "Exclude enemies around the target. If there are also Azure Magnet entries on the tool, there will be no exclusion effect, but it will increase the tool's damage.",
+  "modifier.tinker_in_caves.azure_magnet_armor": "Azure Magnet Armor",
+  "modifier.tinker_in_caves.azure_magnet_armor.flavor": "Gravitation",
+  "modifier.tinker_in_caves.azure_magnet_armor.description": "When damaged, attract surrounding enemies to your side. If there is also a Scarlet Magnet Armor entry on the armor, there will be no attraction effect, but it will increase the toughness of the armor.",
+  "modifier.tinker_in_caves.scarlet_magnet_armor": "Scarlet Magnet Armor",
+  "modifier.tinker_in_caves.scarlet_magnet_armor.flavor": "Repulsion",
+  "modifier.tinker_in_caves.scarlet_magnet_armor.description": "When damaged, repel surrounding enemies. If there are also Azure Magnet Armor entry on the armor, there will be no repulsion effect, but it will increase the armor value of the armor.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

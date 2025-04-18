@@ -18,6 +18,8 @@ public class TinkerInCavesModifiers {
     public static final StaticModifier<Magnetizing> magnetizing = MODIFIERS.register("magnetizing", Magnetizing::new);
     public static final StaticModifier<AzureMagnet> azure_magnet = MODIFIERS.register("azure_magnet", AzureMagnet::new);
     public static final StaticModifier<ScarletMagnet> scarlet_magnet = MODIFIERS.register("scarlet_magnet", ScarletMagnet::new);
+    public static final StaticModifier<AzureMagnetArmor> azure_magnet_armor = MODIFIERS.register("azure_magnet_armor", AzureMagnetArmor::new);
+    public static final StaticModifier<ScarletMagnetArmor> scarlet_magnet_armor = MODIFIERS.register("scarlet_magnet_armor", ScarletMagnetArmor::new);
 
     public static final StaticModifier<PrimordialStrength> primordial_strength = MODIFIERS.register("primordial_strength", PrimordialStrength::new);
     public static final StaticModifier<PrimitiveClub> primitive_club = MODIFIERS.register("primitive_club", PrimitiveClub::new);

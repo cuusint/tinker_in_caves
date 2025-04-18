@@ -22,8 +22,6 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import javax.annotation.Nullable;
 
-import static slimeknights.tconstruct.library.modifiers.ModifierId.*;
-
 public class AzureMagnet extends Modifier implements ConditionalStatModifierHook, MeleeHitModifierHook, ProjectileHitModifierHook {
     public AzureMagnet() {
     }
@@ -90,6 +88,6 @@ public class AzureMagnet extends Modifier implements ConditionalStatModifierHook
     }
 
     private double getKnockBackDistance(LivingEntity attacker, float modifierLevel) {
-        return attacker.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 0.1d * modifierLevel;
+        return attacker.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 0.3d * modifierLevel;
     }
 }

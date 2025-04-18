@@ -179,6 +179,12 @@
   "modifier.tinker_in_caves.scarlet_magnet": "赤磁",
   "modifier.tinker_in_caves.scarlet_magnet.flavor": "斥力",
   "modifier.tinker_in_caves.scarlet_magnet.description": "将目标周围的敌人排斥开来，若工具上同时有青磁词条，则没有排斥效果，但会增加工具的伤害。",
+  "modifier.tinker_in_caves.azure_magnet_armor": "青磁甲",
+  "modifier.tinker_in_caves.azure_magnet_armor.flavor": "引力",
+  "modifier.tinker_in_caves.azure_magnet_armor.description": "受到伤害时将周围的敌人吸引至身旁，若护甲上同时有赤磁甲词条，则没有吸引效果，但会增加护甲的韧性。",
+  "modifier.tinker_in_caves.scarlet_magnet_armor": "赤磁甲",
+  "modifier.tinker_in_caves.scarlet_magnet_armor.flavor": "斥力",
+  "modifier.tinker_in_caves.scarlet_magnet_armor.description": "受到伤害时将周围的敌人排斥开来，若护甲上同时有青磁甲词条，则没有排斥效果，但会增加护甲的护甲值。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

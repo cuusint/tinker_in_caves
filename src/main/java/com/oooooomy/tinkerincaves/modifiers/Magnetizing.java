@@ -1,15 +1,19 @@
 package com.oooooomy.tinkerincaves.modifiers;
 
 import com.oooooomy.tinkerincaves.AlexsCavesEffects;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileHitModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
@@ -17,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-public class Magnetizing extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
+public class Magnetizing extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook, OnAttackedModifierHook {
     public Magnetizing() {
     }
 
@@ -46,6 +50,15 @@ public class Magnetizing extends Modifier implements MeleeHitModifierHook, Proje
         int duration = getMobEffectDuration(modifier);
         AlexsCavesEffects.effectMagnetizing(target, duration);
         return false;
+    }
+
+    @Override
+    public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext equipmentContext, EquipmentSlot equipmentSlot, DamageSource damageSource, float amount, boolean isDirectDamage) {
+        if (!(damageSource.getEntity() instanceof LivingEntity attacker) ) {
+            return;
+        }
+        int duration = getMobEffectDuration(modifier);
+        AlexsCavesEffects.effectMagnetizing(attacker, duration);
     }
 
     private int getMobEffectDuration(ModifierEntry modifier) {
