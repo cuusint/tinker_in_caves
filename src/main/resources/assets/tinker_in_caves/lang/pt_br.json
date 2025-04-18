@@ -190,6 +190,12 @@
   "modifier.tinker_in_caves.scarlet_magnet_armor": "Scarlet Magnet Armor",
   "modifier.tinker_in_caves.scarlet_magnet_armor.flavor": "Repulsão",
   "modifier.tinker_in_caves.scarlet_magnet_armor.description": "Quando danificados, repelem os inimigos ao redor. Se também há entrada do Armor Azure Magnet na armadura, não haverá efeito de repulsão, mas aumentará o valor da armadura.",
+  "modifier.tinker_in_caves.favorite_gummy_bear": "Oso Gummi Favorito",
+  "modifier.tinker_in_caves.favorite_gummy_bear.flavor": "Entrega os doces",
+  "modifier.tinker_in_caves.favorite_gummy_bear.description": "Há uma oportunidade de deixar Jelly Beans quando matar inimigos.",
+  "modifier.tinker_in_caves.sweety": "Mel",
+  "modifier.tinker_in_caves.sweety.flavor": "♥~♥~Mel~♥~♥",
+  "modifier.tinker_in_caves.sweety.description": "Dois e deliciosos, todos não podem evitar dar-lhes canos doces.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Requer melhoria da Clava Primitiva",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Requer melhoria da Clava Primitiva",

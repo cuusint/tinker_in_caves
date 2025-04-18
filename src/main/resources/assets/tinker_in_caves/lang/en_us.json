@@ -188,6 +188,12 @@
   "modifier.tinker_in_caves.scarlet_magnet_armor": "Scarlet Magnet Armor",
   "modifier.tinker_in_caves.scarlet_magnet_armor.flavor": "Repulsion",
   "modifier.tinker_in_caves.scarlet_magnet_armor.description": "When damaged, repel surrounding enemies. If there are also Azure Magnet Armor entry on the armor, there will be no repulsion effect, but it will increase the armor value of the armor.",
+  "modifier.tinker_in_caves.favorite_gummy_bear": "Favorite Gummy Bear",
+  "modifier.tinker_in_caves.favorite_gummy_bear.flavor": "Hand over the candy",
+  "modifier.tinker_in_caves.favorite_gummy_bear.description": "There is a chance to drop Jelly Beans when killing enemies.",
+  "modifier.tinker_in_caves.sweety": "Sweety",
+  "modifier.tinker_in_caves.sweety.flavor": "♥~♥~Sweety~♥~♥",
+  "modifier.tinker_in_caves.sweety.description": "Sweet and delicious, everyone can't help but give you candy canes.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

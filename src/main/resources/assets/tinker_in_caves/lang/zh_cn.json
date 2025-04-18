@@ -188,6 +188,12 @@
   "modifier.tinker_in_caves.scarlet_magnet_armor": "赤磁甲",
   "modifier.tinker_in_caves.scarlet_magnet_armor.flavor": "斥力",
   "modifier.tinker_in_caves.scarlet_magnet_armor.description": "受到伤害时将周围的敌人排斥开来，若护甲上同时有青磁甲词条，则没有排斥效果，但会增加护甲的护甲值。",
+  "modifier.tinker_in_caves.favorite_gummy_bear": "最爱软糖熊",
+  "modifier.tinker_in_caves.favorite_gummy_bear.flavor": "交出糖果",
+  "modifier.tinker_in_caves.favorite_gummy_bear.description": "击杀敌人时有概率掉落糖豆。",
+  "modifier.tinker_in_caves.sweety": "甜心",
+  "modifier.tinker_in_caves.sweety.flavor": "♥~♥~甜心~♥~♥",
+  "modifier.tinker_in_caves.sweety.description": "甜甜的很好吃，所有人都会忍不住给你拐杖糖。",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "要求 原始大棒 升级",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "要求 原始大棒 升级",

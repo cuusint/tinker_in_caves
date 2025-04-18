@@ -3,6 +3,10 @@
     {
       "name": "tconstruct:cultivated",
       "level": 1
+    },
+    {
+      "name": "tinker_in_caves:favorite_gummy_bear",
+      "level": 1
     }
   ]
 }
