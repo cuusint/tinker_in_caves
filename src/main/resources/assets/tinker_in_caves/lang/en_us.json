@@ -173,6 +173,12 @@
   "modifier.tinker_in_caves.atlatitan_trample": "Atlatitan Trample",
   "modifier.tinker_in_caves.atlatitan_trample.flavor": "Terrain leveler!",
   "modifier.tinker_in_caves.atlatitan_trample.description": "Turn the surrounding blocks that are higher than your own feet into drops.",
+  "modifier.tinker_in_caves.azure_magnet": "Azure Magnet",
+  "modifier.tinker_in_caves.azure_magnet.flavor": "Gravitation",
+  "modifier.tinker_in_caves.azure_magnet.description": "Attract enemies around the target to its surroundings. If there are both Scarlet Magnet entries on the tool, there will be no attraction effect, but it will increase the speed of the tool.",
+  "modifier.tinker_in_caves.scarlet_magnet": "Scarlet Magnet",
+  "modifier.tinker_in_caves.scarlet_magnet.flavor": "Repulsion",
+  "modifier.tinker_in_caves.scarlet_magnet.description": "Exclude enemies around the target. If there are also Azure Magnet entries on the tool, there will be no exclusion effect, but it will increase the tool's damage.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Require Primitive Club upgrade",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Require Primitive Club upgrade",

@@ -8,5 +8,45 @@
       "name": "tconstruct:magnetic",
       "level": 1
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "tinker_in_caves:magnetizing",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:magnetic",
+        "level": 1
+      },
+      {
+        "name": "tinker_in_caves:azure_magnet",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinker_in_caves:magnetizing",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:magnetic",
+        "level": 1
+      },
+      {
+        "name": "tinker_in_caves:azure_magnet",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "tinker_in_caves:magnetizing",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:magnetic",
+        "level": 1
+      }
+    ]
+  }
 }

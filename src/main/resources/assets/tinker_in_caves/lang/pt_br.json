@@ -175,6 +175,12 @@
   "modifier.tinker_in_caves.atlatitan_trample": "Atlatitan Trample",
   "modifier.tinker_in_caves.atlatitan_trample.flavor": "Leveler de terreno!",
   "modifier.tinker_in_caves.atlatitan_trample.description": "Convertem os blocos ao redor que são mais altos que seus próprios pés em gotas.",
+  "modifier.tinker_in_caves.azure_magnet": "Magneto Azuro",
+  "modifier.tinker_in_caves.azure_magnet.flavor": "Gravitação",
+  "modifier.tinker_in_caves.azure_magnet.description": "Atira inimigos ao redor do alvo para seu redor. Se há entradas Scarlet Magnet na ferramenta, não haverá efeito de atração, mas aumentará a velocidade da ferramenta.",
+  "modifier.tinker_in_caves.scarlet_magnet": "Scarlet Magnet",
+  "modifier.tinker_in_caves.scarlet_magnet.flavor": "Repulsão",
+  "modifier.tinker_in_caves.scarlet_magnet.description": "Excluírem inimigos ao redor do alvo. Se também há entradas de Magneto Azuro na ferramenta, não haverá efeito de exclusão, mas aumentará o dano da ferramenta.",
 
   "modifier.tinker_in_caves.primitive_club.requirements": "Requer melhoria da Clava Primitiva",
   "modifier.tinker_in_caves.tremorsaurus.requirements": "Requer melhoria da Clava Primitiva",

@@ -30,10 +30,6 @@ public class Magnetizing extends Modifier implements MeleeHitModifierHook, Proje
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        int modifierLevel = modifier.getLevel();
-        if (modifierLevel <= 0) {
-            return;
-        }
         LivingEntity target = context.getLivingTarget();
         if (target == null) {
             return;
@@ -44,10 +40,6 @@ public class Magnetizing extends Modifier implements MeleeHitModifierHook, Proje
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        int modifierLevel = modifier.getLevel();
-        if (modifierLevel <= 0) {
-            return false;
-        }
         if (target == null || attacker == null) {
             return false;
         }

@@ -14,6 +14,18 @@
       "melee_attack": 2.8
     },
 
+    "tconstruct:limb": {
+      "durability": 600,
+      "draw_speed": 0.05,
+      "velocity": 0.05,
+      "accuracy": 0.1
+    },
+    "tconstruct:grip": {
+      "durability": 0.1,
+      "accuracy": 0.1,
+      "melee_damage": 2.6
+    },
+
     "tconstruct:maille": {},
     "tconstruct:plating_helmet": {
       "armor": 3.0,

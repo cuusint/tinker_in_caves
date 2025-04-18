@@ -3,7 +3,7 @@ package com.oooooomy.tinkerincaves.registers;
 import com.oooooomy.tinkerincaves.TinkerInCaves;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
-public class ToxicCavesMaterials {
+public class TinkerInCavesMaterials {
     public static MaterialId createMaterial(String name) {
         return new MaterialId(TinkerInCaves.getResource(name));
     }

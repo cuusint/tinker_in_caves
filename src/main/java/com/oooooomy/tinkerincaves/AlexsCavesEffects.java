@@ -485,6 +485,37 @@ public class AlexsCavesEffects {
         }
     }
 
+    public static void effectScarletAndAzureMagnet(LivingEntity attacker, LivingEntity target, float modifierLevel, boolean scarletOrAzure, double knockBackDistance) {
+        float range = 1 + 2 * modifierLevel;
+        Level level = target.level();
+        AlexsCaves.PROXY.playWorldSound(target, (byte) (scarletOrAzure ? 9 : 10));
+        Vec3 particlesFrom = target.position().add(0, 0.2, 0);
+        float particleMax = 2 + 2 * modifierLevel + target.getRandom().nextInt(5);
+        for (int particles = 0; particles < particleMax; particles++) {
+            Vec3 vec3 = new Vec3((target.getRandom().nextFloat() - 0.5) * 0.3F, (target.getRandom().nextFloat() - 0.5) * 0.3F, range * 0.5F + range * 0.5F * target.getRandom().nextFloat()).yRot((float) ((particles / particleMax) * Math.PI * 2)).add(particlesFrom);
+            if (scarletOrAzure) {
+                level.addParticle(ACParticleRegistry.SCARLET_SHIELD_LIGHTNING.get(), vec3.x, vec3.y, vec3.z, particlesFrom.x, particlesFrom.y, particlesFrom.z);
+            } else {
+                level.addParticle(ACParticleRegistry.AZURE_SHIELD_LIGHTNING.get(), particlesFrom.x, particlesFrom.y, particlesFrom.z, vec3.x, vec3.y, vec3.z);
+            }
+        }
+        AABB bashBox = target.getBoundingBox().inflate(range, 1, range);
+        int effectDuration = (int) (10 + 5 * modifierLevel);
+        for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, bashBox)) {
+            if (!attacker.isAlliedTo(entity) && !entity.equals(attacker) && !entity.equals(target) && entity.distanceTo(target) <= range) {
+                if (entity.hasEffect(ACEffectRegistry.MAGNETIZING.get())) {
+                    if (scarletOrAzure) {
+                        entity.knockback(knockBackDistance, entity.getX() - target.getX(), entity.getZ() - target.getZ());
+                    } else {
+                        entity.knockback(knockBackDistance, target.getX() - entity.getX(), target.getZ() - entity.getZ());
+                    }
+                } else {
+                    effectMagnetizing(entity, effectDuration);
+                }
+            }
+        }
+    }
+
     private static final int STOMP_CRUSH_HEIGHT = 6;
 
     public static void effectAtlatitanTrample(LivingEntity living, int width, float dropChance) {
