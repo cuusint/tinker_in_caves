@@ -24,8 +24,7 @@
       "tconstruct:binding",
       "tconstruct:repair_kit",
 
-      "tconstruct:maille",
-      "tconstruct:armor_maille"
+      "tconstruct:maille"
     ],
     "ignoreMaterialStats": false
   }

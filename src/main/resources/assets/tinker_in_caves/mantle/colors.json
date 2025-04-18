@@ -9,7 +9,10 @@
     "azure_neodymium":"#1936B9",
     "polymer_plate":"#DAE7EB",
     "dark_tatters":"#151515",
-    "shadow_silk":"#151515"
+    "shadow_silk":"#151515",
+    "thorn_wood":"#2E271F",
+    "licoroot_vine":"#671180",
+    "candy_cane":"#FC3E55"
   },
   "modifier.tinker_in_caves": {
     "primordial_strength":"#B91919",

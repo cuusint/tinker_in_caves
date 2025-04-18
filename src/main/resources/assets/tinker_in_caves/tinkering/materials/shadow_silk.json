@@ -19,8 +19,7 @@
       }
     },
     "supportedStats": [
-      "tconstruct:maille",
-      "tconstruct:armor_maille"
+      "tconstruct:maille"
     ],
     "ignoreMaterialStats": false
   }

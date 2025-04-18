@@ -19,7 +19,10 @@ public class TinkerInCavesMaterials {
     public static final MaterialId scarlet_neodymium = createMaterial("scarlet_neodymium");
     public static final MaterialId azure_neodymium = createMaterial("azure_neodymium");
 
-    public static final MaterialId dark_tatters = createMaterial("dark_tatters.json");
+    public static final MaterialId dark_tatters = createMaterial("dark_tatters");
     public static final MaterialId shadow_silk = createMaterial("shadow_silk");
+    public static final MaterialId thorn_wood = createMaterial("thorn_wood");
 
+    public static final MaterialId licoroot_vine = createMaterial("licoroot_vine");
+    public static final MaterialId candy_cane = createMaterial("candy_cane");
 }
