@@ -1,6 +1,18 @@
 {
   "values": [
     "tinker_in_caves:primitive_club",
-    "tinker_in_caves:ortholance"
+    "tinker_in_caves:dazing_sweep",
+    "tinker_in_caves:tremorsaurus",
+
+    "tinker_in_caves:desolate_dagger",
+    "tinker_in_caves:multiple_stab",
+    "tinker_in_caves:impending_stab",
+
+    "tinker_in_caves:ortholance",
+    "tinker_in_caves:flinging",
+    "tinker_in_caves:tsunami",
+    "tinker_in_caves:second_wave",
+    "tinker_in_caves:sea_swing"
+
   ]
 }

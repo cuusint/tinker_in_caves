@@ -1,0 +1,28 @@
+{
+  "values": [
+    "tinker_in_caves:atlatitan_trample",
+
+    "tinker_in_caves:resistor_slam",
+    "tinker_in_caves:heavy_slam",
+    "tinker_in_caves:scarlet_shield",
+    "tinker_in_caves:azure_shield",
+
+    "tinker_in_caves:sea_staff",
+    "tinker_in_caves:triple_splash",
+    "tinker_in_caves:soak_seeking",
+    "tinker_in_caves:soak_seeking",
+    "tinker_in_caves:enveloping_bubble",
+    "tinker_in_caves:bouncing_bolt",
+
+    "tinker_in_caves:frostmint_spear",
+
+    "tinker_in_caves:ray_gun",
+    "tinker_in_caves:x_ray",
+    "tinker_in_caves:gamma_ray",
+    "tinker_in_caves:ray_efficiency",
+
+    "tinker_in_caves:sugar_staff",
+    "tinker_in_caves:peppermint_punting",
+    "tinker_in_caves:multiple_mint"
+  ]
+}

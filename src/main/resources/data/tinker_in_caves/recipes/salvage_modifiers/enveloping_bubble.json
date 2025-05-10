@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:modifier_salvage",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "modifier": "tinker_in_caves:enveloping_bubble",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/staffs"
+    }
+  ]
+}

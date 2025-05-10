@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:modifier_salvage",
+  "conditions": [
+    {
+      "modid": "alexscaves",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "level": 1,
+  "modifier": "tinker_in_caves:primitive_club",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    }
+  ]
+}
